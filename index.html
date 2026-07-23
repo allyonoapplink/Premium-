@@ -1,4 +1,3 @@
-000
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,6 +65,137 @@
     body.dark-theme .small-download { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
     body.dark-theme .small-download:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); }
     
+    /* ===== 7-BAGS LAYOUT ===== */
+    .tag-bags-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 14px 0 8px;
+    }
+    .tag-bag {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 12px 14px;
+      border: 1px solid #e9edf4;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .tag-bag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    .tag-bag .bag-icon {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      font-size: 1.2rem;
+      opacity: 0.25;
+      transition: 0.3s;
+    }
+    .tag-bag:hover .bag-icon {
+      opacity: 0.6;
+      transform: scale(1.1) rotate(8deg);
+    }
+    .tag-bag .bag-title {
+      font-weight: 700;
+      font-size: 0.75rem;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tag-bag .bag-title .led-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 8px currentColor;
+      animation: ledPulseBag 2s ease-in-out infinite;
+    }
+    @keyframes ledPulseBag {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+    .tag-bag .bag-content {
+      font-size: 0.7rem;
+      color: #334155;
+      line-height: 1.5;
+    }
+    .tag-bag .bag-content strong { color: #0b1e33; }
+    .tag-bag .bag-content .hi-text { color: #6c7a5a; font-size: 0.65rem; border-top: 1px dashed #ddd; padding-top: 6px; margin-top: 4px; }
+    .tag-bag .bag-content .hi-text strong { color: #b45900; }
+    
+    /* Bag colors */
+    .bag-color-1 { border-left: 4px solid #8b5cf6; background: #f5f0ff; }
+    .bag-color-2 { border-left: 4px solid #22c55e; background: #f0faf0; }
+    .bag-color-3 { border-left: 4px solid #f59e0b; background: #fffbeb; }
+    .bag-color-4 { border-left: 4px solid #3b82f6; background: #f0f5ff; }
+    .bag-color-5 { border-left: 4px solid #ec4899; background: #fdf0f5; }
+    .bag-color-6 { border-left: 4px solid #06b6d4; background: #f0fafc; }
+    .bag-color-7 { border-left: 4px solid #ef4444; background: #fef2f2; }
+    
+    .bag-color-1 .led-dot { color: #8b5cf6; }
+    .bag-color-2 .led-dot { color: #22c55e; }
+    .bag-color-3 .led-dot { color: #f59e0b; }
+    .bag-color-4 .led-dot { color: #3b82f6; }
+    .bag-color-5 .led-dot { color: #ec4899; }
+    .bag-color-6 .led-dot { color: #06b6d4; }
+    .bag-color-7 .led-dot { color: #ef4444; }
+    
+    .tag-bag .bag-title .bag-icon-text { font-size: 0.9rem; }
+    
+    /* Dark theme bags */
+    body.dark-theme .tag-bag {
+      background: #0f1a24;
+      border-color: #2a3a4a;
+    }
+    body.dark-theme .tag-bag .bag-content { color: #b0c0d0; }
+    body.dark-theme .tag-bag .bag-content strong { color: #d0d9e8; }
+    body.dark-theme .tag-bag .bag-content .hi-text { border-color: #2a3a4a; color: #8a9aaa; }
+    body.dark-theme .tag-bag .bag-content .hi-text strong { color: #f59e0b; }
+    body.dark-theme .bag-color-1 { background: #1a1a3a; border-left-color: #8b5cf6; }
+    body.dark-theme .bag-color-2 { background: #1a2a1a; border-left-color: #22c55e; }
+    body.dark-theme .bag-color-3 { background: #1a2a1a; border-left-color: #f59e0b; }
+    body.dark-theme .bag-color-4 { background: #1a1a3a; border-left-color: #3b82f6; }
+    body.dark-theme .bag-color-5 { background: #2a1a1a; border-left-color: #ec4899; }
+    body.dark-theme .bag-color-6 { background: #1a2a2a; border-left-color: #06b6d4; }
+    body.dark-theme .bag-color-7 { background: #2a1a1a; border-left-color: #ef4444; }
+    
+    /* Dark theme: 5 bags layout */
+    body.dark-theme .tag-bags-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    body.dark-theme .tag-bags-grid .tag-bag:nth-child(6),
+    body.dark-theme .tag-bags-grid .tag-bag:nth-child(7) {
+      display: none;
+    }
+    
+    /* Responsive */
+    @media (max-width: 640px) {
+      .tag-bags-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      body.dark-theme .tag-bags-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      body.dark-theme .tag-bags-grid .tag-bag:nth-child(6),
+      body.dark-theme .tag-bags-grid .tag-bag:nth-child(7) {
+        display: none;
+      }
+    }
+    @media (max-width: 440px) {
+      .tag-bags-grid {
+        grid-template-columns: 1fr;
+      }
+      body.dark-theme .tag-bags-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* ===== TOP NAV ===== */
     .top-nav { 
       background: #ffffff; 
       padding: 6px 10px; 
@@ -786,7 +916,7 @@
       return descs[Math.abs(bonusNum) % descs.length];
     }
 
-    // ===== UNIQUE EXTRA BENEFITS PER APP (200-300 range, no referral) =====
+    // ===== UNIQUE EXTRA BENEFITS PER APP =====
     function getExtraBenefits(appName, bonusNum, category) {
       const benefits = [
         `🎯 Daily login rewards • Cashback offers • Fast UPI withdrawals • 24/7 customer support • Exclusive ${appName} tournaments • Weekly bonus up to ₹${200 + (bonusNum % 50)}`,
@@ -849,111 +979,90 @@
       return { ratingClass, sizeClass, votesClass, bonusClass };
     }
 
-    // ===== 34 UNIQUE TAG MODELS (Hindi + English mix, each unique) =====
-    const tagModelList = [
-      // Model 1: Yono Games
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">🎯 ${n} – ₹${b} तुरंत बोनस पाएं!</div><div class="tag-content">Play skill-based Rummy, Teen Patti & slots. सुरक्षित निकासी ₹100 से। Start earning real cash in minutes – डाउनलोड करें और अपना बोनस पाएं!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">💰 ${n} में ₹${b} बोनस अनलॉक करें!</div><div class="tag-content">Aviator, Rummy & more जैसे रोमांचक गेम खेलें। Fast, secure withdrawals via bank/UPI. लाखों लोगों ने भरोसा किया – अभी खेलना शुरू करें!</div></div>`,
-      // Model 2: INR Rummy
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🎰 ${n} खेलें और ₹${b} स्वागत बोनस पाएं!</div><div class="tag-content">रोमांचक रम्मी टेबल, दैनिक पुरस्कार और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💸 ${n} – ₹${b} वेलकम बोनस</div><div class="tag-content">सीक्वेंस बनाएं, कैश टूर्नामेंट में शामिल हों और दैनिक रहस्य पुरस्कार प्राप्त करें। सुरक्षित, मजेदार और भरोसेमंद गेमिंग – आज ही रियल कैश जीतना शुरू करें!</div></div>`,
-      // Model 3: MBM BET
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🏆 ${n} और ₹${b} वेलकम बोनस पाएं!</div><div class="tag-content">रोमांचक कैसीनो गेम, दैनिक पुरस्कार अपडेट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📲 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक लॉगिन बोनस, दैनिक कमाई, इंस्टेंट बैंक ट्रांसफर, ${n} लॉयल्टी रिवॉर्ड प्राप्त करें। अभी खेलें!</div></div>`,
-      // Model 4: 567 Slots
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">🆕 नया अपडेट ${n} डाउनलोड करें और ₹${b} वेलकम बोनस पाएं!</div><div class="tag-content">रोमांचक स्लॉट मशीन, दैनिक पुरस्कार और तेज़ निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎁 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक लॉगिन बोनस, कैशबैक कमाई, इंस्टेंट विदड्रॉल और ${n} लॉयल्टी रिवॉर्ड प्राप्त करें। नया अपडेट उपलब्ध है!</div></div>`,
-      // Model 5: Saga Slots
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🌟 ${n} वर्शन – ₹${b} जॉइनिंग बोनस!</div><div class="tag-content">प्रीमियम स्लॉट मशीनों के साथ स्पिन करें, खेलें और जीतें। तेज़ भुगतान और 24/7 सहायता उपलब्ध है। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💎 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक मुफ्त स्पिन, कैश, त्वरित UPI निकासी, चौबीसों घंटे सहायता और ${n} विशेष इवेंट का आनंद लें।</div></div>`,
-      // Model 6: Jaiho 91
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🎉 ${n} – ₹${b} वेलकम ऑफर</div><div class="tag-content">कैसीनो गेम, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">🎊 ${n} बोनस</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी, और VIP रिवॉर्ड अनलॉक करें। आज ही जुड़ें और कमाई शुरू करें!</div></div>`,
-      // Model 7: Rummy Ludo
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">🎲 ${n} – ₹${b} साइनअप बोनस</div><div class="tag-content">रम्मी, लूडो और बहुत कुछ खेलें। सुरक्षित लेनदेन, त्वरित निकासी और 24/7 सहायता। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🏅 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
-      // Model 8: ABC Rummy
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">♠️ ${n} – ₹${b} वेलकम बोनस</div><div class="tag-content">रम्मी टेबल, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💰 ${n} – ₹${b} बोनस</div><div class="tag-content">सीक्वेंस बनाएं, कैश टूर्नामेंट में शामिल हों और दैनिक रहस्य पुरस्कार प्राप्त करें। सुरक्षित, मजेदार और भरोसेमंद गेमिंग!</div></div>`,
-      // Model 9: Rummy 91
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🔥 ${n} – ₹${b} जॉइनिंग बोनस</div><div class="tag-content">रम्मी, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📱 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें और कमाई शुरू करें!</div></div>`,
-      // Model 10: Love Rummy
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">❤️ ${n} – ₹${b} लव बोनस</div><div class="tag-content">रम्मी को प्यार से खेलें, दैनिक टूर्नामेंट और तेज़ UPI निकासी। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎯 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
-      // Model 11: Spin Crush
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🌀 ${n} – ₹${b} स्पिन बोनस</div><div class="tag-content">प्रीमियम गेम्स के साथ स्पिन, खेलें और जीतें। तेज़ भुगतान और 24/7 सहायता उपलब्ध है। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💲 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक मुफ्त स्पिन, कैश, त्वरित UPI निकासी और ${n} विशेष इवेंट का आनंद लें।</div></div>`,
-      // Model 12: Top Rummy
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">👑 ${n} – ₹${b} टॉप बोनस</div><div class="tag-content">रम्मी, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">⭐ ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
-      // Model 13: Hello Rummy
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">👋 ${n} – ₹${b} हेलो बोनस</div><div class="tag-content">रम्मी, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎁 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
-      // Model 14: Rummy 365
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">📅 ${n} – ₹${b} 365 बोनस</div><div class="tag-content">365 दिन रम्मी खेलें, दैनिक टूर्नामेंट और तेज़ UPI निकासी। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💵 ${n} – ₹${b} बोनस</div><div class="tag-content">सीक्वेंस बनाएं, कैश टूर्नामेंट में शामिल हों और दैनिक रहस्य पुरस्कार प्राप्त करें। सुरक्षित, मजेदार और भरोसेमंद गेमिंग!</div></div>`,
-      // Model 15: Teen Patti Gold
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🥇 ${n} – ₹${b} गोल्ड बोनस</div><div class="tag-content">टीन पत्ती, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📲 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
-      // Model 16: Teen Patti Master
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">🎩 ${n} – ₹${b} मास्टर बोनस</div><div class="tag-content">टीन पत्ती, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🏆 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
-      // Model 17: Yono Rummy
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🟢 ${n} – ₹${b} योनो बोनस</div><div class="tag-content">रम्मी, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💸 ${n} – ₹${b} बोनस</div><div class="tag-content">सीक्वेंस बनाएं, कैश टूर्नामेंट में शामिल हों और दैनिक रहस्य पुरस्कार प्राप्त करें। सुरक्षित, मजेदार और भरोसेमंद गेमिंग!</div></div>`,
-      // Model 18: Slots Winner
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🏅 ${n} – ₹${b} विनर बोनस</div><div class="tag-content">स्लॉट खेलें, रियल मनी जीतें और तुरंत निकासी करें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">🎰 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
-      // Model 19: Good Slots
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">👍 ${n} – ₹${b} गुड बोनस</div><div class="tag-content">स्लॉट, दैनिक पुरस्कार और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎁 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
-      // Model 20: Diwa Slot
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🪔 ${n} – ₹${b} दीवा बोनस</div><div class="tag-content">स्लॉट खेलें, स्पिन करें और जीतें, तेज़ UPI निकासी। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💵 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक मुफ्त स्पिन, कैश, त्वरित UPI निकासी और ${n} विशेष इवेंट का आनंद लें।</div></div>`,
-      // Model 21: GoGo Rummy
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🚀 ${n} – ₹${b} गो-गो बोनस</div><div class="tag-content">रम्मी, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📱 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
-      // Model 22: Joy Rummy
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">😊 ${n} – ₹${b} जॉय बोनस</div><div class="tag-content">रम्मी, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎉 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
-      // Model 23: Spin Gold
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🌟 ${n} – ₹${b} स्पिन गोल्ड बोनस</div><div class="tag-content">प्रीमियम गेम्स के साथ स्पिन, खेलें और जीतें। तेज़ भुगतान और 24/7 सहायता। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💰 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक मुफ्त स्पिन, कैश, त्वरित UPI निकासी और ${n} विशेष इवेंट का आनंद लें।</div></div>`,
-      // Model 24: Bingo 101
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🎱 ${n} – ₹${b} बिंगो बोनस</div><div class="tag-content">बिंगो, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📲 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
-      // Model 25: Yes Spin
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">✅ ${n} – ₹${b} यस बोनस</div><div class="tag-content">प्रीमियम गेम्स के साथ स्पिन, खेलें और जीतें। तेज़ भुगतान और 24/7 सहायता। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎯 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
-      // Model 26: Yono Arcade
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🎮 ${n} – ₹${b} आर्केड बोनस</div><div class="tag-content">आर्केड गेम, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💲 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
-      // Model 27: SVIP 777
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">👑 ${n} – ₹${b} SVIP बोनस</div><div class="tag-content">कैसीनो गेम, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📱 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
-      // Model 28: OK Rummy
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">👍 ${n} – ₹${b} ओके बोनस</div><div class="tag-content">रम्मी, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎁 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
-      // Model 29: Hind 777
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🇮🇳 ${n} – ₹${b} हिंद बोनस</div><div class="tag-content">स्लॉट, स्पिन और जीतें, तेज़ UPI निकासी। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💵 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक मुफ्त स्पिन, कैश, त्वरित UPI निकासी और ${n} विशेष इवेंट का आनंद लें।</div></div>`,
-      // Model 30: Bet 213
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🎲 ${n} – ₹${b} बेट बोनस</div><div class="tag-content">बेटिंग गेम, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📲 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
-      // Model 31: Boss Rummy
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">👔 ${n} – ₹${b} बॉस बोनस</div><div class="tag-content">रम्मी, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🏆 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
-      // Model 32: Yono 777
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🟢 ${n} – ₹${b} योनो 777 बोनस</div><div class="tag-content">स्लॉट, स्पिन और जीतें, तेज़ UPI निकासी। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">🎰 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक मुफ्त स्पिन, कैश, त्वरित UPI निकासी और ${n} विशेष इवेंट का आनंद लें।</div></div>`,
-      // Model 33: Diwa VIP
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">💎 ${n} – ₹${b} VIP बोनस</div><div class="tag-content">VIP गेम, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📱 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
-      // Model 34: Diwa 777
-      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">🪔 ${n} – ₹${b} दीवा 777 बोनस</div><div class="tag-content">स्लॉट, स्पिन और जीतें, तेज़ UPI निकासी। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎁 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`
-    ];
+    // ===== 7-BAGS TAG GENERATOR (unique per app) =====
+    function generate7Bags(appName, bonusNum, appIndex) {
+      const bagColors = ['bag-color-1','bag-color-2','bag-color-3','bag-color-4','bag-color-5','bag-color-6','bag-color-7'];
+      const icons = ['🎯','💰','🎰','📲','🔒','🎁','❓'];
+      const titles = [
+        'App Title / ऐप शीर्षक',
+        'Welcome Bonus / स्वागत बोनस',
+        'Top Games / शीर्ष गेम',
+        'How to Download / डाउनलोड कैसे करें',
+        'Safety & Security / सुरक्षा',
+        'Extra Benefits / अतिरिक्त लाभ',
+        'FAQ / सामान्य प्रश्न'
+      ];
+      // Unique content per app based on appIndex
+      const seed = appIndex * 7 + bonusNum;
+      const h1 = (seed * 31 + 17) % 100;
+      const h2 = (seed * 43 + 29) % 100;
+      const h3 = (seed * 59 + 41) % 100;
+      const h4 = (seed * 71 + 53) % 100;
+      const h5 = (seed * 83 + 61) % 100;
+      const h6 = (seed * 97 + 73) % 100;
+      const h7 = (seed * 11 + 7) % 100;
+      
+      const contents = [
+        // Bag 1: App Title (Hindi + English)
+        `<strong>${appName}</strong> – भारत का सबसे भरोसेमंद गेमिंग ऐप! <span style="color:#8b5cf6;font-weight:700;">₹${bonusNum}</span> बोनस पाएं।<div class="hi-text"><strong>हिंदी:</strong> ${appName} आपको साइनअप पर ₹${bonusNum} का मुफ्त बोनस देता है। रियल कैश कमाने का सबसे आसान तरीका!</div>`,
+        // Bag 2: Welcome Bonus (Hindi)
+        `🎁 <strong>₹${bonusNum}</strong> वेलकम बोनस तुरंत!<br>न्यूनतम निकासी ₹100<br>दैनिक लॉगिन बोनस ₹${20 + (h1 % 30)} तक<div class="hi-text"><strong>हिंदी:</strong> ₹${bonusNum} बोनस पाने के लिए आज ही रजिस्टर करें। ₹100 से निकासी शुरू करें!</div>`,
+        // Bag 3: Top Games (Hindi)
+        `🎮 <strong>${appName}</strong> में 20+ गेम्स:<br>रम्मी, टीन पत्ती, स्लॉट्स, बिंगो, स्पिन गेम्स और बहुत कुछ!<div class="hi-text"><strong>हिंदी:</strong> रोमांचक गेम्स खेलें और रियल कैश जीतें। हर दिन नए गेम्स आते हैं!</div>`,
+        // Bag 4: How to Download (English)
+        `📥 <strong>Download Steps:</strong><br>1. Click DOWNLOAD button<br>2. Allow "Unknown Sources"<br>3. Install APK<br>4. Register & verify OTP<br>5. Claim ₹${bonusNum} bonus!<div class="hi-text"><strong>हिंदी:</strong> डाउनलोड बटन क्लिक करें, अज्ञात स्रोतों की अनुमति दें, APK इंस्टॉल करें, रजिस्टर करें और बोनस पाएं!</div>`,
+        // Bag 5: Safety & Security (English)
+        `🔒 <strong>Secure Platform</strong><br>• OTP verified login<br>• Encrypted transactions<br>• Regular security updates<br>• 24/7 monitoring<div class="hi-text"><strong>हिंदी:</strong> OTP सत्यापन, एन्क्रिप्टेड लेनदेन, नियमित सुरक्षा अपडेट – 100% सुरक्षित प्लेटफॉर्म!</div>`,
+        // Bag 6: Extra Benefits (mix)
+        `🎯 <strong>Extra Rewards</strong><br>• Daily login bonus: ₹${10 + (h2 % 20)}<br>• Referral bonus: ₹${50 + (h3 % 50)}<br>• Weekly cashback: ${5 + (h4 % 10)}%<br>• VIP loyalty rewards<div class="hi-text"><strong>हिंदी:</strong> दैनिक बोनस, रेफरल बोनस, साप्ताहिक कैशबैक और VIP रिवॉर्ड्स!</div>`,
+        // Bag 7: FAQ (mix)
+        `❓ <strong>FAQ</strong><br>Q: ${appName} सुरक्षित है?<br>A: हाँ, OTP और एन्क्रिप्शन के साथ सुरक्षित।<br>Q: निकासी कैसे करें?<br>A: UPI या बैंक ट्रांसफर से ₹${100 + (h5 % 50)} से शुरू करें।<div class="hi-text"><strong>हिंदी:</strong> सभी सवालों के जवाब यहाँ दिए गए हैं। अधिक जानकारी के लिए हमसे संपर्क करें!</div>`
+      ];
 
-    // ===== GENERATE FULL TAGS HTML WITH FAQ AND OVERVIEW (visible by default) =====
+      let html = `<div class="tag-bags-grid">`;
+      for (let i = 0; i < 7; i++) {
+        const colorClass = bagColors[i % bagColors.length];
+        const icon = icons[i % icons.length];
+        const title = titles[i % titles.length];
+        const content = contents[i % contents.length];
+        html += `
+          <div class="tag-bag ${colorClass}">
+            <span class="bag-icon">${icon}</span>
+            <div class="bag-title">
+              <span class="led-dot"></span>
+              <span class="bag-icon-text">${icon}</span>
+              ${title}
+            </div>
+            <div class="bag-content">${content}</div>
+          </div>
+        `;
+      }
+      html += `</div>`;
+      return html;
+    }
+
+    // ===== CREATE FULL TAGS HTML WITH 7-BAGS =====
     function createTagsHTML(appName, bonusNum, appIndex) {
-      const modelFn = tagModelList[appIndex % tagModelList.length];
-      const mainTags = modelFn(appName, bonusNum);
+      const bagsHTML = generate7Bags(appName, bonusNum, appIndex);
       const bonusArr = [];
       for (let i = 1; i <= 17; i++) bonusArr.push(200 + (Math.abs((bonusNum + i) * i) % 101));
       
       return `
-        ${mainTags}
-        <div class="tag-divider"></div>
-        <div class="tag-box">
-          <div class="tag-title">❓ Frequently Asked Questions</div>
-          <div class="tag-content">
-            <div class="faq-item"><div class="faq-q">1. ${appName} एपीके क्या है?</div><div class="faq-a">${appName} APP APK एक बेहतरीन एप्लिकेशन है जो उपयोगकर्ताओं को ₹${bonusArr[0]} का साइन-अप बोनस प्रदान करता है। इस गेम में शानदार बोनस प्रोग्राम है, और आप पूरी पोस्ट पढ़कर अधिक जान सकते हैं। इसके अलावा, ${appName} APK एक लोकप्रिय स्लॉट गेम है जिसमें न्यूनतम निकासी ₹100 है।</div></div>
-            <div class="faq-item"><div class="faq-q">2. ${appName} APK के लिए साइन अप कैसे करें?</div><div class="faq-a">${appName} APK के लिए साइन अप करने के लिए, इन चरणों का पालन करें:<br>• ${appName} APK के लिए डाउनलोड बटन पर क्लिक करें।<br>• डाउनलोड शुरू करने के लिए OK चुनें।<br>• अपने स्मार्टफोन पर ऐप इंस्टॉल करें।<br>• नया ऐप खोलें और Play as Guest पर क्लिक करें।<br>• प्रोफाइल बटन पर क्लिक करें और अपना मोबाइल नंबर बाँधें।<br>इन चरणों को पूरा करने के बाद, आपको ₹${bonusArr[1]} का साइन-अप बोनस मिलेगा।</div></div>
-            <div class="faq-item"><div class="faq-q">3. ${appName} ऐप में कितने गेम उपलब्ध हैं?</div><div class="faq-a">${appName} ऐप 75+ विभिन्न प्रकार के गेम का समर्थन करता है। आप Rummy, Teen Patti, 7 Up Down, Dragon vs Tiger और बहुत कुछ जैसे विभिन्न गेम का आनंद ले सकते हैं।</div></div>
-            <div class="faq-item"><div class="faq-q">4. ${appName} ऐप APK की कुछ बेहतरीन विशेषताएं क्या हैं?</div><div class="faq-a">• APK में ₹${bonusArr[2]} का मुफ्त बोनस प्राप्त करें।<br>• 20 गेमिंग विकल्पों तक पहुंच।<br>• दोस्तों को आमंत्रित करने पर ₹${bonusArr[3]} तक कमाएं।<br>• न्यूनतम ₹${bonusArr[4]} से निकासी शुरू करें।<br>• प्रोफाइल बटन पर क्लिक करें और अपना मोबाइल नंबर बाँधें।<br>• न्यूनतम जमा राशि ₹${bonusArr[5]} है।</div></div>
-          </div>
-        </div>
+        ${bagsHTML}
         <div class="tag-divider"></div>
         <div class="tag-box">
           <div class="tag-title">📖 Overview – ${appName}</div>
-          <div class="tag-content">${appName} भारत में एक लोकप्रिय रियल कैश कमाने वाला ऐप है जहाँ उपयोगकर्ता रियल मनी जीतने के लिए रम्मी, स्लॉट, बिंगो और स्पिन गेम जैसे गेम खेल सकते हैं। नए उपयोगकर्ता ₹${bonusArr[6]} तक के साइनअप बोनस का दावा कर सकते हैं, जिससे प्लेटफॉर्म पर शुरू करना और एक्सप्लोर करना आसान हो जाता है। ऐप तेज़ UPI जमा और निकासी के साथ एक सहज और सुरक्षित अनुभव प्रदान करता है।<br><br>${appName} का इंटरफ़ेस सरल और उपयोगकर्ता के अनुकूल है, जो इसे शुरुआती और अनुभवी खिलाड़ियों दोनों के लिए उपयुक्त बनाता है। आप अपनी कमाई बढ़ाने के लिए दैनिक पुरस्कार, बोनस ऑफर और विशेष इवेंट का आनंद ले सकते हैं। न्यूनतम निकासी ₹${bonusArr[7]} से शुरू होती है, और अधिकांश लेनदेन बिना देरी के जल्दी से संसाधित होते हैं।<br><br>यदि आप एक भरोसेमंद गेमिंग ऐप की तलाश में हैं जो मनोरंजन को वास्तविक कमाई के अवसरों के साथ जोड़ता है, तो ${appName} एक बढ़िया विकल्प है। आज ही नवीनतम APK संस्करण डाउनलोड करें और अपने मोबाइल से रियल कैश रिवॉर्ड कमाने के लिए खेलना शुरू करें।</div>
+          <div class="tag-content">${appName} भारत में एक लोकप्रिय रियल कैश कमाने वाला ऐप है जहाँ उपयोगकर्ता रियल मनी जीतने के लिए रम्मी, स्लॉट, बिंगो और स्पिन गेम जैसे गेम खेल सकते हैं। नए उपयोगकर्ता ₹${bonusArr[0]} तक के साइनअप बोनस का दावा कर सकते हैं, जिससे प्लेटफॉर्म पर शुरू करना और एक्सप्लोर करना आसान हो जाता है। ऐप तेज़ UPI जमा और निकासी के साथ एक सहज और सुरक्षित अनुभव प्रदान करता है।<br><br>${appName} का इंटरफ़ेस सरल और उपयोगकर्ता के अनुकूल है, जो इसे शुरुआती और अनुभवी खिलाड़ियों दोनों के लिए उपयुक्त बनाता है। आप अपनी कमाई बढ़ाने के लिए दैनिक पुरस्कार, बोनस ऑफर और विशेष इवेंट का आनंद ले सकते हैं। न्यूनतम निकासी ₹${bonusArr[1]} से शुरू होती है, और अधिकांश लेनदेन बिना देरी के जल्दी से संसाधित होते हैं।<br><br>यदि आप एक भरोसेमंद गेमिंग ऐप की तलाश में हैं जो मनोरंजन को वास्तविक कमाई के अवसरों के साथ जोड़ता है, तो ${appName} एक बढ़िया विकल्प है। आज ही नवीनतम APK संस्करण डाउनलोड करें और अपने मोबाइल से रियल कैश रिवॉर्ड कमाने के लिए खेलना शुरू करें।</div>
         </div>
         <div class="tag-divider"></div>
         <div class="tag-box">
           <div class="tag-title">✨ ${appName} App Features & Benefits</div>
-          <div class="tag-content"><ul><li><strong>वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[8]} तक का साइनअप बोनस प्राप्त करें</li><li><strong>तेज़ UPI निकासी:</strong> अपने बैंक खाते में सीधे ₹${bonusArr[9]} से निकासी शुरू करें</li><li><strong>लोकप्रिय गेम:</strong> रम्मी, स्लॉट, बिंगो, स्पिन गेम और अधिक रियल कैश कमाने के विकल्प खेलें</li><li><strong>सुरक्षित प्लेटफॉर्म:</strong> सुरक्षित लेनदेन के साथ सहज गेमप्ले अनुभव</li><li><strong>दैनिक पुरस्कार और ऑफर:</strong> नियमित रूप से अतिरिक्त बोनस, कैशबैक और पुरस्कार प्राप्त करें</li><li><strong>उपयोगकर्ता के अनुकूल इंटरफ़ेस:</strong> शुरुआती और अनुभवी खिलाड़ियों के लिए उपयोग में आसान ऐप</li></ul></div>
+          <div class="tag-content"><ul><li><strong>वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[2]} तक का साइनअप बोनस प्राप्त करें</li><li><strong>तेज़ UPI निकासी:</strong> अपने बैंक खाते में सीधे ₹${bonusArr[3]} से निकासी शुरू करें</li><li><strong>लोकप्रिय गेम:</strong> रम्मी, स्लॉट, बिंगो, स्पिन गेम और अधिक रियल कैश कमाने के विकल्प खेलें</li><li><strong>सुरक्षित प्लेटफॉर्म:</strong> सुरक्षित लेनदेन के साथ सहज गेमप्ले अनुभव</li><li><strong>दैनिक पुरस्कार और ऑफर:</strong> नियमित रूप से अतिरिक्त बोनस, कैशबैक और पुरस्कार प्राप्त करें</li><li><strong>उपयोगकर्ता के अनुकूल इंटरफ़ेस:</strong> शुरुआती और अनुभवी खिलाड़ियों के लिए उपयोग में आसान ऐप</li></ul></div>
         </div>
         <div class="tag-divider"></div>
         <div class="tag-box">
           <div class="tag-title">📥 How to Download & Install ${appName}</div>
-          <div class="tag-content"><ul><li><strong>1.</strong> ऊपर दिए गए बड़े डाउनलोड बटन पर टैप करें</li><li><strong>2.</strong> अज्ञात स्रोतों से इंस्टॉलेशन की अनुमति दें</li><li><strong>3.</strong> डाउनलोड की गई APK खोलें और Install पर टैप करें</li><li><strong>4.</strong> अपने मोबाइल नंबर से पंजीकरण करें</li><li><strong>5.</strong> अपना साइनअप बोनस तुरंत प्राप्त करें – ₹${bonusArr[10]} तक!</li></ul></div>
+          <div class="tag-content"><ul><li><strong>1.</strong> ऊपर दिए गए बड़े डाउनलोड बटन पर टैप करें</li><li><strong>2.</strong> अज्ञात स्रोतों से इंस्टॉलेशन की अनुमति दें</li><li><strong>3.</strong> डाउनलोड की गई APK खोलें और Install पर टैप करें</li><li><strong>4.</strong> अपने मोबाइल नंबर से पंजीकरण करें</li><li><strong>5.</strong> अपना साइनअप बोनस तुरंत प्राप्त करें – ₹${bonusArr[4]} तक!</li></ul></div>
         </div>
         <div class="tag-divider"></div>
         <div class="tag-box">
@@ -963,7 +1072,7 @@
         <div class="tag-divider"></div>
         <div class="tag-box">
           <div class="tag-title">✅ Why Choose ${appName} App?</div>
-          <div class="tag-content"><ul><li><strong>आकर्षक वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[11]} तक</li><li><strong>तेज़ UPI निकासी</strong> प्रणाली त्वरित प्रसंस्करण समय के साथ</li><li><strong>गेम की विस्तृत श्रृंखला</strong> जिसमें रम्मी, स्लॉट, बिंगो और स्पिन गेम शामिल हैं</li><li><strong>स्मूथ और ऑप्टिमाइज़्ड</strong> प्रदर्शन अधिकांश Android डिवाइस पर</li><li><strong>नियमित अपडेट</strong> नई सुविधाओं, ऑफ़र और सुधारों के साथ</li><li><strong>सरल और उपयोगकर्ता के अनुकूल</strong> इंटरफ़ेस शुरुआती और नियमित खिलाड़ियों के लिए</li></ul></div>
+          <div class="tag-content"><ul><li><strong>आकर्षक वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[5]} तक</li><li><strong>तेज़ UPI निकासी</strong> प्रणाली त्वरित प्रसंस्करण समय के साथ</li><li><strong>गेम की विस्तृत श्रृंखला</strong> जिसमें रम्मी, स्लॉट, बिंगो और स्पिन गेम शामिल हैं</li><li><strong>स्मूथ और ऑप्टिमाइज़्ड</strong> प्रदर्शन अधिकांश Android डिवाइस पर</li><li><strong>नियमित अपडेट</strong> नई सुविधाओं, ऑफ़र और सुधारों के साथ</li><li><strong>सरल और उपयोगकर्ता के अनुकूल</strong> इंटरफ़ेस शुरुआती और नियमित खिलाड़ियों के लिए</li></ul></div>
         </div>
       `;
     }
@@ -1125,7 +1234,7 @@
             <div class="tag-section">
               <div class="tag-title" style="font-weight:700; font-size:0.95rem; margin-bottom:8px; color:#0b1e33;">${selectedApp.name} – Top Offers</div>
               <div class="five-options" id="fiveOptions">${fiveOptionsHtml}<span class="opt-item" style="background:#22c55e;color:white;border-color:#22c55e;font-weight:700;">+ 5 More</span></div>
-              <!-- All tags visible directly -->
+              <!-- 7-BAGS TAGS -->
               <div class="tag-grid" id="tagGridContainer">${tagsHTML}</div>
             </div>
             <div class="detail-warning-led" id="detailWarningToggle">
