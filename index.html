@@ -191,6 +191,45 @@
       border-color: #aaaadd;
     }
     
+    /* premium LED color mix for super fast withdrawal APK */
+    .super-fast-withdrawal {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #22c55e, #06b6d4, #eab308, #1a1a1a);
+      padding: 4px 14px 4px 10px;
+      border-radius: 40px;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.6rem;
+      border: none;
+      box-shadow: 0 0 20px rgba(34,197,94,0.4), 0 0 40px rgba(6,182,212,0.2);
+      transition: 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      margin-left: 6px;
+    }
+    .super-fast-withdrawal:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(34,197,94,0.6), 0 0 60px rgba(6,182,212,0.3);
+    }
+    .super-fast-withdrawal .led-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: ledBlink 1.2s infinite alternate;
+      box-shadow: 0 0 12px #22c55e;
+    }
+    @keyframes ledBlink {
+      0% { background: #22c55e; box-shadow: 0 0 8px #22c55e; }
+      33% { background: #06b6d4; box-shadow: 0 0 12px #06b6d4; }
+      66% { background: #eab308; box-shadow: 0 0 12px #eab308; }
+      100% { background: #1a1a1a; box-shadow: 0 0 16px #1a1a1a; }
+    }
+    
     .app-tags-wrapper {
       padding: 8px 12px;
       background: #f8fafc;
@@ -671,6 +710,10 @@
     <a href="#" id="navContact"><span class="icon-contact"></span> Contact</a>
     <a href="#" id="navDisclaimer"><span class="icon-disclaimer"></span> Disclaimer</a>
   </div>
+  <!-- super fast withdrawal APK button with 4 color LED mix -->
+  <a href="https://www.earntp.com/gold/jm9n7r" target="_blank" rel="noopener noreferrer" class="super-fast-withdrawal" id="superFastWithdrawalBtn">
+    <span class="led-dot"></span> SUPER FAST WITHDRAWAL APK
+  </a>
   <a href="https://t.me/yonogamestite" target="_blank" rel="noopener noreferrer" class="telegram-nav-btn" id="telegramNavBtn">
     <img src="https://i.ibb.co/S7P1xcCq/telegram-icon.jpg" alt="Telegram" loading="eager">
     Telegram
