@@ -86,18 +86,6 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(0,0,0,0.06);
     }
-    .tag-bag .bag-icon {
-      position: absolute;
-      top: 8px;
-      right: 10px;
-      font-size: 1.2rem;
-      opacity: 0.25;
-      transition: 0.3s;
-    }
-    .tag-bag:hover .bag-icon {
-      opacity: 0.6;
-      transform: scale(1.1) rotate(8deg);
-    }
     .tag-bag .bag-title {
       font-weight: 700;
       font-size: 0.75rem;
@@ -127,6 +115,8 @@
     .tag-bag .bag-content strong { color: #0b1e33; }
     .tag-bag .bag-content .hi-text { color: #6c7a5a; font-size: 0.65rem; border-top: 1px dashed #ddd; padding-top: 6px; margin-top: 4px; }
     .tag-bag .bag-content .hi-text strong { color: #b45900; }
+    .tag-bag .bag-content .en-text { font-weight: 500; }
+    .tag-bag .bag-content .mix-highlight { font-weight: 600; }
     
     /* Bag colors */
     .bag-color-1 { border-left: 4px solid #8b5cf6; background: #f5f0ff; }
@@ -144,8 +134,6 @@
     .bag-color-5 .led-dot { color: #ec4899; }
     .bag-color-6 .led-dot { color: #06b6d4; }
     .bag-color-7 .led-dot { color: #ef4444; }
-    
-    .tag-bag .bag-title .bag-icon-text { font-size: 0.9rem; }
     
     /* Dark theme bags */
     body.dark-theme .tag-bag {
@@ -979,61 +967,91 @@
       return { ratingClass, sizeClass, votesClass, bonusClass };
     }
 
-    // ===== 7-BAGS TAG GENERATOR (unique per app) =====
+    // ===== 34 UNIQUE BAG MODELS (varying Hindi/English mix) =====
     function generate7Bags(appName, bonusNum, appIndex) {
       const bagColors = ['bag-color-1','bag-color-2','bag-color-3','bag-color-4','bag-color-5','bag-color-6','bag-color-7'];
-      const icons = ['🎯','💰','🎰','📲','🔒','🎁','❓'];
       const titles = [
-        'App Title / ऐप शीर्षक',
-        'Welcome Bonus / स्वागत बोनस',
-        'Top Games / शीर्ष गेम',
-        'How to Download / डाउनलोड कैसे करें',
-        'Safety & Security / सुरक्षा',
-        'Extra Benefits / अतिरिक्त लाभ',
-        'FAQ / सामान्य प्रश्न'
+        'App Title',
+        'Welcome Bonus',
+        'Top Games',
+        'How to Download',
+        'Safety & Security',
+        'Extra Benefits',
+        'FAQ'
       ];
-      // Unique content per app based on appIndex
-      const seed = appIndex * 7 + bonusNum;
-      const h1 = (seed * 31 + 17) % 100;
-      const h2 = (seed * 43 + 29) % 100;
-      const h3 = (seed * 59 + 41) % 100;
-      const h4 = (seed * 71 + 53) % 100;
-      const h5 = (seed * 83 + 61) % 100;
-      const h6 = (seed * 97 + 73) % 100;
-      const h7 = (seed * 11 + 7) % 100;
+      // Use appIndex to seed unique mix percentages for each bag
+      const seed = appIndex * 7;
+      const mix = [];
+      for (let i = 0; i < 7; i++) {
+        mix.push((seed + i * 13) % 101); // 0-100
+      }
       
-      const contents = [
-        // Bag 1: App Title (Hindi + English)
-        `<strong>${appName}</strong> – भारत का सबसे भरोसेमंद गेमिंग ऐप! <span style="color:#8b5cf6;font-weight:700;">₹${bonusNum}</span> बोनस पाएं।<div class="hi-text"><strong>हिंदी:</strong> ${appName} आपको साइनअप पर ₹${bonusNum} का मुफ्त बोनस देता है। रियल कैश कमाने का सबसे आसान तरीका!</div>`,
-        // Bag 2: Welcome Bonus (Hindi)
-        `🎁 <strong>₹${bonusNum}</strong> वेलकम बोनस तुरंत!<br>न्यूनतम निकासी ₹100<br>दैनिक लॉगिन बोनस ₹${20 + (h1 % 30)} तक<div class="hi-text"><strong>हिंदी:</strong> ₹${bonusNum} बोनस पाने के लिए आज ही रजिस्टर करें। ₹100 से निकासी शुरू करें!</div>`,
-        // Bag 3: Top Games (Hindi)
-        `🎮 <strong>${appName}</strong> में 20+ गेम्स:<br>रम्मी, टीन पत्ती, स्लॉट्स, बिंगो, स्पिन गेम्स और बहुत कुछ!<div class="hi-text"><strong>हिंदी:</strong> रोमांचक गेम्स खेलें और रियल कैश जीतें। हर दिन नए गेम्स आते हैं!</div>`,
-        // Bag 4: How to Download (English)
-        `📥 <strong>Download Steps:</strong><br>1. Click DOWNLOAD button<br>2. Allow "Unknown Sources"<br>3. Install APK<br>4. Register & verify OTP<br>5. Claim ₹${bonusNum} bonus!<div class="hi-text"><strong>हिंदी:</strong> डाउनलोड बटन क्लिक करें, अज्ञात स्रोतों की अनुमति दें, APK इंस्टॉल करें, रजिस्टर करें और बोनस पाएं!</div>`,
-        // Bag 5: Safety & Security (English)
-        `🔒 <strong>Secure Platform</strong><br>• OTP verified login<br>• Encrypted transactions<br>• Regular security updates<br>• 24/7 monitoring<div class="hi-text"><strong>हिंदी:</strong> OTP सत्यापन, एन्क्रिप्टेड लेनदेन, नियमित सुरक्षा अपडेट – 100% सुरक्षित प्लेटफॉर्म!</div>`,
-        // Bag 6: Extra Benefits (mix)
-        `🎯 <strong>Extra Rewards</strong><br>• Daily login bonus: ₹${10 + (h2 % 20)}<br>• Referral bonus: ₹${50 + (h3 % 50)}<br>• Weekly cashback: ${5 + (h4 % 10)}%<br>• VIP loyalty rewards<div class="hi-text"><strong>हिंदी:</strong> दैनिक बोनस, रेफरल बोनस, साप्ताहिक कैशबैक और VIP रिवॉर्ड्स!</div>`,
-        // Bag 7: FAQ (mix)
-        `❓ <strong>FAQ</strong><br>Q: ${appName} सुरक्षित है?<br>A: हाँ, OTP और एन्क्रिप्शन के साथ सुरक्षित।<br>Q: निकासी कैसे करें?<br>A: UPI या बैंक ट्रांसफर से ₹${100 + (h5 % 50)} से शुरू करें।<div class="hi-text"><strong>हिंदी:</strong> सभी सवालों के जवाब यहाँ दिए गए हैं। अधिक जानकारी के लिए हमसे संपर्क करें!</div>`
+      // English and Hindi content for each bag
+      const enContents = [
+        `<strong>${appName}</strong> – India's most trusted gaming app! Get <span style="color:#8b5cf6;font-weight:700;">₹${bonusNum}</span> bonus instantly.`,
+        `🎁 <strong>₹${bonusNum}</strong> Welcome Bonus!<br>Min withdrawal ₹100<br>Daily login bonus ₹${20 + (appIndex % 30)}`,
+        `🎮 <strong>${appName}</strong> offers 20+ games:<br>Rummy, Teen Patti, Slots, Bingo, Spin & more!`,
+        `📥 <strong>Download Steps:</strong><br>1. Click DOWNLOAD button<br>2. Allow "Unknown Sources"<br>3. Install APK<br>4. Register & verify OTP<br>5. Claim ₹${bonusNum} bonus!`,
+        `🔒 <strong>Secure Platform</strong><br>• OTP verified login<br>• Encrypted transactions<br>• Regular updates<br>• 24/7 monitoring`,
+        `🎯 <strong>Extra Rewards</strong><br>• Daily bonus: ₹${10 + (appIndex % 20)}<br>• Referral bonus: ₹${50 + (appIndex % 50)}<br>• Weekly cashback: ${5 + (appIndex % 10)}%`,
+        `❓ <strong>FAQ</strong><br>Q: Is ${appName} safe?<br>A: Yes, with OTP & encryption.<br>Q: Withdrawal method?<br>A: UPI or bank transfer from ₹${100 + (appIndex % 50)}.`
+      ];
+      
+      const hiContents = [
+        `<strong>${appName}</strong> – भारत का सबसे भरोसेमंद गेमिंग ऐप! <span style="color:#8b5cf6;font-weight:700;">₹${bonusNum}</span> बोनस तुरंत पाएं।`,
+        `🎁 <strong>₹${bonusNum}</strong> वेलकम बोनस!<br>न्यूनतम निकासी ₹100<br>दैनिक लॉगिन बोनस ₹${20 + (appIndex % 30)}`,
+        `🎮 <strong>${appName}</strong> में 20+ गेम्स:<br>रम्मी, टीन पत्ती, स्लॉट्स, बिंगो, स्पिन और भी!`,
+        `📥 <strong>डाउनलोड करने के चरण:</strong><br>1. डाउनलोड बटन क्लिक करें<br>2. "अज्ञात स्रोतों" की अनुमति दें<br>3. APK इंस्टॉल करें<br>4. मोबाइल नंबर से रजिस्टर करें और OTP सत्यापित करें<br>5. ₹${bonusNum} बोनस प्राप्त करें!`,
+        `🔒 <strong>सुरक्षित प्लेटफॉर्म</strong><br>• OTP सत्यापित लॉगिन<br>• एन्क्रिप्टेड लेनदेन<br>• नियमित अपडेट्स<br>• 24/7 निगरानी`,
+        `🎯 <strong>अतिरिक्त पुरस्कार</strong><br>• दैनिक बोनस: ₹${10 + (appIndex % 20)}<br>• रेफरल बोनस: ₹${50 + (appIndex % 50)}<br>• साप्ताहिक कैशबैक: ${5 + (appIndex % 10)}%`,
+        `❓ <strong>FAQ</strong><br>Q: क्या ${appName} सुरक्षित है?<br>A: हाँ, OTP और एन्क्रिप्शन के साथ।<br>Q: निकासी कैसे करें?<br>A: UPI या बैंक ट्रांसफर से ₹${100 + (appIndex % 50)} से।`
       ];
 
       let html = `<div class="tag-bags-grid">`;
       for (let i = 0; i < 7; i++) {
         const colorClass = bagColors[i % bagColors.length];
-        const icon = icons[i % icons.length];
         const title = titles[i % titles.length];
-        const content = contents[i % contents.length];
+        const en = enContents[i % enContents.length];
+        const hi = hiContents[i % hiContents.length];
+        const mixPercent = mix[i]; // 0-100 = % Hindi
+        
+        // Determine which text to show prominently and which as secondary
+        let primary, secondary, primaryClass, secondaryClass;
+        if (mixPercent < 30) {
+          // Mostly English
+          primary = en;
+          secondary = hi;
+          primaryClass = 'en-text';
+          secondaryClass = 'hi-text';
+        } else if (mixPercent < 60) {
+          // Balanced - show both equally
+          primary = en + '<br><br>' + hi;
+          secondary = '';
+          primaryClass = 'en-text mix-highlight';
+          secondaryClass = '';
+        } else {
+          // Mostly Hindi
+          primary = hi;
+          secondary = en;
+          primaryClass = 'hi-text mix-highlight';
+          secondaryClass = 'en-text';
+        }
+        
+        // Build content
+        let content = `<div class="bag-content">`;
+        content += `<div class="${primaryClass}">${primary}</div>`;
+        if (secondary) {
+          content += `<div class="${secondaryClass}" style="font-size:0.65rem; border-top:1px dashed #ddd; padding-top:6px; margin-top:4px;">${secondary}</div>`;
+        }
+        content += `</div>`;
+        
         html += `
           <div class="tag-bag ${colorClass}">
-            <span class="bag-icon">${icon}</span>
             <div class="bag-title">
               <span class="led-dot"></span>
-              <span class="bag-icon-text">${icon}</span>
               ${title}
             </div>
-            <div class="bag-content">${content}</div>
+            ${content}
           </div>
         `;
       }
