@@ -65,6 +65,47 @@
     body.dark-theme .small-download { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
     body.dark-theme .small-download:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); }
     
+    /* ===== LED ICON STYLES (no emoji, pure CSS) ===== */
+    .led-icon-blue, .led-icon-green, .led-icon-red, .led-icon-yellow, .led-icon-purple {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      margin-right: 6px;
+      flex-shrink: 0;
+      box-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
+      transition: all 0.3s ease;
+    }
+    .led-icon-blue { background: #3b82f6; color: #3b82f6; box-shadow: 0 0 12px #3b82f6, 0 0 24px #3b82f6; }
+    .led-icon-green { background: #22c55e; color: #22c55e; box-shadow: 0 0 12px #22c55e, 0 0 24px #22c55e; }
+    .led-icon-red { background: #ef4444; color: #ef4444; box-shadow: 0 0 12px #ef4444, 0 0 24px #ef4444; }
+    .led-icon-yellow { background: #eab308; color: #eab308; box-shadow: 0 0 12px #eab308, 0 0 24px #eab308; }
+    .led-icon-purple { background: #8b5cf6; color: #8b5cf6; box-shadow: 0 0 12px #8b5cf6, 0 0 24px #8b5cf6; }
+    
+    .led-icon-blue:hover, .led-icon-green:hover, .led-icon-red:hover, .led-icon-yellow:hover, .led-icon-purple:hover {
+      transform: scale(1.15);
+      filter: brightness(1.2);
+    }
+    
+    /* small variant for tags */
+    .led-icon-small {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+      flex-shrink: 0;
+      box-shadow: 0 0 8px currentColor;
+      transition: 0.3s;
+    }
+    .led-icon-small.blue { background: #3b82f6; color: #3b82f6; box-shadow: 0 0 8px #3b82f6; }
+    .led-icon-small.green { background: #22c55e; color: #22c55e; box-shadow: 0 0 8px #22c55e; }
+    .led-icon-small.red { background: #ef4444; color: #ef4444; box-shadow: 0 0 8px #ef4444; }
+    .led-icon-small.yellow { background: #eab308; color: #eab308; box-shadow: 0 0 8px #eab308; }
+    .led-icon-small.purple { background: #8b5cf6; color: #8b5cf6; box-shadow: 0 0 8px #8b5cf6; }
+    
+    .led-icon-small:hover { transform: scale(1.2); filter: brightness(1.3); }
+    
     .top-nav { 
       background: #ffffff; 
       padding: 6px 10px; 
@@ -102,21 +143,6 @@
     }
     .top-nav a:hover { background: #f1f5f9; border-color: #d0d9e8; }
     .top-nav a.active { background: #eef2ff; color: #1e293b; border-color: #b3c8e6; }
-    
-    .icon-about, .icon-contact, .icon-disclaimer {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      transition: 0.2s;
-    }
-    .icon-about { background: #8b5cf6; box-shadow: 0 0 6px rgba(139,92,246,0.5); }
-    .icon-contact { background: #3b82f6; box-shadow: 0 0 6px rgba(59,130,246,0.5); }
-    .icon-disclaimer { background: #ef4444; box-shadow: 0 0 6px rgba(239,68,68,0.5); }
-    .top-nav a:hover .icon-about { box-shadow: 0 0 12px rgba(139,92,246,0.8); }
-    .top-nav a:hover .icon-contact { box-shadow: 0 0 12px rgba(59,130,246,0.8); }
-    .top-nav a:hover .icon-disclaimer { box-shadow: 0 0 12px rgba(239,68,68,0.8); }
     
     .telegram-nav-btn {
       display: inline-flex;
@@ -692,10 +718,10 @@
     <span class="site-title">YONO GAMES SITE</span>
   </div>
   <div class="nav-links">
-    <a href="#" class="active" id="homeNavLink">HOME</a>
-    <a href="#" id="navAbout"><span class="icon-about"></span> About</a>
-    <a href="#" id="navContact"><span class="icon-contact"></span> Contact</a>
-    <a href="#" id="navDisclaimer"><span class="icon-disclaimer"></span> Disclaimer</a>
+    <a href="#" class="active" id="homeNavLink"><span class="led-icon-blue"></span>HOME</a>
+    <a href="#" id="navAbout"><span class="led-icon-purple"></span> About</a>
+    <a href="#" id="navContact"><span class="led-icon-blue"></span> Contact</a>
+    <a href="#" id="navDisclaimer"><span class="led-icon-red"></span> Disclaimer</a>
   </div>
   <a href="https://t.me/yonogamestite" target="_blank" rel="noopener noreferrer" class="telegram-nav-btn" id="telegramNavBtn">
     <img src="https://i.ibb.co/S7P1xcCq/telegram-icon.jpg" alt="Telegram" loading="eager">
@@ -778,11 +804,11 @@
 
     function getExtraBenefits(appName, bonusNum, category) {
       const benefits = [
-        `🎯 Daily login rewards • Cashback offers • Fast UPI withdrawals • 24/7 customer support • Exclusive ${appName} tournaments • Weekly bonus up to ₹${200 + (bonusNum % 50)}`,
-        `🎯 Welcome bonus • Daily free spins • Instant UPI payouts • VIP support • Weekly cashback offers • Monthly loyalty reward ₹${210 + (bonusNum % 60)}`,
-        `🎯 Daily rewards • Fast withdrawals • Priority support • Festival bonus offers • Weekly cashback • ₹${220 + (bonusNum % 40)} welcome bonus`,
-        `🎯 Login bonuses • Instant bank transfers • 24/7 help • Loyalty rewards • Daily spin bonuses • ₹${230 + (bonusNum % 70)} extra cash`,
-        `🎯 Free daily spins • Quick UPI withdrawals • Round-the-clock support • Exclusive events • Cashback up to ₹${240 + (bonusNum % 50)} • Daily jackpot`
+        `Daily login rewards • Cashback offers • Fast UPI withdrawals • 24/7 customer support • Exclusive ${appName} tournaments • Weekly bonus up to ₹${200 + (bonusNum % 50)}`,
+        `Welcome bonus • Daily free spins • Instant UPI payouts • VIP support • Weekly cashback offers • Monthly loyalty reward ₹${210 + (bonusNum % 60)}`,
+        `Daily rewards • Fast withdrawals • Priority support • Festival bonus offers • Weekly cashback • ₹${220 + (bonusNum % 40)} welcome bonus`,
+        `Login bonuses • Instant bank transfers • 24/7 help • Loyalty rewards • Daily spin bonuses • ₹${230 + (bonusNum % 70)} extra cash`,
+        `Free daily spins • Quick UPI withdrawals • Round-the-clock support • Exclusive events • Cashback up to ₹${240 + (bonusNum % 50)} • Daily jackpot`
       ];
       return benefits[Math.abs(bonusNum * 3) % benefits.length];
     }
@@ -838,77 +864,42 @@
       return { ratingClass, sizeClass, votesClass, bonusClass };
     }
 
-    // ===== 34 UNIQUE TAG MODELS (no icons except warning) =====
-    // Each model: different language mix, title position, bonus count (3-5), all different
+    // ===== 34 UNIQUE TAG MODELS with LED icons (no emoji) =====
     const tagModelList = [
-      // 1: 3 Hindi tags, 1 English, bonus 3
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🎯 ${n}</strong> – ₹${b} इंस्टेंट बोनस पाएं!<br>Play Rummy, Teen Patti & slots. सुरक्षित निकासी ₹100 से। Start earning real cash – डाउनलोड करें! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>💰 ${n}</strong> – ₹${bArr[1]} बोनस अनलॉक करें!<br>रोमांचक गेम खेलें। Fast withdrawals via UPI. Trusted by millions – अभी खेलना शुरू करें! ₹${bArr[2]} welcome.</div></div>`,
-      // 2: 2 Hindi, 2 English, bonus 4
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🎰 ${n}</strong> – Get ₹${b} Welcome Bonus!<br>रोमांचक रम्मी टेबल, daily rewards, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>💸 ${n}</strong> – ₹${bArr[1]} वेलकम बोनस<br>Build sequences, join cash tournaments & daily mystery rewards. सुरक्षित गेमिंग – आज ही जीतना शुरू करें! ₹${bArr[2]} daily. ₹${bArr[3]} loyalty.</div></div>`,
-      // 3: 4 English, 1 Hindi, bonus 5
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🏆 ${n}</strong> – Get ₹${b} Welcome Bonus!<br>Enjoy thrilling casino games, daily rewards update, and fast UPI withdrawals. ${n} gives you free cash on signup! ₹${bArr[0]} extra. ₹${bArr[1]} refer bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>📲 ${n}</strong> – ₹${bArr[2]} Bonus<br>दैनिक लॉगिन बोनस, daily earnings, instant bank transfers. ${n} loyalty rewards. ₹${bArr[3]} cashback. ₹${bArr[4]} spin.</div></div>`,
-      // 4: All Hindi, bonus 3
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🆕 नया अपडेट ${n}</strong> – ₹${b} वेलकम बोनस पाएं!<br>रोमांचक स्लॉट मशीन, daily rewards, fast withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🎁 ${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक लॉगिन बोनस, cashback earnings, instant withdrawal. New update available! ₹${bArr[2]} welcome.</div></div>`,
-      // 5: 2 English, 3 Hindi, bonus 4
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🌟 ${n}</strong> – ₹${b} joining bonus!<br>Spin, play & win with premium slots. Fast payouts and 24/7 support. ₹${bArr[0]} free spins.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>💎 ${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, quick UPI withdrawals, round-the-clock support. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
-      // 6: All English, bonus 5
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🎉 ${n}</strong> – ₹${b} Welcome Offer<br>Play casino games, slots & more. Fast withdrawals, secure platform, daily rewards. ₹${bArr[0]} daily bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🎊 ${n}</strong> – ₹${bArr[1]} Bonus<br>Daily bonuses, instant UPI withdrawals, VIP rewards. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      // 7: 3 Hindi, 2 English, bonus 3
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🎲 ${n}</strong> – ₹${b} साइनअप बोनस<br>Play Rummy, Ludo & more. सुरक्षित लेनदेन, instant withdrawals. ₹${bArr[0]} refer bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🏅 ${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonus, loyalty rewards. ₹${bArr[2]} cashback.</div></div>`,
-      // 8: 1 Hindi, 4 English, bonus 4
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>♠️ ${n}</strong> – ₹${b} Welcome Bonus<br>रम्मी टेबल, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>💰 ${n}</strong> – ₹${bArr[1]} बोनस<br>Build sequences, join cash tournaments & daily mystery rewards. Safe gaming! ₹${bArr[2]} daily. ₹${bArr[3]} loyalty.</div></div>`,
-      // 9: All Hindi, bonus 5
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🔥 ${n}</strong> – ₹${b} जॉइनिंग बोनस<br>रम्मी, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily reward.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>📱 ${n}</strong> – ₹${bArr[1]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals, loyalty rewards. ₹${bArr[2]} bonus. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      // 10: 2 English, 3 Hindi, bonus 3
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>❤️ ${n}</strong> – ₹${b} Love Bonus<br>Play rummy with love, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🎯 ${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses, loyalty rewards. ₹${bArr[2]} cashback.</div></div>`,
-      // 11: 4 Hindi, 1 English, bonus 4
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🌀 ${n}</strong> – ₹${b} स्पिन बोनस<br>Spin, play & win with premium games. Fast payouts and 24/7 support. ₹${bArr[0]} free spins.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>💲 ${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, cash, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
-      // 12: All English, bonus 5
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>👑 ${n}</strong> – ₹${b} Top Bonus<br>Play rummy, slots & more. Fast withdrawals, secure platform, daily rewards. ₹${bArr[0]} extra cash.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>⭐ ${n}</strong> – ₹${bArr[1]} Features<br>Daily bonuses, instant UPI withdrawals, loyalty rewards. ₹${bArr[2]} cashback. ₹${bArr[3]} spin. ₹${bArr[4]} welcome.</div></div>`,
-      // 13: 3 English, 2 Hindi, bonus 3
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>👋 ${n}</strong> – ₹${b} Hello Bonus<br>Play rummy, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🎁 ${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses, loyalty rewards. ₹${bArr[2]} cashback.</div></div>`,
-      // 14: 1 English, 4 Hindi, bonus 4
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>📅 ${n}</strong> – ₹${b} 365 बोनस<br>365 days play rummy, daily tournaments, fast UPI withdrawals. ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>💵 ${n}</strong> – ₹${bArr[1]} बोनस<br>Build sequences, join cash tournaments. ₹${bArr[2]} daily reward. ₹${bArr[3]} loyalty.</div></div>`,
-      // 15: All Hindi, bonus 5
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🥇 ${n}</strong> – ₹${b} गोल्ड बोनस<br>Teen Patti, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily. ₹${bArr[1]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>📲 ${n}</strong> – ₹${bArr[2]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals. ₹${bArr[3]} loyalty. ₹${bArr[4]} cashback.</div></div>`,
-      // 16: 2 Hindi, 3 English, bonus 3
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🎩 ${n}</strong> – ₹${b} मास्टर बोनस<br>Play Teen Patti, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🏆 ${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses, loyalty rewards. ₹${bArr[2]} welcome.</div></div>`,
-      // 17: 4 English, 1 Hindi, bonus 4
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🟢 ${n}</strong> – ₹${b} Yono Bonus<br>रम्मी, slots & more. Fast withdrawals, secure platform, daily rewards. ₹${bArr[0]} daily reward.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>💸 ${n}</strong> – ₹${bArr[1]} बोनस<br>Build sequences, join cash tournaments. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback.</div></div>`,
-      // 18: All English, bonus 5
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🏅 ${n}</strong> – ₹${b} Winner Bonus<br>Play slots, win real money, withdraw instantly. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🎰 ${n}</strong> – ₹${bArr[1]} Features<br>Daily bonuses, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} spin.</div></div>`,
-      // 19: 3 Hindi, 2 English, bonus 3
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>👍 ${n}</strong> – ₹${b} गुड बोनस<br>Play slots, daily rewards, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🎁 ${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} loyalty.</div></div>`,
-      // 20: 1 English, 4 Hindi, bonus 4
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🪔 ${n}</strong> – ₹${b} Diwa Bonus<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>💵 ${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
-      // 21: All Hindi, bonus 5
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🚀 ${n}</strong> – ₹${b} गो-गो बोनस<br>रम्मी, daily tournaments, fast UPI withdrawals. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>📱 ${n}</strong> – ₹${bArr[1]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      // 22: 2 English, 3 Hindi, bonus 3
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>😊 ${n}</strong> – ₹${b} Joy Bonus<br>Play rummy, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🎉 ${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} cashback.</div></div>`,
-      // 23: 4 Hindi, 1 English, bonus 4
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🌟 ${n}</strong> – ₹${b} स्पिन गोल्ड बोनस<br>Spin, play & win with premium games. Fast payouts and 24/7 support. ₹${bArr[0]} free spins.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>💰 ${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, cash, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
-      // 24: All English, bonus 5
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🎱 ${n}</strong> – ₹${b} Bingo Bonus<br>Play Bingo, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>📲 ${n}</strong> – ₹${bArr[1]} Features<br>Daily bonuses, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      // 25: 3 English, 2 Hindi, bonus 3
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>✅ ${n}</strong> – ₹${b} Yes Bonus<br>Spin, play & win with premium games. Fast payouts and 24/7 support. ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🎯 ${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} loyalty.</div></div>`,
-      // 26: 1 Hindi, 4 English, bonus 4
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🎮 ${n}</strong> – ₹${b} Arcade Bonus<br>Play arcade games, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>💲 ${n}</strong> – ₹${bArr[1]} बोनस<br>Daily bonuses, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback.</div></div>`,
-      // 27: All Hindi, bonus 5
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>👑 ${n}</strong> – ₹${b} SVIP बोनस<br>Casino games, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>📱 ${n}</strong> – ₹${bArr[1]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      // 28: 2 English, 3 Hindi, bonus 3
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>👍 ${n}</strong> – ₹${b} OK Bonus<br>Play rummy, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🎁 ${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses, loyalty rewards. ₹${bArr[2]} welcome.</div></div>`,
-      // 29: 4 Hindi, 1 English, bonus 4
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🇮🇳 ${n}</strong> – ₹${b} हिंद बोनस<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>💵 ${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
-      // 30: All English, bonus 5
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🎲 ${n}</strong> – ₹${b} Bet Bonus<br>Betting games, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>📲 ${n}</strong> – ₹${bArr[1]} Features<br>Daily bonuses, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      // 31: 3 Hindi, 2 English, bonus 3
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>👔 ${n}</strong> – ₹${b} बॉस बोनस<br>Play rummy, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🏆 ${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} loyalty.</div></div>`,
-      // 32: 1 English, 4 Hindi, bonus 4
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🟢 ${n}</strong> – ₹${b} योनो 777 बोनस<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🎰 ${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
-      // 33: All Hindi, bonus 5
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>💎 ${n}</strong> – ₹${b} VIP बोनस<br>VIP games, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>📱 ${n}</strong> – ₹${bArr[1]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      // 34: 2 English, 3 Hindi, bonus 3
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><strong>🪔 ${n}</strong> – ₹${b} Diwa 777 Bonus<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><strong>🎁 ${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} cashback.</div></div>`
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} इंस्टेंट बोनस पाएं!<br>Play Rummy, Teen Patti & slots. सुरक्षित निकासी ₹100 से। Start earning real cash – डाउनलोड करें! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस अनलॉक करें!<br>रोमांचक गेम खेलें। Fast withdrawals via UPI. Trusted by millions – अभी खेलना शुरू करें! ₹${bArr[2]} welcome.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – Get ₹${b} Welcome Bonus!<br>रोमांचक रम्मी टेबल, daily rewards, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} वेलकम बोनस<br>Build sequences, join cash tournaments & daily mystery rewards. सुरक्षित गेमिंग – आज ही जीतना शुरू करें! ₹${bArr[2]} daily. ₹${bArr[3]} loyalty.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – Get ₹${b} Welcome Bonus!<br>Enjoy thrilling casino games, daily rewards update, and fast UPI withdrawals. ${n} gives you free cash on signup! ₹${bArr[0]} extra. ₹${bArr[1]} refer bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[2]} Bonus<br>दैनिक लॉगिन बोनस, daily earnings, instant bank transfers. ${n} loyalty rewards. ₹${bArr[3]} cashback. ₹${bArr[4]} spin.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>नया अपडेट ${n}</strong> – ₹${b} वेलकम बोनस पाएं!<br>रोमांचक स्लॉट मशीन, daily rewards, fast withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक लॉगिन बोनस, cashback earnings, instant withdrawal. New update available! ₹${bArr[2]} welcome.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${b} joining bonus!<br>Spin, play & win with premium slots. Fast payouts and 24/7 support. ₹${bArr[0]} free spins.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, quick UPI withdrawals, round-the-clock support. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} Welcome Offer<br>Play casino games, slots & more. Fast withdrawals, secure platform, daily rewards. ₹${bArr[0]} daily bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} Bonus<br>Daily bonuses, instant UPI withdrawals, VIP rewards. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${b} साइनअप बोनस<br>Play Rummy, Ludo & more. सुरक्षित लेनदेन, instant withdrawals. ₹${bArr[0]} refer bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonus, loyalty rewards. ₹${bArr[2]} cashback.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${b} Welcome Bonus<br>रम्मी टेबल, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>Build sequences, join cash tournaments & daily mystery rewards. Safe gaming! ₹${bArr[2]} daily. ₹${bArr[3]} loyalty.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} जॉइनिंग बोनस<br>रम्मी, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily reward.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals, loyalty rewards. ₹${bArr[2]} bonus. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${b} Love Bonus<br>Play rummy with love, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses, loyalty rewards. ₹${bArr[2]} cashback.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} स्पिन बोनस<br>Spin, play & win with premium games. Fast payouts and 24/7 support. ₹${bArr[0]} free spins.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, cash, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${b} Top Bonus<br>Play rummy, slots & more. Fast withdrawals, secure platform, daily rewards. ₹${bArr[0]} extra cash.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} Features<br>Daily bonuses, instant UPI withdrawals, loyalty rewards. ₹${bArr[2]} cashback. ₹${bArr[3]} spin. ₹${bArr[4]} welcome.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${b} Hello Bonus<br>Play rummy, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses, loyalty rewards. ₹${bArr[2]} cashback.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} 365 बोनस<br>365 days play rummy, daily tournaments, fast UPI withdrawals. ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>Build sequences, join cash tournaments. ₹${bArr[2]} daily reward. ₹${bArr[3]} loyalty.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${b} गोल्ड बोनस<br>Teen Patti, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily. ₹${bArr[1]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${bArr[2]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals. ₹${bArr[3]} loyalty. ₹${bArr[4]} cashback.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} मास्टर बोनस<br>Play Teen Patti, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses, loyalty rewards. ₹${bArr[2]} welcome.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${b} Yono Bonus<br>रम्मी, slots & more. Fast withdrawals, secure platform, daily rewards. ₹${bArr[0]} daily reward.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>Build sequences, join cash tournaments. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${b} Winner Bonus<br>Play slots, win real money, withdraw instantly. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[1]} Features<br>Daily bonuses, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} spin.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} गुड बोनस<br>Play slots, daily rewards, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} loyalty.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${b} Diwa Bonus<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} गो-गो बोनस<br>रम्मी, daily tournaments, fast UPI withdrawals. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${b} Joy Bonus<br>Play rummy, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} cashback.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${b} स्पिन गोल्ड बोनस<br>Spin, play & win with premium games. Fast payouts and 24/7 support. ₹${bArr[0]} free spins.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, cash, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} Bingo Bonus<br>Play Bingo, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} Features<br>Daily bonuses, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${b} Yes Bonus<br>Spin, play & win with premium games. Fast payouts and 24/7 support. ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} loyalty.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} Arcade Bonus<br>Play arcade games, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>Daily bonuses, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${b} SVIP बोनस<br>Casino games, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${b} OK Bonus<br>Play rummy, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses, loyalty rewards. ₹${bArr[2]} welcome.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} हिंद बोनस<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${b} Bet Bonus<br>Betting games, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${bArr[1]} Features<br>Daily bonuses, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} बॉस बोनस<br>Play rummy, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} loyalty.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${b} योनो 777 बोनस<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${b} VIP बोनस<br>VIP games, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[1]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
+      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} Diwa 777 Bonus<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} cashback.</div></div>`
     ];
 
     // ===== GENERATE FULL TAGS HTML WITH FAQ AND OVERVIEW =====
@@ -919,14 +910,13 @@
       
       const mainTags = modelFn(appName, bonusNum, bonusArr);
       
-      // Language mix based on appIndex for FAQ sections
       const langMode = appIndex % 5;
       let useHindi = false;
-      if (langMode === 0) useHindi = true; // all Hindi
-      else if (langMode === 1) useHindi = false; // all English
-      else if (langMode === 2) useHindi = true; // 70% Hindi
-      else if (langMode === 3) useHindi = false; // 70% English
-      else useHindi = (appIndex % 2 === 0); // mix
+      if (langMode === 0) useHindi = true;
+      else if (langMode === 1) useHindi = false;
+      else if (langMode === 2) useHindi = true;
+      else if (langMode === 3) useHindi = false;
+      else useHindi = (appIndex % 2 === 0);
       
       const faqTitle = useHindi ? '❓ अक्सर पूछे जाने वाले प्रश्न' : '❓ Frequently Asked Questions';
       const overviewTitle = useHindi ? `📖 अवलोकन – ${appName}` : `📖 Overview – ${appName}`;
@@ -934,6 +924,14 @@
       const downloadTitle = useHindi ? `📥 ${appName} कैसे डाउनलोड और इंस्टॉल करें` : `📥 How to Download & Install ${appName}`;
       const safetyTitle = useHindi ? `🔒 ${appName} सुरक्षा और सुरक्षा` : `🔒 ${appName} Safety & Security`;
       const whyTitle = useHindi ? `✅ ${appName} ऐप क्यों चुनें?` : `✅ Why Choose ${appName} App?`;
+      
+      // Replace emoji with LED icons in titles
+      const faqTitleLed = faqTitle.replace('❓', '<span class="led-icon-small purple"></span>');
+      const overviewTitleLed = overviewTitle.replace('📖', '<span class="led-icon-small blue"></span>');
+      const featuresTitleLed = featuresTitle.replace('✨', '<span class="led-icon-small green"></span>');
+      const downloadTitleLed = downloadTitle.replace('📥', '<span class="led-icon-small yellow"></span>');
+      const safetyTitleLed = safetyTitle.replace('🔒', '<span class="led-icon-small red"></span>');
+      const whyTitleLed = whyTitle.replace('✅', '<span class="led-icon-small green"></span>');
       
       const faqContent = useHindi ? `
         <div class="faq-item"><div class="faq-q">1. ${appName} एपीके क्या है?</div><div class="faq-a">${appName} APP APK एक बेहतरीन एप्लिकेशन है जो उपयोगकर्ताओं को ₹${bonusArr[0]} का साइन-अप बोनस प्रदान करता है। इस गेम में शानदार बोनस प्रोग्राम है, और आप पूरी पोस्ट पढ़कर अधिक जान सकते हैं। इसके अलावा, ${appName} APK एक लोकप्रिय स्लॉट गेम है जिसमें न्यूनतम निकासी ₹100 है।</div></div>
@@ -960,17 +958,17 @@
       return `
         ${mainTags}
         <div class="tag-divider"></div>
-        <div class="tag-box"><div class="tag-content">${faqTitle}<br>${faqContent}</div></div>
+        <div class="tag-box"><div class="tag-content">${faqTitleLed}<br>${faqContent}</div></div>
         <div class="tag-divider"></div>
-        <div class="tag-box"><div class="tag-content"><strong>${overviewTitle}</strong><br>${overviewContent}</div></div>
+        <div class="tag-box"><div class="tag-content"><strong>${overviewTitleLed}</strong><br>${overviewContent}</div></div>
         <div class="tag-divider"></div>
-        <div class="tag-box"><div class="tag-content"><strong>${featuresTitle}</strong><br>${featuresContent}</div></div>
+        <div class="tag-box"><div class="tag-content"><strong>${featuresTitleLed}</strong><br>${featuresContent}</div></div>
         <div class="tag-divider"></div>
-        <div class="tag-box"><div class="tag-content"><strong>${downloadTitle}</strong><br>${downloadContent}</div></div>
+        <div class="tag-box"><div class="tag-content"><strong>${downloadTitleLed}</strong><br>${downloadContent}</div></div>
         <div class="tag-divider"></div>
-        <div class="tag-box"><div class="tag-content"><strong>${safetyTitle}</strong><br>${safetyContent}</div></div>
+        <div class="tag-box"><div class="tag-content"><strong>${safetyTitleLed}</strong><br>${safetyContent}</div></div>
         <div class="tag-divider"></div>
-        <div class="tag-box"><div class="tag-content"><strong>${whyTitle}</strong><br>${whyContent}</div></div>
+        <div class="tag-box"><div class="tag-content"><strong>${whyTitleLed}</strong><br>${whyContent}</div></div>
       `;
     }
 
