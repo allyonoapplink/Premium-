@@ -848,43 +848,82 @@
       return { ratingClass, sizeClass, votesClass, bonusClass };
     }
 
-    // ===== GENERATE UNIQUE TAGS PER APP (34 different models) =====
-    function generateAppTags(appName, bonusNum) {
-      const tagModels = [
-        // Model 1: Yono Games style
-        `<div class="tag-box"><div class="tag-title tag-title-premium">${appName} – Get ₹${bonusNum} Instant Bonus!</div><div class="tag-content">Play skill-based Rummy, Teen Patti & slots. Safe withdrawals from ₹100. Start earning real cash in minutes – download APK & claim your bonus today!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">Unlock ₹${bonusNum} Bonus in ${appName} App!</div><div class="tag-content">Enjoy thrilling games like Aviator, Rummy & more. Fast, secure withdrawals via bank/UPI. Trusted by millions – start playing now!</div></div>`,
-        
-        // Model 2: INR Rummy style
-        `<div class="tag-box"><div class="tag-title tag-title-games">Play ${appName} and grab ₹${bonusNum} welcome bonus!</div><div class="tag-content">Enjoy thrilling rummy tables, daily rewards, and fast UPI withdrawals. ${appName} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${appName} – ₹${bonusNum} Welcome Bonus</div><div class="tag-content">Build sequences, join cash tournaments & daily mystery rewards. Safe, fun, and secure gaming – start winning real cash today!</div></div>`,
-        
-        // Model 3: MBM BET style
-        `<div class="tag-box"><div class="tag-title tag-title-vip">${appName} and grab ₹${bonusNum} welcome bonus!</div><div class="tag-content">Enjoy thrilling casino games, daily rewards update, and fast UPI withdrawals. ${appName} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${appName} – ₹${bonusNum} Bonus</div><div class="tag-content">Unlock daily login bonuses, daily earnings, instant bank transfers, ${appName} loyalty rewards. Play now!</div></div>`,
-        
-        // Model 4: 567 Slots style
-        `<div class="tag-box"><div class="tag-title tag-title-premium">Download new update version ${appName} and grab ₹${bonusNum} welcome bonus!</div><div class="tag-content">Enjoy thrilling slot machines, daily rewards, and fast withdrawals. ${appName} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${appName} – ₹${bonusNum} Bonus</div><div class="tag-content">Unlock daily login bonuses, cashback earnings, instant withdrawal and ${appName} loyalty rewards. New update available!</div></div>`,
-        
-        // Model 5: Saga Slots style
-        `<div class="tag-box"><div class="tag-title tag-title-games">${appName} version – ₹${bonusNum} joining bonus!</div><div class="tag-content">Spin, play & win with premium slot machines. Fast payouts and 24/7 support available. ${appName} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${appName} – ₹${bonusNum} Bonus</div><div class="tag-content">Enjoy free daily spins, cash, quick UPI instant withdrawals, round-the-clock support, and ${appName} exclusive events.</div></div>`,
-        
-        // Model 6: Generic premium
-        `<div class="tag-box"><div class="tag-title tag-title-vip">${appName} – Join & Get ₹${bonusNum} Free</div><div class="tag-content">Play exciting games, win real money, withdraw instantly. ${appName} is India's trusted gaming platform.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${appName} Features</div><div class="tag-content">Daily bonuses, fast UPI payouts, and exclusive VIP tournaments. Download now!</div></div>`,
-        
-        // Model 7: Card games style
-        `<div class="tag-box"><div class="tag-title tag-title-premium">${appName} – ₹${bonusNum} Signup Bonus</div><div class="tag-content">Play Teen Patti, Rummy & more. Secure transactions, instant withdrawals, and 24/7 support.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${appName} Rewards</div><div class="tag-content">Earn cashback, and daily login bonuses. Start winning real money today!</div></div>`,
-        
-        // Model 8: Arcade style
-        `<div class="tag-box"><div class="tag-title tag-title-games">${appName} – ₹${bonusNum} Welcome Offer</div><div class="tag-content">Play arcade games, slots, and more. Fast withdrawals, secure platform, and daily rewards.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${appName} Bonus</div><div class="tag-content">Unlock daily bonuses, and instant UPI withdrawals. Join now and start earning!</div></div>`
-      ];
-      
-      let hash = 0;
-      for (let i = 0; i < appName.length; i++) { hash = ((hash << 5) - hash) + appName.charCodeAt(i); hash |= 0; }
-      const modelIdx = Math.abs(hash) % tagModels.length;
-      return tagModels[modelIdx];
-    }
+    // ===== 34 UNIQUE TAG MODELS (one per app) =====
+    const tagModelList = [
+      // Model 1: Yono Games
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">${n} – Get ₹${b} Instant Bonus!</div><div class="tag-content">Play skill-based Rummy, Teen Patti & slots. Safe withdrawals from ₹100. Start earning real cash in minutes – download APK & claim your bonus today!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">Unlock ₹${b} Bonus in ${n} App!</div><div class="tag-content">Enjoy thrilling games like Aviator, Rummy & more. Fast, secure withdrawals via bank/UPI. Trusted by millions – start playing now!</div></div>`,
+      // Model 2: INR Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">Play ${n} and grab ₹${b} welcome bonus!</div><div class="tag-content">Enjoy thrilling rummy tables, daily rewards, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${n} – ₹${b} Welcome Bonus</div><div class="tag-content">Build sequences, join cash tournaments & daily mystery rewards. Safe, fun, and secure gaming – start winning real cash today!</div></div>`,
+      // Model 3: MBM BET
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">${n} and grab ₹${b} welcome bonus!</div><div class="tag-content">Enjoy thrilling casino games, daily rewards update, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${n} – ₹${b} Bonus</div><div class="tag-content">Unlock daily login bonuses, daily earnings, instant bank transfers, ${n} loyalty rewards. Play now!</div></div>`,
+      // Model 4: 567 Slots
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">Download new update version ${n} and grab ₹${b} welcome bonus!</div><div class="tag-content">Enjoy thrilling slot machines, daily rewards, and fast withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${n} – ₹${b} Bonus</div><div class="tag-content">Unlock daily login bonuses, cashback earnings, instant withdrawal and ${n} loyalty rewards. New update available!</div></div>`,
+      // Model 5: Saga Slots
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">${n} version – ₹${b} joining bonus!</div><div class="tag-content">Spin, play & win with premium slot machines. Fast payouts and 24/7 support available. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${n} – ₹${b} Bonus</div><div class="tag-content">Enjoy free daily spins, cash, quick UPI instant withdrawals, round-the-clock support, and ${n} exclusive events.</div></div>`,
+      // Model 6: Jaiho 91
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">${n} – ₹${b} Welcome Offer</div><div class="tag-content">Play casino games, slots & more. Fast withdrawals, secure platform, and daily rewards. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${n} Bonus</div><div class="tag-content">Unlock daily bonuses, instant UPI withdrawals, and VIP rewards. Join now and start earning!</div></div>`,
+      // Model 7: Rummy Ludo
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">${n} – ₹${b} Signup Bonus</div><div class="tag-content">Play Rummy, Ludo & more. Secure transactions, instant withdrawals, and 24/7 support. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${n} Rewards</div><div class="tag-content">Earn cashback, daily login bonuses, and loyalty rewards. Start winning real money today!</div></div>`,
+      // Model 8: ABC Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">${n} – ₹${b} Welcome Bonus</div><div class="tag-content">Play rummy tables, daily tournaments, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${n} – ₹${b} Bonus</div><div class="tag-content">Build sequences, join cash tournaments & daily mystery rewards. Safe, fun, and secure gaming!</div></div>`,
+      // Model 9: Rummy 91
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">${n} – ₹${b} Joining Bonus</div><div class="tag-content">Play rummy, slots & more. Fast withdrawals, secure platform, and daily rewards. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${n} Features</div><div class="tag-content">Unlock daily bonuses, instant UPI withdrawals, and loyalty rewards. Join now and start earning!</div></div>`,
+      // Model 10: Love Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">${n} – ₹${b} Love Bonus</div><div class="tag-content">Play rummy with love, daily tournaments, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${n} Rewards</div><div class="tag-content">Earn cashback, daily login bonuses, and loyalty rewards. Start winning real money today!</div></div>`,
+      // Model 11: Spin Crush
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">${n} – ₹${b} Spin Bonus</div><div class="tag-content">Spin, play & win with premium games. Fast payouts and 24/7 support available. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${n} – ₹${b} Bonus</div><div class="tag-content">Enjoy free daily spins, cash, quick UPI instant withdrawals, and ${n} exclusive events.</div></div>`,
+      // Model 12: Top Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">${n} – ₹${b} Top Bonus</div><div class="tag-content">Play rummy, slots & more. Fast withdrawals, secure platform, and daily rewards. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${n} Features</div><div class="tag-content">Unlock daily bonuses, instant UPI withdrawals, and loyalty rewards. Join now!</div></div>`,
+      // Model 13: Hello Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">${n} – ₹${b} Hello Bonus</div><div class="tag-content">Play rummy, daily tournaments, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${n} Rewards</div><div class="tag-content">Earn cashback, daily login bonuses, and loyalty rewards. Start winning real money!</div></div>`,
+      // Model 14: Rummy 365
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">${n} – ₹${b} 365 Bonus</div><div class="tag-content">Play rummy 365 days, daily tournaments, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${n} – ₹${b} Bonus</div><div class="tag-content">Build sequences, join cash tournaments & daily mystery rewards. Safe, fun, and secure gaming!</div></div>`,
+      // Model 15: Teen Patti Gold
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">${n} – ₹${b} Gold Bonus</div><div class="tag-content">Play Teen Patti, slots & more. Fast withdrawals, secure platform, and daily rewards. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${n} Features</div><div class="tag-content">Unlock daily bonuses, instant UPI withdrawals, and loyalty rewards. Join now!</div></div>`,
+      // Model 16: Teen Patti Master
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">${n} – ₹${b} Master Bonus</div><div class="tag-content">Play Teen Patti, daily tournaments, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${n} Rewards</div><div class="tag-content">Earn cashback, daily login bonuses, and loyalty rewards. Start winning real money!</div></div>`,
+      // Model 17: Yono Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">${n} – ₹${b} Yono Bonus</div><div class="tag-content">Play rummy, slots & more. Fast withdrawals, secure platform, and daily rewards. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${n} – ₹${b} Bonus</div><div class="tag-content">Build sequences, join cash tournaments & daily mystery rewards. Safe, fun, and secure gaming!</div></div>`,
+      // Model 18: Slots Winner
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">${n} – ₹${b} Winner Bonus</div><div class="tag-content">Play slots, win real money, and withdraw instantly. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${n} Features</div><div class="tag-content">Unlock daily bonuses, instant UPI withdrawals, and loyalty rewards. Join now!</div></div>`,
+      // Model 19: Good Slots
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">${n} – ₹${b} Good Bonus</div><div class="tag-content">Play slots, daily rewards, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${n} Rewards</div><div class="tag-content">Earn cashback, daily login bonuses, and loyalty rewards. Start winning real money!</div></div>`,
+      // Model 20: Diwa Slot
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">${n} – ₹${b} Diwa Bonus</div><div class="tag-content">Play slots, spin & win, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${n} – ₹${b} Bonus</div><div class="tag-content">Enjoy free daily spins, cash, quick UPI instant withdrawals, and ${n} exclusive events.</div></div>`,
+      // Model 21: GoGo Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">${n} – ₹${b} GoGo Bonus</div><div class="tag-content">Play rummy, daily tournaments, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${n} Features</div><div class="tag-content">Unlock daily bonuses, instant UPI withdrawals, and loyalty rewards. Join now!</div></div>`,
+      // Model 22: Joy Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">${n} – ₹${b} Joy Bonus</div><div class="tag-content">Play rummy, daily tournaments, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${n} Rewards</div><div class="tag-content">Earn cashback, daily login bonuses, and loyalty rewards. Start winning real money!</div></div>`,
+      // Model 23: Spin Gold
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">${n} – ₹${b} Spin Gold Bonus</div><div class="tag-content">Spin, play & win with premium games. Fast payouts and 24/7 support. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${n} – ₹${b} Bonus</div><div class="tag-content">Enjoy free daily spins, cash, quick UPI instant withdrawals, and ${n} exclusive events.</div></div>`,
+      // Model 24: Bingo 101
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">${n} – ₹${b} Bingo Bonus</div><div class="tag-content">Play bingo, slots & more. Fast withdrawals, secure platform, and daily rewards. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${n} Features</div><div class="tag-content">Unlock daily bonuses, instant UPI withdrawals, and loyalty rewards. Join now!</div></div>`,
+      // Model 25: Yes Spin
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">${n} – ₹${b} Yes Bonus</div><div class="tag-content">Spin, play & win with premium games. Fast payouts and 24/7 support. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${n} Rewards</div><div class="tag-content">Earn cashback, daily login bonuses, and loyalty rewards. Start winning real money!</div></div>`,
+      // Model 26: Yono Arcade
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">${n} – ₹${b} Arcade Bonus</div><div class="tag-content">Play arcade games, slots & more. Fast withdrawals, secure platform, and daily rewards. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${n} – ₹${b} Bonus</div><div class="tag-content">Unlock daily bonuses, instant UPI withdrawals, and loyalty rewards. Join now!</div></div>`,
+      // Model 27: SVIP 777
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">${n} – ₹${b} SVIP Bonus</div><div class="tag-content">Play casino games, slots & more. Fast withdrawals, secure platform, and daily rewards. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${n} Features</div><div class="tag-content">Unlock daily bonuses, instant UPI withdrawals, and loyalty rewards. Join now!</div></div>`,
+      // Model 28: OK Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">${n} – ₹${b} OK Bonus</div><div class="tag-content">Play rummy, daily tournaments, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${n} Rewards</div><div class="tag-content">Earn cashback, daily login bonuses, and loyalty rewards. Start winning real money!</div></div>`,
+      // Model 29: Hind 777
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">${n} – ₹${b} Hind Bonus</div><div class="tag-content">Play slots, spin & win, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${n} – ₹${b} Bonus</div><div class="tag-content">Enjoy free daily spins, cash, quick UPI instant withdrawals, and ${n} exclusive events.</div></div>`,
+      // Model 30: Bet 213
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">${n} – ₹${b} Bet Bonus</div><div class="tag-content">Play betting games, slots & more. Fast withdrawals, secure platform, and daily rewards. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${n} Features</div><div class="tag-content">Unlock daily bonuses, instant UPI withdrawals, and loyalty rewards. Join now!</div></div>`,
+      // Model 31: Boss Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">${n} – ₹${b} Boss Bonus</div><div class="tag-content">Play rummy, daily tournaments, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${n} Rewards</div><div class="tag-content">Earn cashback, daily login bonuses, and loyalty rewards. Start winning real money!</div></div>`,
+      // Model 32: Yono 777
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">${n} – ₹${b} Yono 777 Bonus</div><div class="tag-content">Play slots, spin & win, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${n} – ₹${b} Bonus</div><div class="tag-content">Enjoy free daily spins, cash, quick UPI instant withdrawals, and ${n} exclusive events.</div></div>`,
+      // Model 33: Diwa VIP
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">${n} – ₹${b} VIP Bonus</div><div class="tag-content">Play VIP games, slots & more. Fast withdrawals, secure platform, and daily rewards. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${n} Features</div><div class="tag-content">Unlock daily bonuses, instant UPI withdrawals, and loyalty rewards. Join now!</div></div>`,
+      // Model 34: Diwa 777
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">${n} – ₹${b} Diwa 777 Bonus</div><div class="tag-content">Play slots, spin & win, and fast UPI withdrawals. ${n} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${n} Rewards</div><div class="tag-content">Earn cashback, daily login bonuses, and loyalty rewards. Start winning real money!</div></div>`
+    ];
 
     // ===== GENERATE FULL TAGS HTML WITH FAQ AND OVERVIEW =====
-    function createTagsHTML(appName, bonusNum) {
-      const mainTags = generateAppTags(appName, bonusNum);
+    function createTagsHTML(appName, bonusNum, appIndex) {
+      const modelFn = tagModelList[appIndex % tagModelList.length];
+      const mainTags = modelFn(appName, bonusNum);
       const bonusArr = [];
       for (let i = 1; i <= 17; i++) bonusArr.push(200 + (Math.abs((bonusNum + i) * i) % 101));
       
@@ -1031,7 +1070,7 @@
       const downloadContainer = document.getElementById('downloadPageContainer');
       gridDiv.classList.add('hidden');
       downloadContainer.classList.remove('hidden');
-      const tagsHTML = createTagsHTML(selectedApp.name, bonusNum);
+      const tagsHTML = createTagsHTML(selectedApp.name, bonusNum, selectedIndex);
       const fiveApps = appsData.filter((_, idx) => idx !== selectedIndex).slice(0, 5);
       let fiveOptionsHtml = '';
       fiveApps.forEach((app) => {
