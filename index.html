@@ -46,6 +46,7 @@
     .top-nav a:hover { background: #f1f5f9; border-color: #d0d9e8; }
     .top-nav a.active { background: #eef2ff; color: #1e293b; border-color: #b3c8e6; }
     
+    /* ===== NAV ICONS WITH LED COLORS ===== */
     .icon-about, .icon-contact, .icon-disclaimer {
       display: inline-block;
       width: 10px;
@@ -53,13 +54,14 @@
       border-radius: 50%;
       flex-shrink: 0;
       transition: 0.2s;
+      box-shadow: 0 0 8px currentColor;
     }
-    .icon-about { background: #8b5cf6; box-shadow: 0 0 6px rgba(139,92,246,0.5); }
-    .icon-contact { background: #3b82f6; box-shadow: 0 0 6px rgba(59,130,246,0.5); }
-    .icon-disclaimer { background: #ef4444; box-shadow: 0 0 6px rgba(239,68,68,0.5); }
-    .top-nav a:hover .icon-about { box-shadow: 0 0 12px rgba(139,92,246,0.8); }
-    .top-nav a:hover .icon-contact { box-shadow: 0 0 12px rgba(59,130,246,0.8); }
-    .top-nav a:hover .icon-disclaimer { box-shadow: 0 0 12px rgba(239,68,68,0.8); }
+    .icon-about { background: #8b5cf6; color: #8b5cf6; box-shadow: 0 0 10px rgba(139,92,246,0.5); }
+    .icon-contact { background: #3b82f6; color: #3b82f6; box-shadow: 0 0 10px rgba(59,130,246,0.5); }
+    .icon-disclaimer { background: #ef4444; color: #ef4444; box-shadow: 0 0 10px rgba(239,68,68,0.5); }
+    .top-nav a:hover .icon-about { box-shadow: 0 0 20px rgba(139,92,246,0.9); transform: scale(1.2); }
+    .top-nav a:hover .icon-contact { box-shadow: 0 0 20px rgba(59,130,246,0.9); transform: scale(1.2); }
+    .top-nav a:hover .icon-disclaimer { box-shadow: 0 0 20px rgba(239,68,68,0.9); transform: scale(1.2); }
     
     .telegram-nav-btn {
       display: inline-flex;
@@ -155,7 +157,6 @@
     .container { max-width: 100%; margin: 12px auto; padding: 0 8px; }
     .cards-grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; padding: 8px 0 16px; }
     
-    /* ===== CARD ===== */
     .app-card {
       background: white;
       border-radius: 24px;
@@ -265,7 +266,6 @@
     .app-card .card-stat .stat-value { font-size: 0.75rem; font-weight: 800; color: #1e562a; }
     .app-card .card-stat .stat-label { font-size: 0.4rem; font-weight: 700; color: #6c7a5a; letter-spacing: 0.2px; text-transform: uppercase; }
     
-    /* ===== CARD INFO ROW ===== */
     .app-card .card-info-row { 
       display: flex; 
       flex-wrap: wrap; 
@@ -704,21 +704,13 @@
       { name: "Diwa 777", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://sharediwa7771.top?pid=287747863&channel=2010001&t=pdd2&pkg=com.diwa777.app", img: "https://i.ibb.co/Kx2RKNvN/1000022725.jpg", category: "Slots" }
     ];
 
-    // ===== UNIQUE SPIN & WIN DESCRIPTION PER APP (200-300 range) =====
     function getSpinWinDescription(appName, bonusNum, category) {
       const catMap = {
-        'Slots': 'slot machines',
-        'Rummy': 'rummy tables',
-        'Casino': 'casino games',
-        'Spin': 'spin wheels',
-        'Card': 'card games',
-        'Bingo': 'bingo halls',
-        'Arcade': 'arcade games',
-        'Betting': 'betting tables',
-        'VIP': 'VIP rooms'
+        'Slots': 'slot machines', 'Rummy': 'rummy tables', 'Casino': 'casino games',
+        'Spin': 'spin wheels', 'Card': 'card games', 'Bingo': 'bingo halls',
+        'Arcade': 'arcade games', 'Betting': 'betting tables', 'VIP': 'VIP rooms'
       };
       const gameType = catMap[category] || 'games';
-      
       const descs = [
         `Join ${appName} today and get ₹${bonusNum} bonus! Play exciting ${gameType}, unlock jackpots, and earn real cash daily.`,
         `Play ${appName} and grab ₹${bonusNum} welcome bonus! Enjoy thrilling ${gameType}, daily rewards, and fast UPI withdrawals.`,
@@ -730,7 +722,6 @@
       return descs[idx];
     }
 
-    // ===== UNIQUE EXTRA BENEFITS PER APP (150-200 range) =====
     function getExtraBenefits(appName, bonusNum, category) {
       const benefits = [
         `Daily login rewards, referral cashback, fast UPI withdrawals, 24/7 customer support, and exclusive ${appName} tournaments.`,
@@ -743,7 +734,6 @@
       return benefits[idx];
     }
 
-    // ===== UNIQUE WARNING VALUE (100-150 range) =====
     function getWarningValue(appName) {
       let h = 0;
       for (let i = 0; i < appName.length; i++) {
@@ -753,7 +743,6 @@
       return 100 + (Math.abs(h) % 51);
     }
 
-    // ===== POPULATE APP TAGS =====
     function populateAppTags() {
       const container = document.getElementById('appTagsScroll');
       if (!container) return;
@@ -770,7 +759,6 @@
       });
     }
 
-    // ===== HELPERS =====
     function getCardStats(appName, bonusAmount) {
       let hash = 0;
       for (let i = 0; i < appName.length; i++) {
@@ -802,15 +790,9 @@
 
     function getDescription(appName, category, bonusNum) {
       const catMap = {
-        'Slots': 'slot machines',
-        'Rummy': 'rummy tables',
-        'Casino': 'casino games',
-        'Spin': 'spin wheels',
-        'Card': 'card games',
-        'Bingo': 'bingo halls',
-        'Arcade': 'arcade games',
-        'Betting': 'betting tables',
-        'VIP': 'VIP rooms'
+        'Slots': 'slot machines', 'Rummy': 'rummy tables', 'Casino': 'casino games',
+        'Spin': 'spin wheels', 'Card': 'card games', 'Bingo': 'bingo halls',
+        'Arcade': 'arcade games', 'Betting': 'betting tables', 'VIP': 'VIP rooms'
       };
       const gameType = catMap[category] || 'games';
       const descs = [
@@ -836,7 +818,6 @@
       return benefits[idx];
     }
 
-    // ===== CLONE TAG TEMPLATE =====
     function createTagsHTML(appName, bonusNum) {
       const template = document.getElementById('tagTemplate');
       const clone = template.cloneNode(true);
@@ -870,7 +851,6 @@
       return clone.innerHTML;
     }
 
-    // ===== STATE =====
     let currentSelectedIndex = null;
     const customModal = document.getElementById('customInfoModal');
     const modalTitle = document.getElementById('modalTitle');
@@ -894,7 +874,6 @@
     modalCloseBtn.addEventListener('click', closeModalAndResetHistory);
     window.addEventListener('click', (e) => { if (e.target === customModal) closeModalAndResetHistory(); });
 
-    // ===== RENDER MAIN GRID =====
     function renderMainGrid() {
       const gridContainer = document.getElementById('allAppsGrid');
       if (!gridContainer) return;
@@ -973,7 +952,6 @@
       });
     }
 
-    // ===== NAVIGATION =====
     function navigateToDownloadPage(selectedIndex) {
       currentSelectedIndex = selectedIndex;
       history.pushState({ page: 'download', index: selectedIndex }, '', '#download');
@@ -1160,7 +1138,6 @@
       goToMainGrid();
     }
 
-    // ===== NAV CLICKS =====
     const homeNavLink = document.getElementById('homeNavLink');
     const navAbout = document.getElementById('navAbout');
     const navContact = document.getElementById('navContact');
@@ -1230,7 +1207,6 @@
       `);
     });
 
-    // ===== INIT =====
     populateAppTags();
     renderMainGrid();
   })();
