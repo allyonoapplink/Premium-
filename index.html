@@ -8,7 +8,6 @@
     * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif; }
     body { background: linear-gradient(145deg, #f0f4fa 0%, #e2e8f0 100%); min-height: 100vh; padding-bottom: 30px; transition: background 0.3s, color 0.3s; }
     
-    /* dark theme base */
     body.dark-theme {
       background: #0b1219;
       color: #e8edf2;
@@ -27,8 +26,8 @@
     body.dark-theme .app-card .card-benefits { background: #0f1a24; color: #b0d0b0; }
     body.dark-theme .app-card .card-app-name { background: linear-gradient(125deg, #8bc34a, #4caf50); background-clip: text; -webkit-background-clip: text; color: transparent; }
     body.dark-theme .app-card .card-spin-desc { color: #c0d0c0; }
-    body.dark-theme .app-card .download-btn { background: #2a3a4a; color: #e8edf2; }
-    body.dark-theme .app-card .download-btn:hover { background: #3a4a5a; }
+    body.dark-theme .app-card .download-btn { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 20px rgba(34,197,94,0.3); }
+    body.dark-theme .app-card .download-btn:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
     body.dark-theme .warning-led-toggle { background: linear-gradient(135deg, #1a3a2a, #0a2a1a); border-color: #4a8a4a; }
     body.dark-theme .warning-led-toggle .led-text { color: #c8e6c9; }
     body.dark-theme .warning-content { background: #1a1a2a; border-color: #8a4a4a; color: #d0c0c0; }
@@ -55,16 +54,12 @@
     body.dark-theme footer { background: #0a1a1a; border-top-color: #4a5a3a; }
     body.dark-theme footer .marquee-bg { background: #0a0a0a; border-color: #4a5a3a; }
     body.dark-theme .nav-logo .site-title { color: #8bc34a; }
-    /* dark theme LED colors for stats */
     body.dark-theme .app-card .card-stat-value.rating-green { color: #22c55e; text-shadow: 0 0 12px #22c55e; }
     body.dark-theme .app-card .card-stat-value.size-cyan { color: #06b6d4; text-shadow: 0 0 12px #06b6d4; }
     body.dark-theme .app-card .card-stat-value.votes-dark { color: #ec4899; text-shadow: 0 0 12px #ec4899; }
     body.dark-theme .app-card .card-stat-value.bonus-green { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
     body.dark-theme .app-card .card-stat-value.bonus-red { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
     body.dark-theme .app-card .card-stat-value.votes-black { color: #ec4899; text-shadow: 0 0 12px #ec4899; }
-    /* dark theme download button green cyan mix */
-    body.dark-theme .app-card .download-btn { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 20px rgba(34,197,94,0.3); }
-    body.dark-theme .app-card .download-btn:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
     body.dark-theme .final-download-btn { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 20px rgba(34,197,94,0.3); }
     body.dark-theme .final-download-btn:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
     body.dark-theme .small-download { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
@@ -204,45 +199,6 @@
       border-color: #aaaadd;
     }
     
-    /* super fast withdrawal APK button - new tags name HD */
-    .super-fast-withdrawal {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: linear-gradient(135deg, #22c55e, #06b6d4, #eab308, #1a1a1a);
-      padding: 4px 14px 4px 10px;
-      border-radius: 40px;
-      color: #fff;
-      font-weight: 800;
-      font-size: 0.6rem;
-      border: none;
-      box-shadow: 0 0 20px rgba(34,197,94,0.4), 0 0 40px rgba(6,182,212,0.2);
-      transition: 0.3s;
-      cursor: pointer;
-      text-decoration: none;
-      letter-spacing: 0.5px;
-      margin-left: 6px;
-    }
-    .super-fast-withdrawal:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(34,197,94,0.6), 0 0 60px rgba(6,182,212,0.3);
-    }
-    .super-fast-withdrawal .led-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #22c55e;
-      animation: ledBlink 1.2s infinite alternate;
-      box-shadow: 0 0 12px #22c55e;
-    }
-    @keyframes ledBlink {
-      0% { background: #22c55e; box-shadow: 0 0 8px #22c55e; }
-      33% { background: #06b6d4; box-shadow: 0 0 12px #06b6d4; }
-      66% { background: #eab308; box-shadow: 0 0 12px #eab308; }
-      100% { background: #1a1a1a; box-shadow: 0 0 16px #1a1a1a; }
-    }
-    
     .app-tags-wrapper {
       padding: 8px 12px;
       background: #f8fafc;
@@ -334,7 +290,6 @@
     .app-card .card-benefits { font-size: 0.65rem; color: #1e562a; line-height: 1.5; margin: 4px 0 6px; text-align: left; padding: 6px 10px; background: #f0f9f0; border-radius: 12px; border-left: 3px solid #22c55e; }
     .app-card .card-benefits strong { color: #0a2e1d; }
     
-    /* app number badge */
     .app-number {
       position: absolute;
       top: -6px;
@@ -750,10 +705,6 @@
     <a href="#" id="navContact"><span class="icon-contact"></span> Contact</a>
     <a href="#" id="navDisclaimer"><span class="icon-disclaimer"></span> Disclaimer</a>
   </div>
-  <!-- super fast withdrawal APK button - new tags name HD -->
-  <a href="https://www.earntp.com/gold/jm9n7r" target="_blank" rel="noopener noreferrer" class="super-fast-withdrawal" id="superFastWithdrawalBtn">
-    <span class="led-dot"></span> SUPER FAST WITHDRAWAL APK
-  </a>
   <a href="https://t.me/yonogamestite" target="_blank" rel="noopener noreferrer" class="telegram-nav-btn" id="telegramNavBtn">
     <img src="https://i.ibb.co/S7P1xcCq/telegram-icon.jpg" alt="Telegram" loading="eager">
     Telegram
@@ -966,25 +917,23 @@
       });
     }
 
-    function getCardStats(appName, bonusAmount) {
+    function getCardStats(appName) {
       let hash = 0;
       for (let i = 0; i < appName.length; i++) { hash = ((hash << 5) - hash) + appName.charCodeAt(i); hash |= 0; }
-      const ratings = ["4.2","4.5","4.7","4.3","4.8","4.6","4.4","4.9","4.1","4.0"];
-      const sizes = ["48 MB","52 MB","58 MB","62 MB","65 MB","68 MB","72 MB","75 MB","78 MB","55 MB","60 MB","70 MB"];
-      const votes = ["122K","222K","95K","310K","178K","89K","405K","150K","250K","180K","320K"];
+      const ratings = ["4.2","4.4","4.5","4.7","4.3","4.8","4.6","4.9","4.1","4.0"];
+      const sizes = ["48 MB","52 MB","55 MB","58 MB","62 MB","65 MB","68 MB","72 MB","75 MB","78 MB"];
+      const votes = ["122K","89K","222K","95K","310K","178K","150K","89K","405K","250K"];
+      const bonus = 200 + (Math.abs(hash) % 101);
       const idx = Math.abs(hash) % ratings.length;
-      const bIdx = Math.abs(hash * 2) % sizes.length;
-      const vIdx = Math.abs(hash * 3) % votes.length;
-      const bonusNum = 200 + (Math.abs(hash) % 101);
-      return { rating: ratings[idx], size: sizes[bIdx], votes: votes[vIdx], bonus: bonusNum };
+      return { rating: ratings[idx], size: sizes[idx], votes: votes[idx], bonus: bonus };
     }
 
     function getAppStats(appName) {
       let hash = 0;
       for (let i = 0; i < appName.length; i++) { hash = ((hash << 5) - hash) + appName.charCodeAt(i); hash |= 0; }
-      const ratings = ["4.2","4.5","4.7","4.3","4.8","4.6","4.4","4.9"];
-      const sizes = ["48 MB","59 MB","42 MB","67 MB","38 MB","55 MB","72 MB","33 MB"];
-      const votes = ["122K","222K","95K","310K","178K","89K","405K","150K"];
+      const ratings = ["4.2","4.4","4.5","4.7","4.3","4.8","4.6","4.9"];
+      const sizes = ["48 MB","52 MB","55 MB","58 MB","62 MB","65 MB","68 MB","72 MB"];
+      const votes = ["122K","89K","222K","95K","310K","178K","150K","89K"];
       const idx = Math.abs(hash) % ratings.length;
       return { rating: ratings[idx], size: sizes[idx], votes: votes[idx] };
     }
@@ -1070,7 +1019,7 @@
       if (!gridContainer) return;
       let html = '';
       appsData.forEach((app, idx) => {
-        const stats = getCardStats(app.name, app.bonus);
+        const stats = getCardStats(app.name);
         const displayBonus = stats.bonus;
         const colors = getColorClasses(idx);
         const spinDesc = getSpinWinDescription(app.name, displayBonus, app.category);
