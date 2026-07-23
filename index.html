@@ -8,7 +8,6 @@
     * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif; }
     body { background: linear-gradient(145deg, #f0f4fa 0%, #e2e8f0 100%); min-height: 100vh; padding-bottom: 30px; transition: background 0.3s, color 0.3s; }
     
-    /* dark theme base */
     body.dark-theme {
       background: #0b1219;
       color: #e8edf2;
@@ -65,18 +64,17 @@
     body.dark-theme .final-download-btn:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
     body.dark-theme .small-download { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
     body.dark-theme .small-download:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); }
-    /* dark theme toggle button premium cyan yellow mix */
     body.dark-theme .dark-toggle-btn {
-      background: linear-gradient(135deg, #06b6d4, #eab308);
-      color: #0a0a0a;
+      background: linear-gradient(135deg, #22c55e, #06b6d4);
+      color: #fff;
       border-color: #22c55e;
-      box-shadow: 0 0 25px rgba(6,182,212,0.6), 0 0 50px rgba(234,179,8,0.3);
-      font-weight: 800;
+      box-shadow: 0 0 20px rgba(34,197,94,0.3);
     }
     body.dark-theme .dark-toggle-btn:hover {
-      box-shadow: 0 0 40px rgba(6,182,212,0.8), 0 0 70px rgba(234,179,8,0.4);
-      transform: scale(1.05);
+      background: linear-gradient(135deg, #06b6d4, #22c55e);
+      box-shadow: 0 0 30px rgba(6,182,212,0.4);
     }
+    body.dark-theme .dark-toggle-btn .moon-icon { color: #fff; }
     
     .top-nav { 
       background: #ffffff; 
@@ -297,7 +295,7 @@
     .app-number {
       position: absolute;
       top: -6px;
-      left: -6px;
+      right: -6px;
       background: #000;
       color: #fff;
       font-weight: 800;
@@ -731,7 +729,7 @@
 </div>
 
 <div class="tag-template" id="tagTemplate">
-  <!-- will be populated per app dynamically -->
+  <!-- This template will be populated dynamically per app -->
 </div>
 
 <div class="container" id="mainContainer">
@@ -779,46 +777,39 @@
       { name: "Diwa 777", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://sharediwa7771.top?pid=287747863&channel=2010001&t=pdd2&pkg=com.diwa777.app", img: "https://i.ibb.co/Kx2RKNvN/1000022725.jpg", category: "Slots" }
     ];
 
-    // ----- UNIQUE TAGS PER APP (34 different models) -----
-    function getUniqueTags(appName, bonusNum, category) {
+    // ===== UNIQUE DESCRIPTIONS & BENEFITS PER APP =====
+    function getSpinWinDescription(appName, bonusNum, category) {
       const catMap = { 'Slots':'slot machines','Rummy':'rummy tables','Casino':'casino games','Spin':'spin wheels','Card':'card games','Bingo':'bingo halls','Arcade':'arcade games','Betting':'betting tables','VIP':'VIP rooms' };
       const gameType = catMap[category] || 'games';
       
-      // each app gets a unique combination based on name hash
+      // Unique per app based on name hash
       let hash = 0;
       for (let i = 0; i < appName.length; i++) { hash = ((hash << 5) - hash) + appName.charCodeAt(i); hash |= 0; }
-      const idx = Math.abs(hash) % 6;
+      const idx = Math.abs(hash) % 5;
       
       const descs = [
         `Play ${appName} and grab ₹${bonusNum} welcome bonus! Enjoy thrilling ${gameType}, daily rewards, and fast UPI withdrawals.`,
         `Spin & win with ${appName}! Huge jackpots, free spins, and ₹${bonusNum} joining bonus. Play premium ${gameType} and withdraw your winnings instantly.`,
-        `Join ${appName} today and get ₹${bonusNum} bonus! Play exciting ${gameType}, unlock jackpots, and earn real cash daily.`,
         `${appName} gives you ₹${bonusNum} free cash on signup! Experience the best ${gameType}, win real money, and withdraw instantly.`,
-        `${appName} – ₹${bonusNum} joining bonus! Spin, play & win with premium ${gameType}. Fast payouts and 24/7 support.`,
-        `Experience ${appName} with ₹${bonusNum} welcome bonus! Play ${gameType}, earn cashback, and enjoy daily rewards.`
+        `Join ${appName} today and get ₹${bonusNum} bonus! Play exciting ${gameType}, unlock jackpots, and earn real cash daily.`,
+        `${appName} – ₹${bonusNum} joining bonus! Spin, play & win with premium ${gameType}. Fast payouts and 24/7 support.`
       ];
-      
-      const benefitsList = [
-        `Daily login rewards, referral cashback, fast UPI withdrawals, 24/7 customer support, and exclusive ${appName} tournaments.`,
-        `Unlock daily login bonuses, referral earnings, instant bank transfers, 24/7 help, and ${appName} loyalty rewards.`,
-        `Get daily rewards, friend referral bonuses, fast withdrawals, priority support, and special ${appName} festival offers.`,
-        `Earn referral bonuses, daily free spins, instant UPI payouts, VIP support, and weekly ${appName} cashback offers.`,
-        `Enjoy free daily spins, referral cash, quick UPI withdrawals, round-the-clock support, and ${appName} exclusive events.`,
-        `Daily login rewards, referral bonuses, instant withdrawals, priority support, and ${appName} special offers.`
-      ];
-      
-      return {
-        desc: descs[idx % descs.length],
-        benefits: benefitsList[idx % benefitsList.length]
-      };
-    }
-
-    function getSpinWinDescription(appName, bonusNum, category) {
-      return getUniqueTags(appName, bonusNum, category).desc;
+      return descs[idx % descs.length];
     }
 
     function getExtraBenefits(appName, bonusNum, category) {
-      return getUniqueTags(appName, bonusNum, category).benefits;
+      let hash = 0;
+      for (let i = 0; i < appName.length; i++) { hash = ((hash << 5) - hash) + appName.charCodeAt(i); hash |= 0; }
+      const idx = Math.abs(hash) % 5;
+      
+      const benefits = [
+        `Unlock daily login bonuses, referral earnings, instant bank transfers, 24/7 help, and ${appName} loyalty rewards.`,
+        `Get daily rewards, friend referral bonuses, fast withdrawals, priority support, and special ${appName} festival offers.`,
+        `Earn referral bonuses, daily free spins, instant UPI payouts, VIP support, and weekly ${appName} cashback offers.`,
+        `Daily login rewards, referral cashback, fast UPI withdrawals, 24/7 customer support, and exclusive ${appName} tournaments.`,
+        `Enjoy free daily spins, referral cash, quick UPI withdrawals, round-the-clock support, and ${appName} exclusive events.`
+      ];
+      return benefits[idx % benefits.length];
     }
 
     function getWarningValue(appName) {
@@ -872,34 +863,87 @@
       return { ratingClass, sizeClass, votesClass, bonusClass };
     }
 
-    // ----- generate unique tag template per app -----
-    function generateAppTags(appName, bonusNum) {
-      const tags = getUniqueTags(appName, bonusNum, 'Slots');
-      // build a unique tag box for this app
+    // ===== GENERATE UNIQUE TAGS PER APP =====
+    function generateTagsHTML(appName, bonusNum) {
+      let hash = 0;
+      for (let i = 0; i < appName.length; i++) { hash = ((hash << 5) - hash) + appName.charCodeAt(i); hash |= 0; }
+      const seed = Math.abs(hash);
+      
+      const tagTitles = [
+        `${appName} APK Download – Get ₹${bonusNum} Instant Bonus!`,
+        `Unlock ₹${bonusNum} Bonus in ${appName} App!`,
+        `${appName} – Signup for ₹${bonusNum} Free Bonus`,
+        `Experience ${appName} – ₹${bonusNum} Welcome Bonus on Download`,
+        `Dive into ${appName} – India's Top Online Gaming App`
+      ];
+      const tagContents = [
+        `Play skill-based Rummy, Teen Patti & slots. Safe withdrawals from ₹100. Start earning real cash in minutes – download APK & claim your bonus today!`,
+        `Enjoy thrilling games like Aviator, Rummy & more. Refer friends for extra cash. Fast, secure withdrawals via bank/UPI. Trusted by millions – start playing now!`,
+        `Play 20+ exciting games including Dragon vs Tiger & slots. Minimum deposit ₹100, instant payouts. Download now & earn real money daily!`,
+        `Build sequences, join cash tournaments & daily mystery rewards. Safe, fun, and secure gaming – start winning real cash today!`,
+        `Get ₹${bonusNum} signup bonus, play Rummy, Teen Patti, slots & Aviator. Withdraw from ₹100, join 1Cr+ players & claim daily bonuses. Download APK now!`
+      ];
+      
+      const idx1 = seed % tagTitles.length;
+      const idx2 = (seed + 3) % tagTitles.length;
+      const idx3 = (seed + 7) % tagTitles.length;
+      const idx4 = (seed + 11) % tagTitles.length;
+      const idx5 = (seed + 13) % tagTitles.length;
+      
+      const titleClasses = ['tag-title-premium', 'tag-title-bonus', 'tag-title-games', 'tag-title-cash', 'tag-title-vip'];
+      
       return `
         <div class="tag-box">
-          <div class="tag-title tag-title-premium">${appName} – Get ₹${bonusNum} Instant Bonus!</div>
-          <div class="tag-content">${tags.desc}</div>
+          <div class="tag-title ${titleClasses[idx1 % titleClasses.length]}">${tagTitles[idx1]}</div>
+          <div class="tag-content">${tagContents[idx1 % tagContents.length]}</div>
         </div>
         <div class="tag-divider"></div>
         <div class="tag-box">
-          <div class="tag-title tag-title-bonus">${appName} – Extra Benefits</div>
-          <div class="tag-content">${tags.benefits}</div>
+          <div class="tag-title ${titleClasses[idx2 % titleClasses.length]}">${tagTitles[idx2]}</div>
+          <div class="tag-content">${tagContents[idx2 % tagContents.length]}</div>
         </div>
         <div class="tag-divider"></div>
         <div class="tag-box">
-          <div class="tag-title tag-title-games">${appName} – Play & Earn Real Cash</div>
-          <div class="tag-content">Play exciting games, win real money, and withdraw instantly via UPI. Minimum withdrawal ₹100.</div>
+          <div class="tag-title ${titleClasses[idx3 % titleClasses.length]}">${tagTitles[idx3]}</div>
+          <div class="tag-content">${tagContents[idx3 % tagContents.length]}</div>
         </div>
         <div class="tag-divider"></div>
         <div class="tag-box">
-          <div class="tag-title tag-title-cash">${appName} – Daily Rewards & Bonuses</div>
-          <div class="tag-content">Get daily login rewards, referral bonuses, and special festival offers. Start earning today!</div>
+          <div class="tag-title ${titleClasses[idx4 % titleClasses.length]}">${tagTitles[idx4]}</div>
+          <div class="tag-content">${tagContents[idx4 % tagContents.length]}</div>
         </div>
         <div class="tag-divider"></div>
         <div class="tag-box">
-          <div class="tag-title tag-title-vip">${appName} – Trusted by Millions</div>
-          <div class="tag-content">Join 1Cr+ players and enjoy a secure gaming experience with fast withdrawals and 24/7 support.</div>
+          <div class="tag-title ${titleClasses[idx5 % titleClasses.length]}">${tagTitles[idx5]}</div>
+          <div class="tag-content">${tagContents[idx5 % tagContents.length]}</div>
+        </div>
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">Frequently Asked Questions</div>
+          <div class="tag-content">
+            <div class="faq-item"><div class="faq-q">1. What Is The ${appName} app APK?</div><div class="faq-a">The ${appName} APP APK is an excellent application that offers a sign-up bonus of ₹${bonusNum} when you join. This game includes a fantastic bonus program. Additionally, ${appName} APK is a popular game with a minimum withdrawal amount of ₹100.</div></div>
+            <div class="faq-item"><div class="faq-q">2. How to Sign Up for ${appName} APK?</div><div class="faq-a">To sign up: Click Download Button, install the app, open and click Play as Guest, then bind your mobile number. You'll receive ₹${bonusNum} sign-up bonus.</div></div>
+            <div class="faq-item"><div class="faq-q">3. How Many Games Are Available In The ${appName} App?</div><div class="faq-a">The ${appName} app offers 75+ different types of games including Rummy, Teen Patti, 7 Up Down, Dragon vs Tiger, and many more.</div></div>
+            <div class="faq-item"><div class="faq-q">4. What are some of the best features of the ${appName} app APK?</div><div class="faq-a">• Bonus of ₹${bonusNum} free in the APK<br>• Access to 20+ gaming options<br>• Earn referral bonuses<br>• Withdrawals from ₹100</div></div>
+          </div>
+        </div>
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">Overview – ${appName}</div>
+          <div class="tag-content">${appName} is a popular real cash earning app in India where users can play games like rummy, slots, bingo, and spin games to win real money. New users can claim a signup bonus of up to ₹${bonusNum}, making it easy to get started. The app offers a smooth and secure experience with fast UPI deposits and withdrawals. The interface is simple and user-friendly, suitable for both beginners and experienced players. Download the latest APK today and start earning real cash rewards.</div>
+        </div>
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">${appName} App Features & Benefits</div>
+          <div class="tag-content">
+            <ul>
+              <li><strong>Welcome Bonus:</strong> Get up to ₹${bonusNum} signup bonus for new users</li>
+              <li><strong>Fast UPI Withdrawal:</strong> Withdraw starting from ₹100 directly to your bank account</li>
+              <li><strong>Popular Games:</strong> Play rummy, slots, bingo, spin games and more real cash earning options</li>
+              <li><strong>Safe & Secure Platform:</strong> Smooth gameplay experience with secure transactions</li>
+              <li><strong>Daily Rewards & Offers:</strong> Earn extra bonuses, cashback and referral rewards regularly</li>
+            </ul>
+          </div>
         </div>
       `;
     }
@@ -1000,17 +1044,15 @@
       let hash = 0;
       for (let i = 0; i < selectedApp.name.length; i++) { hash = ((hash << 5) - hash) + selectedApp.name.charCodeAt(i); hash |= 0; }
       const bonusNum = 200 + (Math.abs(hash) % 101);
-      const descObj = getUniqueTags(selectedApp.name, bonusNum, selectedApp.category);
-      const description = descObj.desc;
-      const extraBenefits = descObj.benefits;
+      const spinDesc = getSpinWinDescription(selectedApp.name, bonusNum, selectedApp.category);
+      const extraBenefits = getExtraBenefits(selectedApp.name, bonusNum, selectedApp.category);
       const warningVal = getWarningValue(selectedApp.name);
       const gridDiv = document.getElementById('allAppsGrid');
       const downloadContainer = document.getElementById('downloadPageContainer');
       gridDiv.classList.add('hidden');
       downloadContainer.classList.remove('hidden');
       
-      // generate unique tags for this app
-      const tagsHTML = generateAppTags(selectedApp.name, bonusNum);
+      const tagsHTML = generateTagsHTML(selectedApp.name, bonusNum);
       
       const fiveApps = appsData.filter((_, idx) => idx !== selectedIndex).slice(0, 5);
       let fiveOptionsHtml = '';
@@ -1061,7 +1103,7 @@
               <div class="stat-item"><div class="stat-value" style="color:#dc2626;">${bonusNum}</div><div class="stat-label">Bonus</div></div>
             </div>
             <a href="${selectedApp.downloadUrl}" target="_blank" class="final-download-btn">DOWNLOAD ${selectedApp.name}</a>
-            <div class="app-description">${description}<br><br><strong>Extra Benefits:</strong> ${extraBenefits}</div>
+            <div class="app-description">${spinDesc}<br><br><strong>Extra Benefits:</strong> ${extraBenefits}</div>
             <div class="tag-section">
               <div class="tag-title" style="font-weight:700; font-size:0.95rem; margin-bottom:8px; color:#0b1e33;">${selectedApp.name} – Top Offers</div>
               <div class="five-options" id="fiveOptions">${fiveOptionsHtml}<span class="opt-item" style="background:#22c55e;color:white;border-color:#22c55e;font-weight:700;">+ 5 More</span></div>
@@ -1149,7 +1191,7 @@
         <p><strong>Welcome to Yono Games Site</strong>, a trusted platform created to help users discover <strong>genuine Yono Games apps</strong> safely and confidently.</p>
         <p><strong>Our Mission</strong><br>To provide only verified, genuine, and officially released Yono Games apps in one place.</p>
         <p><strong>What Makes Us Different</strong><br>✅ Genuine Yono Games Apps Only<br>✅ Secure & Safe Download Links<br>✅ Regular Updates<br>✅ User-First Approach</p>
-        <div class="premium-toggle-about"><details><summary><span class="toggle-icon">▶</span><span style="font-weight:800; color:#8b5cf6; font-size:0.95rem;">📌 About - Yono Games Store</span><span style="font-size:0.65rem; color:#6b7280; margin-left:auto;">(Click to expand)</span></summary><div class="details-content"><p>Welcome to Yono Games Site – a comprehensive hub for Indian users to discover authentic Yono Games apps.</p><div style="margin-top:12px;background:#f5f0ff;padding:10px;border-radius:12px;border-left:4px solid #8b5cf6;"><p style="font-size:0.7rem;color:#333;line-height:1.5;">⚠️ <strong style="color:#8b5cf6;">Disclaimer:</strong> Playing Yono Games may lead to addictive behavior. Please play responsibly and use your discretion. This website is intended strictly for users who are <strong>18 years of age or older</strong>.</p></div></div></details></div>
+        <div class="premium-toggle-about"><details><summary><span class="toggle-icon">▶</span><span style="font-weight:800; color:#8b5cf6; font-size:0.95rem;">📌 About - Yono Games Store</span><span style="font-size:0.65rem; color:#6b7280; margin-left:auto;">(Click to expand)</span></summary><div class="details-content"><p>Yono Games Site is a comprehensive hub created to enhance digital experiences for everyone. We focus on Indian applications and provide a user-friendly platform.</p><div style="margin-top:12px;background:#f5f0ff;padding:10px;border-radius:12px;border-left:4px solid #8b5cf6;"><p style="font-size:0.7rem;color:#333;line-height:1.5;">⚠️ <strong style="color:#8b5cf6;">Disclaimer:</strong> Playing Yono Games may lead to addictive behavior. Please play responsibly. This website is intended strictly for users who are <strong>18 years of age or older</strong>.</p></div></div></details></div>
         <div style="margin-top:12px;background:#e8f5e9;padding:8px 12px;border-radius:10px;text-align:center;border:1px solid #a5d6a7;"><p style="font-size:0.7rem;color:#1e562a;">✅ All apps are verified and safe only.</p></div>
       `);
     });
@@ -1160,7 +1202,7 @@
       navContact.classList.add('active');
       showInfoModal('Contact Us - Yono Games Site', `
         <p><strong>Yono Games Site</strong> does not provide Customer Support for Listed Apps/Games.</p>
-        <p style="margin-top:14px;"><strong style="color:#d50000;">📢 Advertisement/Business Queries</strong></p>
+        <p style="margin-top:14px;"><strong style="color:#d50000;">📢 Advertisement/Business Queries</strong><br>If you are a game maker company and want to promote your application, contact us.</p>
         <table class="contact-table"><tr><th>Title</th><th>Link</th></tr><tr><td><strong>Email</strong></td><td><a href="mailto:yonogamesite@gmail.com" class="contact-email" style="color:#d50000;font-weight:700;text-decoration:none;">yonogamesite@gmail.com</a></td></tr><tr><td><strong>Telegram</strong></td><td><a href="https://t.me/yonogamestite" target="_blank" class="contact-telegram" style="color:#0088cc;font-weight:700;text-decoration:none;">@yonogamestite</a></td></tr></table>
         <div style="margin-top:12px;background:#e8f5e9;padding:8px 12px;border-radius:10px;text-align:center;border:1px solid #a5d6a7;"><p style="font-size:0.7rem;color:#1e562a;">⚡ We respond within 24 hours</p></div>
       `);
@@ -1171,10 +1213,12 @@
       document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active'));
       navDisclaimer.classList.add('active');
       showInfoModal('Disclaimer - Yono Games Site', `
-        <div style="background:linear-gradient(135deg,#fff5e6,#ffe6cc);padding:10px;border-radius:14px;margin-bottom:12px;text-align:center;"><h3 style="color:#b45900;font-weight:800;font-size:1.1rem;">Yono Games Site - Disclaimer</h3><p style="font-size:0.7rem;color:#555;">By using our website, you confirm that you have read and agreed to this disclaimer.</p></div>
-        <div class="disclaimer-section" style="border-left-color:#8b5cf6;"><h4>1. No Ownership</h4><p>We are not developers/owners of Yono Games.</p></div>
-        <div class="disclaimer-section" style="border-left-color:#22c55e;"><h4>2. Play Responsibly</h4><p>Gaming can be addictive. Play with control.</p></div>
-        <div class="disclaimer-section" style="border-left-color:#ef4444;"><h4>3. 18+ Age Restriction</h4><p>Strictly for users 18 years and above.</p></div>
+        <div style="background:linear-gradient(135deg,#fff5e6,#ffe6cc);padding:10px;border-radius:14px;margin-bottom:12px;text-align:center;"><h3 style="color:#b45900;font-weight:800;font-size:1.1rem;">Yono Games Site - Disclaimer</h3></div>
+        <div class="disclaimer-section"><h4>1. No Ownership</h4><p>We are not developers/owners of Yono Games.</p></div>
+        <div class="disclaimer-section"><h4>2. Play Responsibly</h4><p>Gaming can be addictive. Play with control.</p></div>
+        <div class="disclaimer-section"><h4>3. Financial Risk</h4><p>Financial transactions may lead to monetary loss.</p></div>
+        <div class="disclaimer-section"><h4>4. 18+ Age Restriction</h4><p>Strictly for users 18 years and above.</p></div>
+        <div class="disclaimer-section"><h4>5. No Liability</h4><p>We are not liable for any losses or damages.</p></div>
         <div style="margin-top:14px;background:#fff3e0;padding:10px 12px;border-radius:12px;border:2px solid #ff8c00;"><p style="font-size:0.75rem;color:#d32f2f;font-weight:600;">⚠️ Disclaimer:</p><p style="font-size:0.7rem;color:#333;line-height:1.5;">This website is intended strictly for users who are <strong>18 years of age or older</strong>.</p></div>
       `);
     });
