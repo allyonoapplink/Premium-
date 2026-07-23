@@ -55,6 +55,20 @@
     body.dark-theme footer { background: #0a1a1a; border-top-color: #4a5a3a; }
     body.dark-theme footer .marquee-bg { background: #0a0a0a; border-color: #4a5a3a; }
     body.dark-theme .nav-logo .site-title { color: #8bc34a; }
+    /* dark theme LED colors for stats */
+    body.dark-theme .app-card .card-stat-value.rating-green { color: #22c55e; text-shadow: 0 0 12px #22c55e; }
+    body.dark-theme .app-card .card-stat-value.size-cyan { color: #06b6d4; text-shadow: 0 0 12px #06b6d4; }
+    body.dark-theme .app-card .card-stat-value.votes-dark { color: #ec4899; text-shadow: 0 0 12px #ec4899; }
+    body.dark-theme .app-card .card-stat-value.bonus-green { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
+    body.dark-theme .app-card .card-stat-value.bonus-red { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
+    body.dark-theme .app-card .card-stat-value.votes-black { color: #ec4899; text-shadow: 0 0 12px #ec4899; }
+    /* dark theme download button green cyan mix */
+    body.dark-theme .app-card .download-btn { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 20px rgba(34,197,94,0.3); }
+    body.dark-theme .app-card .download-btn:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
+    body.dark-theme .final-download-btn { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 20px rgba(34,197,94,0.3); }
+    body.dark-theme .final-download-btn:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
+    body.dark-theme .small-download { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
+    body.dark-theme .small-download:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); }
     
     .top-nav { 
       background: #ffffff; 
@@ -153,7 +167,6 @@
       75% { transform: scale(1.06) rotate(2deg); }
     }
     
-    /* dark theme toggle button - premium look */
     .dark-toggle-btn {
       display: inline-flex;
       align-items: center;
@@ -191,7 +204,7 @@
       border-color: #aaaadd;
     }
     
-    /* premium LED color mix for super fast withdrawal APK */
+    /* super fast withdrawal APK button - new tags name HD */
     .super-fast-withdrawal {
       display: inline-flex;
       align-items: center;
@@ -293,6 +306,7 @@
       box-shadow: 0 4px 14px rgba(0,0,0,0.05);
       border: 1px solid #eef2f8;
       text-align: center;
+      position: relative;
     }
     .app-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.10); border-color: #ffcf8a; }
     
@@ -319,6 +333,32 @@
     .app-card .card-spin-desc strong { color: #1e562a; }
     .app-card .card-benefits { font-size: 0.65rem; color: #1e562a; line-height: 1.5; margin: 4px 0 6px; text-align: left; padding: 6px 10px; background: #f0f9f0; border-radius: 12px; border-left: 3px solid #22c55e; }
     .app-card .card-benefits strong { color: #0a2e1d; }
+    
+    /* app number badge */
+    .app-number {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: #000;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.65rem;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #ffcf8a;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+    body.dark-theme .app-number {
+      background: #22c55e;
+      color: #0a1a0a;
+      border-color: #22c55e;
+      box-shadow: 0 0 20px rgba(34,197,94,0.4);
+    }
     
     .warning-led-toggle {
       margin-top: 12px;
@@ -710,7 +750,7 @@
     <a href="#" id="navContact"><span class="icon-contact"></span> Contact</a>
     <a href="#" id="navDisclaimer"><span class="icon-disclaimer"></span> Disclaimer</a>
   </div>
-  <!-- super fast withdrawal APK button with 4 color LED mix -->
+  <!-- super fast withdrawal APK button - new tags name HD -->
   <a href="https://www.earntp.com/gold/jm9n7r" target="_blank" rel="noopener noreferrer" class="super-fast-withdrawal" id="superFastWithdrawalBtn">
     <span class="led-dot"></span> SUPER FAST WITHDRAWAL APK
   </a>
@@ -1036,8 +1076,10 @@
         const spinDesc = getSpinWinDescription(app.name, displayBonus, app.category);
         const extraBenefits = getExtraBenefits(app.name, displayBonus, app.category);
         const warningVal = getWarningValue(app.name);
+        const number = idx + 1;
         html += `
           <div class="app-card" data-app-index="${idx}">
+            <div class="app-number">${number}</div>
             <div class="card-img"><img src="${app.img}" alt="${app.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=App'"></div>
             <div class="card-app-name">${app.name}</div>
             <div class="card-stats">
