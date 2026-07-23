@@ -55,17 +55,17 @@
     body.dark-theme footer .marquee-bg { background: #0a0a0a; border-color: #4a5a3a; }
     body.dark-theme .nav-logo .site-title { color: #8bc34a; }
     body.dark-theme .app-card .card-stat-value.rating-green { color: #22c55e; text-shadow: 0 0 12px #22c55e; }
-    body.dark-theme .app-card .card-stat-value.size-cyan { color: #06b6d4; text-shadow: 0 0 12px #06b6d4; }
-    body.dark-theme .app-card .card-stat-value.votes-dark { color: #ec4899; text-shadow: 0 0 12px #ec4899; }
+    body.dark-theme .app-card .card-stat-value.size-cyan { color: #eab308; text-shadow: 0 0 12px #eab308; }
+    body.dark-theme .app-card .card-stat-value.votes-dark { color: #06b6d4; text-shadow: 0 0 12px #06b6d4; }
     body.dark-theme .app-card .card-stat-value.bonus-green { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
     body.dark-theme .app-card .card-stat-value.bonus-red { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
-    body.dark-theme .app-card .card-stat-value.votes-black { color: #ec4899; text-shadow: 0 0 12px #ec4899; }
+    body.dark-theme .app-card .card-stat-value.votes-black { color: #06b6d4; text-shadow: 0 0 12px #06b6d4; }
     body.dark-theme .final-download-btn { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 20px rgba(34,197,94,0.3); }
     body.dark-theme .final-download-btn:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
     body.dark-theme .small-download { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
     body.dark-theme .small-download:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); }
     
-    /* ===== PREMIUM LED NAV ICONS ===== */
+    /* ===== PREMIUM LED NAV ICONS (unique designs) ===== */
     .nav-icon {
       display: inline-flex;
       align-items: center;
@@ -76,6 +76,7 @@
       margin-right: 4px;
       flex-shrink: 0;
       transition: all 0.3s ease;
+      position: relative;
       background: transparent;
     }
     .nav-icon-home svg { width: 18px; height: 18px; fill: none; stroke: #3b82f6; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px #3b82f6); }
@@ -278,43 +279,82 @@
     .app-card .card-img img { width: 100%; height: 100%; object-fit: cover; }
     .app-card .card-app-name { font-size: 1.1rem; font-weight: 800; background: linear-gradient(125deg, #1e562a, #2c4c3b); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 8px; }
     
-    /* Number badge on image - black color, left side */
-    .img-number {
-      position: absolute;
-      top: -6px;
-      left: -6px;
-      background: #000000;
-      color: #ffffff;
+    /* Premium 3D LED styles */
+    .card-stat-value.rating-green {
+      color: #22c55e;
+      text-shadow: 0 0 8px #22c55e, 0 0 20px #22c55e, 0 0 40px #22c55e;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    .card-stat-value.size-cyan {
+      color: #eab308;
+      text-shadow: 0 0 8px #eab308, 0 0 20px #eab308, 0 0 40px #eab308;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    .card-stat-value.votes-dark {
+      color: #06b6d4;
+      text-shadow: 0 0 8px #06b6d4, 0 0 20px #06b6d4, 0 0 40px #06b6d4;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    .card-stat-value.votes-black {
+      color: #06b6d4;
+      text-shadow: 0 0 8px #06b6d4, 0 0 20px #06b6d4, 0 0 40px #06b6d4;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    .card-stat-value.bonus-green {
+      color: #dc2626;
+      text-shadow: 0 0 8px #dc2626, 0 0 20px #dc2626, 0 0 40px #dc2626;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    .card-stat-value.bonus-red {
+      color: #dc2626;
+      text-shadow: 0 0 8px #dc2626, 0 0 20px #dc2626, 0 0 40px #dc2626;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    .card-stat-label {
+      font-size: 0.55rem;
       font-weight: 800;
-      font-size: 0.6rem;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #ffcf8a;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-      z-index: 2;
-      font-family: 'Segoe UI', sans-serif;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #1e293b;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
-    body.dark-theme .img-number {
-      background: #000000;
-      color: #ffffff;
-      border-color: #22c55e;
+    .card-stat-label.rating-label { color: #22c55e; text-shadow: 0 0 8px #22c55e; }
+    .card-stat-label.size-label { color: #eab308; text-shadow: 0 0 8px #eab308; }
+    .card-stat-label.votes-label { color: #06b6d4; text-shadow: 0 0 8px #06b6d4; }
+    .card-stat-label.bonus-label { color: #dc2626; text-shadow: 0 0 8px #dc2626; }
+
+    .card-info-row .ci-label { 
+      font-size: 0.5rem; 
+      font-weight: 800; 
+      text-transform: uppercase; 
+      letter-spacing: 0.5px;
+      color: #2563eb;
+      text-shadow: 0 0 8px #2563eb;
     }
-    
+    .card-info-row .ci-value.bonus-c { 
+      color: #dc2626; 
+      text-shadow: 0 0 8px #dc2626, 0 0 20px #dc2626;
+      font-weight: 900;
+    }
+    .card-info-row .ci-value.withdraw-c { 
+      color: #2563eb; 
+      text-shadow: 0 0 8px #2563eb, 0 0 20px #2563eb;
+      font-weight: 900;
+    }
+    .card-info-row .ci-label.bonus-label-c { color: #dc2626; text-shadow: 0 0 8px #dc2626; }
+    .card-info-row .ci-label.withdraw-label-c { color: #2563eb; text-shadow: 0 0 8px #2563eb; }
+
     .app-card .card-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; background: #fef4e6; padding: 8px 10px; border-radius: 40px; margin: 6px 0 10px; }
     .app-card .card-stat { text-align: center; min-width: 48px; }
-    .app-card .card-stat-value { font-size: 0.85rem; font-weight: 800; }
-    .app-card .card-stat-label { font-size: 0.4rem; font-weight: 700; color: #6c7a5a; letter-spacing: 0.2px; text-transform: uppercase; }
     
     .app-card .card-info-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; background: #f0f9f0; padding: 6px 10px; border-radius: 40px; border: 1px solid #d4e6d4; margin: 6px 0 10px; }
     .app-card .ci-item { text-align: center; }
-    .app-card .ci-label { font-size: 0.4rem; font-weight: 700; color: #6c7a5a; text-transform: uppercase; letter-spacing: 0.2px; }
-    .app-card .ci-value { font-size: 0.75rem; font-weight: 800; }
-    .app-card .ci-value.bonus-c { color: #dc2626; }
-    .app-card .ci-value.withdraw-c { color: #06b6d4; }
     
     .app-card .download-btn { display: block; width: 100%; text-align: center; margin-top: 10px; padding: 10px 0; background: #0a0a0a; color: white; border: none; border-radius: 60px; font-weight: 800; font-size: 0.75rem; transition: 0.25s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; letter-spacing: 0.3px; }
     .app-card .download-btn:hover { background: #1a1a1a; transform: scale(0.97); }
@@ -397,15 +437,6 @@
       from { opacity: 0; transform: translateY(-8px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
-    .rating-green { color: #22c55e; }
-    .rating-pink { color: #ec4899; }
-    .size-cyan { color: #06b6d4; }
-    .size-yellow { color: #eab308; }
-    .votes-dark { color: #1e293b; }
-    .votes-black { color: #000000; }
-    .bonus-green { color: #22c55e; }
-    .bonus-red { color: #dc2626; }
     
     .hidden { display: none !important; }
     .download-page {
@@ -702,26 +733,37 @@
   </div>
   <div class="nav-links">
     <a href="#" class="active" id="homeNavLink">
-      <span class="nav-icon nav-icon-home"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10"/></svg></span>
+      <span class="nav-icon nav-icon-home">
+        <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10"/></svg>
+      </span>
       <span class="nav-label">HOME</span>
     </a>
     <a href="#" id="navAbout">
-      <span class="nav-icon nav-icon-about"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
+      <span class="nav-icon nav-icon-about">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      </span>
       <span class="nav-label">About</span>
     </a>
     <a href="#" id="navContact">
-      <span class="nav-icon nav-icon-contact"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
+      <span class="nav-icon nav-icon-contact">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </span>
       <span class="nav-label">Contact</span>
     </a>
     <a href="#" id="navDisclaimer">
-      <span class="nav-icon nav-icon-disclaimer"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+      <span class="nav-icon nav-icon-disclaimer">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </span>
       <span class="nav-label">Disclaimer</span>
     </a>
   </div>
   <a href="https://t.me/yonogamestite" target="_blank" rel="noopener noreferrer" class="telegram-nav-btn" id="telegramNavBtn">
-    <img src="https://i.ibb.co/S7P1xcCq/telegram-icon.jpg" alt="Telegram" loading="eager"> Telegram
+    <img src="https://i.ibb.co/S7P1xcCq/telegram-icon.jpg" alt="Telegram" loading="eager">
+    Telegram
   </a>
-  <div class="dark-toggle-btn" id="darkThemeToggle"><span class="moon-icon">🌙</span> Dark</div>
+  <div class="dark-toggle-btn" id="darkThemeToggle">
+    <span class="moon-icon">🌙</span> Dark
+  </div>
 </nav>
 
 <div class="app-tags-wrapper">
@@ -743,7 +785,6 @@
 
 <script>
   (function() {
-    // ===== 34 APPS DATA =====
     const appsData = [
       { name: "Yono Games", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://yonogamesm.com/?code=LHS49AEHVMR&t=1784314209", img: "https://i.ibb.co/LXqV77rd/yono-games.jpg", category: "Slots" },
       { name: "INR Rummy", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://inrrummy.club/?code=JMQBV8TAPD7&t=1784298106", img: "https://i.ibb.co/Y7ZRkLFp/inr-rummy.jpg", category: "Rummy" },
@@ -849,14 +890,9 @@
     }
 
     function getColorClasses(idx) {
-      const ratingClass = (idx % 2 === 0) ? 'rating-green' : 'rating-pink';
-      const sizeClass = (idx % 2 === 0) ? 'size-cyan' : 'size-yellow';
-      const votesClass = (idx % 2 === 0) ? 'votes-dark' : 'votes-black';
-      const bonusClass = (idx % 2 === 0) ? 'bonus-green' : 'bonus-red';
-      return { ratingClass, sizeClass, votesClass, bonusClass };
+      return { ratingClass: 'rating-green', sizeClass: 'size-cyan', votesClass: 'votes-dark', bonusClass: 'bonus-red' };
     }
 
-    // ===== 34 UNIQUE TAG MODELS =====
     const tagModelList = [
       (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} इंस्टेंट बोनस पाएं!<br>Play Rummy, Teen Patti & slots. सुरक्षित निकासी ₹100 से। Start earning real cash – डाउनलोड करें! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस अनलॉक करें!<br>रोमांचक गेम खेलें। Fast withdrawals via UPI. Trusted by millions – अभी खेलना शुरू करें! ₹${bArr[2]} welcome.</div></div>`,
       (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – Get ₹${b} Welcome Bonus!<br>रोमांचक रम्मी टेबल, daily rewards, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} वेलकम बोनस<br>Build sequences, join cash tournaments & daily mystery rewards. सुरक्षित गेमिंग – आज ही जीतना शुरू करें! ₹${bArr[2]} daily. ₹${bArr[3]} loyalty.</div></div>`,
@@ -941,7 +977,7 @@
 
       const downloadContent = useHindi ? `<ul><li><strong>1.</strong> ऊपर दिए गए बड़े डाउनलोड बटन पर टैप करें</li><li><strong>2.</strong> अज्ञात स्रोतों से इंस्टॉलेशन की अनुमति दें</li><li><strong>3.</strong> डाउनलोड की गई APK खोलें और Install पर टैप करें</li><li><strong>4.</strong> अपने मोबाइल नंबर से पंजीकरण करें</li><li><strong>5.</strong> अपना साइनअप बोनस तुरंत प्राप्त करें – ₹${bonusArr[10]} तक!</li></ul>` : `<ul><li><strong>1.</strong> Tap the big Download button above</li><li><strong>2.</strong> Allow installation from unknown sources</li><li><strong>3.</strong> Open the downloaded APK and tap Install</li><li><strong>4.</strong> Register with your mobile number</li><li><strong>5.</strong> Claim your signup bonus instantly – up to ₹${bonusArr[10]}!</li></ul>`;
 
-      const safetyContent = useHindi ? `${appName} एक सुरक्षित और विश्वसनीय गेमिंग अनुभव प्रदान करने के लिए डिज़ाइन किया गया है। ऐप उपयोगकर्ता डेटा और लेनदेन को सुरक्षित रखने में मदद करने के लिए मानक एन्क्रिप्शन और सुरक्षित भुगतान प्रणाली का उपयोग करता है।<br><br>जमा और निकासी आमतौर पर UPI और बैंक ट्रांसफर जैसी विधियों के माध्यम से संसाधित की जाती है, जो भारत में उपयोगकर्ताओं के लिए एक सुविधाजनक अनुभव प्रदान करती है। हालाँकि, उपयोगकर्ताओं को सलाह दी जाती है कि वे जिम्मेदारी से खेलें और ऐप का उपयोग करने से पहले इसकी शर्तों और नीतियों की समीक्षा करें।` : `${appName} is designed to provide a secure and reliable gaming experience. The app uses standard encryption and protected payment systems to help keep user data and transactions safe.<br><br>Deposits and withdrawals are processed through commonly used methods such as UPI and bank transfer, offering a convenient experience for users in India. However, users are advised to play responsibly and review the app's terms and policies before using it.`;
+      const safetyContent = useHindi ? `${appName} एक सुरक्षित और विश्वसनीय गेमिंग अनुभव प्रदान करने के लिए डिज़ाइन किया गया है। ऐप उपयोगकर्ता डेटा और लेनदेन को सुरक्षित रखने में मदद करने के लिए मानक एन्क्रिप्शन और सुरक्षित भुगतान प्रणाली का उपयोग करता है।<br><br>जमा और निकासी आमतौर पर UPI और बैंक ट्रांसफर जैसी विधियों के माध्यम से संसाधित होती है, जो भारत में उपयोगकर्ताओं के लिए एक सुविधाजनक अनुभव प्रदान करती है। हालाँकि, उपयोगकर्ताओं को सलाह दी जाती है कि वे जिम्मेदारी से खेलें और ऐप का उपयोग करने से पहले इसकी शर्तों और नीतियों की समीक्षा करें।` : `${appName} is designed to provide a secure and reliable gaming experience. The app uses standard encryption and protected payment systems to help keep user data and transactions safe.<br><br>Deposits and withdrawals are processed through commonly used methods such as UPI and bank transfer, offering a convenient experience for users in India. However, users are advised to play responsibly and review the app's terms and policies before using it.`;
 
       const whyContent = useHindi ? `<ul><li><strong>आकर्षक वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[11]} तक</li><li><strong>तेज़ UPI निकासी</strong> प्रणाली त्वरित प्रसंस्करण समय के साथ</li><li><strong>गेम की विस्तृत श्रृंखला</strong> जिसमें रम्मी, स्लॉट, बिंगो और स्पिन गेम शामिल हैं</li><li><strong>स्मूथ और ऑप्टिमाइज़्ड</strong> प्रदर्शन अधिकांश Android डिवाइस पर</li><li><strong>नियमित अपडेट</strong> नई सुविधाओं, ऑफ़र और सुधारों के साथ</li><li><strong>सरल और उपयोगकर्ता के अनुकूल</strong> इंटरफ़ेस शुरुआती और नियमित खिलाड़ियों के लिए</li></ul>` : `<ul><li><strong>Attractive welcome bonus</strong> of up to ₹${bonusArr[11]} for new users</li><li><strong>Fast UPI withdrawal</strong> system with quick processing time</li><li><strong>Wide range of games</strong> including rummy, slots, bingo and spin games</li><li><strong>Smooth and optimized</strong> performance on most Android devices</li><li><strong>Regular updates</strong> with new features, offers and improvements</li><li><strong>Simple and user-friendly</strong> interface for beginners and regular players</li></ul>`;
 
@@ -996,23 +1032,21 @@
         const spinDesc = getSpinWinDescription(app.name, displayBonus, app.category);
         const extraBenefits = getExtraBenefits(app.name, displayBonus, app.category);
         const warningVal = getWarningValue(app.name);
-        const number = idx + 1;
         html += `
           <div class="app-card" data-app-index="${idx}">
             <div class="card-img">
               <img src="${app.img}" alt="${app.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=App'">
-              <span class="img-number">${number}</span>
             </div>
             <div class="card-app-name">${app.name}</div>
             <div class="card-stats">
-              <div class="card-stat"><div class="card-stat-value ${colors.ratingClass}">${stats.rating}</div><div class="card-stat-label">Rating</div></div>
-              <div class="card-stat"><div class="card-stat-value ${colors.sizeClass}">${stats.size}</div><div class="card-stat-label">Size</div></div>
-              <div class="card-stat"><div class="card-stat-value ${colors.votesClass}">${stats.votes}</div><div class="card-stat-label">Votes</div></div>
-              <div class="card-stat"><div class="card-stat-value ${colors.bonusClass}">${displayBonus}</div><div class="card-stat-label">Bonus</div></div>
+              <div class="card-stat"><div class="card-stat-value ${colors.ratingClass}">${stats.rating}</div><div class="card-stat-label rating-label">Rating</div></div>
+              <div class="card-stat"><div class="card-stat-value ${colors.sizeClass}">${stats.size}</div><div class="card-stat-label size-label">Size</div></div>
+              <div class="card-stat"><div class="card-stat-value ${colors.votesClass}">${stats.votes}</div><div class="card-stat-label votes-label">Votes</div></div>
+              <div class="card-stat"><div class="card-stat-value ${colors.bonusClass}">${displayBonus}</div><div class="card-stat-label bonus-label">Bonus</div></div>
             </div>
             <div class="card-info-row">
-              <div class="ci-item"><div class="ci-label">Sign Up Bonus</div><div class="ci-value bonus-c">₹${displayBonus}</div></div>
-              <div class="ci-item"><div class="ci-label">Min Withdrawal</div><div class="ci-value withdraw-c">₹${app.withdrawal}</div></div>
+              <div class="ci-item"><div class="ci-label bonus-label-c">Sign Up Bonus</div><div class="ci-value bonus-c">₹${displayBonus}</div></div>
+              <div class="ci-item"><div class="ci-label withdraw-label-c">Min Withdrawal</div><div class="ci-value withdraw-c">${app.withdrawal}</div></div>
             </div>
             <button class="download-btn" data-download-index="${idx}">DOWNLOAD ${app.name}</button>
             <div class="card-spin-desc">${spinDesc}</div>
@@ -1111,10 +1145,10 @@
               <img src="${selectedApp.img}" alt="${selectedApp.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/72?text=App'">
             </div>
             <div class="stats-row">
-              <div class="stat-item"><div class="stat-value" style="color:#22c55e;">${stats.rating}</div><div class="stat-label">Rating</div></div>
-              <div class="stat-item"><div class="stat-value" style="color:#06b6d4;">${stats.size}</div><div class="stat-label">Size</div></div>
-              <div class="stat-item"><div class="stat-value" style="color:#1e293b;">${stats.votes}</div><div class="stat-label">Votes</div></div>
-              <div class="stat-item"><div class="stat-value" style="color:#dc2626;">${bonusNum}</div><div class="stat-label">Bonus</div></div>
+              <div class="stat-item"><div class="stat-value" style="color:#22c55e;text-shadow:0 0 12px #22c55e;">${stats.rating}</div><div class="stat-label" style="color:#22c55e;text-shadow:0 0 8px #22c55e;">Rating</div></div>
+              <div class="stat-item"><div class="stat-value" style="color:#eab308;text-shadow:0 0 12px #eab308;">${stats.size}</div><div class="stat-label" style="color:#eab308;text-shadow:0 0 8px #eab308;">Size</div></div>
+              <div class="stat-item"><div class="stat-value" style="color:#06b6d4;text-shadow:0 0 12px #06b6d4;">${stats.votes}</div><div class="stat-label" style="color:#06b6d4;text-shadow:0 0 8px #06b6d4;">Votes</div></div>
+              <div class="stat-item"><div class="stat-value" style="color:#dc2626;text-shadow:0 0 12px #dc2626;">${bonusNum}</div><div class="stat-label" style="color:#dc2626;text-shadow:0 0 8px #dc2626;">Bonus</div></div>
             </div>
             <a href="${selectedApp.downloadUrl}" target="_blank" class="final-download-btn">DOWNLOAD ${selectedApp.name}</a>
             <div class="app-description">${description}<br><br><strong>Extra Benefits:</strong> ${extraBenefits}</div>
