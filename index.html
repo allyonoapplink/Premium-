@@ -278,13 +278,13 @@
     .app-card .card-img img { width: 100%; height: 100%; object-fit: cover; }
     .app-card .card-app-name { font-size: 1.1rem; font-weight: 800; background: linear-gradient(125deg, #1e562a, #2c4c3b); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 8px; }
     
-    /* Premium number badge on image - small size */
+    /* Number badge on image - black color, left side */
     .img-number {
       position: absolute;
       top: -6px;
-      right: -6px;
-      background: #000;
-      color: #fff;
+      left: -6px;
+      background: #000000;
+      color: #ffffff;
       font-weight: 800;
       font-size: 0.6rem;
       width: 24px;
@@ -299,10 +299,9 @@
       font-family: 'Segoe UI', sans-serif;
     }
     body.dark-theme .img-number {
-      background: #22c55e;
-      color: #0a1a0a;
+      background: #000000;
+      color: #ffffff;
       border-color: #22c55e;
-      box-shadow: 0 0 20px rgba(34,197,94,0.4);
     }
     
     .app-card .card-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; background: #fef4e6; padding: 8px 10px; border-radius: 40px; margin: 6px 0 10px; }
@@ -720,12 +719,9 @@
     </a>
   </div>
   <a href="https://t.me/yonogamestite" target="_blank" rel="noopener noreferrer" class="telegram-nav-btn" id="telegramNavBtn">
-    <img src="https://i.ibb.co/S7P1xcCq/telegram-icon.jpg" alt="Telegram" loading="eager">
-    Telegram
+    <img src="https://i.ibb.co/S7P1xcCq/telegram-icon.jpg" alt="Telegram" loading="eager"> Telegram
   </a>
-  <div class="dark-toggle-btn" id="darkThemeToggle">
-    <span class="moon-icon">🌙</span> Dark
-  </div>
+  <div class="dark-toggle-btn" id="darkThemeToggle"><span class="moon-icon">🌙</span> Dark</div>
 </nav>
 
 <div class="app-tags-wrapper">
@@ -898,7 +894,6 @@
       (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} Diwa 777 Bonus<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} cashback.</div></div>`
     ];
 
-    // ===== GENERATE FULL TAGS HTML =====
     function createTagsHTML(appName, bonusNum, appIndex) {
       const modelFn = tagModelList[appIndex % tagModelList.length];
       const bonusArr = [];
