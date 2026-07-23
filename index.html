@@ -3,139 +3,737 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Yono Games – 34 Premium Apps</title>
+  <title>Yono Games Site – Download 567 Slots, Rummy, Casino & Teen Patti Apps | ₹45 Bonus</title>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', 'Inter', system-ui, sans-serif; }
-    body { background: #0b1219; min-height: 100vh; padding-bottom: 30px; transition: background 0.3s; }
-    body.dark-theme { background: #0b1219; }
-    /* top nav */
-    .top-nav { background: #1a2632; padding: 6px 10px; display: flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; border-bottom: 2px solid #2a3a4a; position: sticky; top:0; z-index:100; }
-    .nav-logo { display:flex; align-items:center; gap:6px; }
-    .nav-logo img { width:32px; height:32px; border-radius:8px; border:2px solid #22c55e; }
-    .nav-logo .site-title { font-weight:800; font-size:0.7rem; color:#22c55e; }
-    .nav-links { display:flex; align-items:center; flex-wrap:wrap; gap:2px 6px; }
-    .top-nav a { color:#d0d9e8; text-decoration:none; font-weight:700; font-size:0.55rem; padding:3px 8px; border-radius:40px; border:1px solid transparent; transition:0.2s; }
-    .top-nav a:hover { background:#2a3a4a; border-color:#4a5a6a; }
-    .top-nav a.active { background:#1e2d3d; color:#e8edf2; border-color:#4a6a8a; }
-    .telegram-nav-btn { display:inline-flex; align-items:center; gap:4px; background:linear-gradient(135deg,#0088cc,#00acee); border:none; padding:2px 10px 2px 8px; border-radius:40px; color:#fff; font-weight:700; font-size:0.5rem; text-decoration:none; transition:0.3s; margin-left:auto; box-shadow:0 2px 10px rgba(0,136,204,0.3); }
-    .telegram-nav-btn:hover { transform:scale(1.03); }
-    .telegram-nav-btn img { width:16px; height:16px; border-radius:50%; object-fit:cover; animation:telegramPulse 2.5s infinite; }
-    @keyframes telegramPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
-    .dark-toggle-btn { display:inline-flex; align-items:center; gap:4px; background:#2a2a4e; border:1px solid #4a4a6a; padding:2px 10px; border-radius:40px; color:#d0d0e0; font-weight:700; font-size:0.5rem; cursor:pointer; transition:0.3s; margin-left:6px; }
-    .dark-toggle-btn:hover { background:#3a3a5e; }
-    .dark-toggle-btn .moon-icon { font-size:0.7rem; }
-    body.dark-theme .dark-toggle-btn { background:#d0d0e8; color:#1a1a2e; border-color:#8a8aca; }
-    body.dark-theme .dark-toggle-btn:hover { background:#e8e8ff; }
-    /* app tags scroll */
-    .app-tags-wrapper { padding:8px 12px; background:#121c26; border-bottom:1px solid #2a3a4a; }
-    .app-tags-scroll { display:flex; gap:8px; overflow-x:auto; padding:4px 0 8px; scrollbar-width:thin; scrollbar-color:#22c55e transparent; -webkit-overflow-scrolling:touch; flex-wrap:nowrap; animation:scrollTags 30s linear infinite; }
-    .app-tags-scroll:hover { animation-play-state:paused; }
-    @keyframes scrollTags { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-    .app-tags-scroll::-webkit-scrollbar { height:3px; }
-    .app-tags-scroll::-webkit-scrollbar-thumb { background:#22c55e; border-radius:4px; }
-    .app-tag-item { flex:0 0 auto; background:linear-gradient(135deg,#0a2e1d,#1a6e3a); border:1px solid #ffcf8a; color:#e8f5e9; padding:4px 16px; border-radius:40px; font-size:0.6rem; font-weight:700; white-space:nowrap; cursor:pointer; transition:0.3s; }
-    .app-tag-item:hover { background:linear-gradient(135deg,#ffcf8a,#f5a623); color:#0a2e1d; transform:scale(1.05); }
-    .container { max-width:100%; margin:12px auto; padding:0 8px; }
-    .cards-grid { display:flex; flex-wrap:wrap; gap:16px; justify-content:center; padding:8px 0 16px; }
-    /* each app card – unique via inline styles or classes */
-    .app-card { width:100%; max-width:300px; border-radius:20px; padding:16px 12px 14px; text-align:center; position:relative; background:#1a2632; border:2px solid #2a3a4a; box-shadow:0 4px 14px rgba(0,0,0,0.5); transition:0.3s; }
-    .app-card:hover { transform:translateY(-4px); box-shadow:0 8px 28px rgba(0,0,0,0.7); border-color:#ffcf8a; }
-    /* unique styles per card index will be applied via JS */
-    .app-card .app-number { position:absolute; top:-8px; right:-8px; background:#22c55e; color:#0a1a0a; font-weight:800; font-size:0.6rem; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid #ffcf8a; box-shadow:0 0 20px rgba(34,197,94,0.4); }
-    .app-card .bonus-top { font-size:1.4rem; font-weight:800; color:#dc2626; text-shadow:0 0 12px #dc2626; margin-bottom:4px; }
-    .app-card .app-name { font-size:1rem; font-weight:700; margin-bottom:6px; background:linear-gradient(125deg,#8bc34a,#4caf50); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-    .app-card .info-mix { font-size:0.7rem; color:#c0d0c0; line-height:1.5; margin:6px 0 8px; text-align:left; }
-    .app-card .info-mix strong { color:#22c55e; }
-    .app-card .download-btn { display:block; width:100%; padding:8px 0; margin-top:10px; background:linear-gradient(135deg,#22c55e,#06b6d4); border:none; border-radius:60px; color:#fff; font-weight:800; font-size:0.7rem; cursor:pointer; transition:0.25s; box-shadow:0 0 20px rgba(34,197,94,0.3); }
-    .app-card .download-btn:hover { transform:scale(0.97); box-shadow:0 0 30px rgba(6,182,212,0.5); }
-    .app-card .safety { font-size:0.55rem; color:#8899aa; margin-top:8px; border-top:1px solid #2a3a4a; padding-top:8px; text-align:left; }
-    .app-card .tags-premium { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin:8px 0; }
-    .app-card .tag-premium { background:#0f1a24; border:1px solid #4a6a8a; border-radius:40px; padding:3px 10px; font-size:0.5rem; font-weight:700; color:#b0c0d0; text-transform:uppercase; letter-spacing:0.3px; box-shadow:0 0 8px rgba(74,106,138,0.3); }
-    .app-card .tag-premium.glow-green { border-color:#22c55e; box-shadow:0 0 12px #22c55e; color:#22c55e; }
-    .app-card .tag-premium.glow-cyan { border-color:#06b6d4; box-shadow:0 0 12px #06b6d4; color:#06b6d4; }
-    .app-card .tag-premium.glow-yellow { border-color:#eab308; box-shadow:0 0 12px #eab308; color:#eab308; }
-    .app-card .tag-premium.glow-pink { border-color:#ec4899; box-shadow:0 0 12px #ec4899; color:#ec4899; }
-    /* modal */
-    .info-modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:300; justify-content:center; align-items:center; }
-    .info-modal-content { background:#1a2632; max-width:400px; width:92%; border-radius:28px; padding:20px 16px; max-height:80vh; overflow-y:auto; border:1px solid #ffcf8a; position:relative; color:#d0d9e8; }
-    .info-modal-content h4 { color:#22c55e; border-left:4px solid #ff8c00; padding-left:12px; margin-bottom:12px; }
-    .info-modal-content p { font-size:0.8rem; line-height:1.5; margin:10px 0; }
-    .modal-close-btn { position:absolute; top:12px; right:14px; background:#2a3a4a; color:#fff; border:none; width:32px; height:32px; border-radius:50%; font-size:1.2rem; cursor:pointer; }
-    .modal-close-btn:hover { background:#3a4a5a; }
-    .hidden { display:none !important; }
-    .download-page { background:#1a2632; border-radius:28px; padding:18px 14px; margin-bottom:20px; border:1px solid #4a5a3a; }
-    .download-header { text-align:center; border-bottom:2px dashed #4a5a3a; padding-bottom:14px; margin-bottom:18px; }
-    .download-header .tag-row { display:flex; flex-wrap:wrap; justify-content:center; gap:6px 10px; }
-    .download-header .app-name-tag { font-weight:800; font-size:0.85rem; color:#22c55e; background:#0f1a24; padding:3px 14px; border-radius:40px; border:1px solid #86efac; }
-    .download-header .bonus-tag { font-weight:700; font-size:0.7rem; color:#dc2626; background:#1a1a2a; padding:3px 12px; border-radius:40px; border:1px solid #fca5a5; }
-    .download-header .withdraw-tag { font-weight:700; font-size:0.7rem; color:#2563eb; background:#0f1a24; padding:3px 12px; border-radius:40px; border:1px solid #93c5fd; }
-    .app-highlight { background:#0f1a24; padding:18px 14px; border-radius:28px; margin:12px 0; text-align:center; }
-    .stats-row { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; background:#0f1a24; padding:10px 12px; border-radius:40px; margin:14px auto; }
-    .stat-item { text-align:center; min-width:54px; }
-    .stat-value { font-size:1rem; font-weight:800; color:#22c55e; }
-    .stat-label { font-size:0.55rem; font-weight:600; color:#6c7a5a; }
-    .final-download-btn { background:linear-gradient(135deg,#22c55e,#06b6d4); padding:12px 16px; font-size:0.85rem; font-weight:800; border-radius:60px; display:block; width:100%; margin:14px 0 12px; box-shadow:0 0 20px rgba(34,197,94,0.3); text-decoration:none; color:white; transition:0.25s; border:none; cursor:pointer; }
-    .final-download-btn:hover { transform:scale(0.97); box-shadow:0 0 30px rgba(6,182,212,0.5); }
-    .app-description { background:#0f1a24; padding:14px 16px; border-radius:24px; text-align:left; margin:14px 0; font-size:0.8rem; line-height:1.5; color:#c0d0c0; }
-    .other-apps-title { font-size:1.1rem; font-weight:800; margin:24px 0 12px; color:#e8edf2; border-left:4px solid #2ecc71; padding-left:12px; }
-    .other-apps-grid { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; background:#0f1a24; padding:12px 10px; border-radius:28px; }
-    .other-card { background:#1a2632; border-radius:24px; padding:12px 10px; width:160px; border:1px solid #2a4a3a; text-align:center; }
-    .other-card .app-name { font-size:0.8rem; margin:6px 0 4px; font-weight:800; color:#8bc34a; }
-    .other-card .withdraw-green { font-size:0.55rem; font-weight:700; color:#16a34a; }
-    .other-card .signup-bonus-small { font-size:0.55rem; font-weight:700; color:#dc2626; }
-    .small-download { background:linear-gradient(135deg,#22c55e,#06b6d4); font-size:0.65rem; padding:6px 0; margin-top:8px; border:none; color:#fff; display:block; width:100%; border-radius:60px; font-weight:700; cursor:pointer; transition:0.25s; box-shadow:0 0 15px rgba(34,197,94,0.2); }
-    .small-download:hover { transform:scale(0.97); }
-    .footer-note { text-align:center; background:#0f1a24; border-radius:40px; padding:10px; font-weight:500; font-size:0.6rem; margin-top:14px; color:#b9ddcb; }
-    .detail-warning-led { margin-top:14px; padding:8px 14px; border-radius:40px; background:linear-gradient(135deg,#1a3a2a,#0a2a1a); border:2px solid #22c55e; cursor:pointer; text-align:center; display:flex; align-items:center; justify-content:center; gap:10px; user-select:none; }
-    .detail-warning-led .led-icon { animation:ledPulse 1.8s infinite; }
-    .detail-warning-led .led-text { color:#e8f5e9; font-weight:700; font-size:0.75rem; }
-    .detail-warning-led .led-arrow { color:#86efac; transition:transform 0.3s; }
-    .detail-warning-led.open .led-arrow { transform:rotate(180deg); }
-    .detail-warning-content { display:none; margin-top:10px; padding:10px 14px; border-radius:14px; background:#1a1a2a; border:2px solid #8a4a4a; border-left:6px solid #dc2626; color:#d0c0c0; font-size:0.7rem; }
-    .detail-warning-content.open { display:block; }
-    footer { background:#0a1a1a; color:#b9ddcb; text-align:center; padding:20px; margin-top:30px; border-top:2px solid #4a5a3a; }
-    footer .marquee-bg { background:#000; border-radius:60px; padding:12px 16px; margin-bottom:16px; border:2px solid #4a5a3a; overflow:hidden; }
-    footer .marquee-bg marquee { color:#fff; font-weight:700; font-size:0.75rem; letter-spacing:0.5px; }
-    @keyframes ledPulse { 0%,100%{text-shadow:0 0 5px #22c55e,0 0 10px #22c55e} 50%{text-shadow:0 0 15px #06b6d4,0 0 30px #06b6d4,0 0 45px #22c55e} }
-    @media (min-width:480px){ .app-card { max-width:280px; } }
-    @media (min-width:768px){ .app-card { max-width:250px; } }
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif; }
+    body { background: linear-gradient(145deg, #f0f4fa 0%, #e2e8f0 100%); min-height: 100vh; padding-bottom: 30px; transition: background 0.3s, color 0.3s; }
+    
+    body.dark-theme {
+      background: #0b1219;
+      color: #e8edf2;
+    }
+    body.dark-theme .top-nav { background: #1a2632; border-bottom-color: #2a3a4a; }
+    body.dark-theme .top-nav a { color: #d0d9e8; }
+    body.dark-theme .top-nav a:hover { background: #2a3a4a; border-color: #4a5a6a; }
+    body.dark-theme .top-nav a.active { background: #1e2d3d; color: #e8edf2; border-color: #4a6a8a; }
+    body.dark-theme .app-tags-wrapper { background: #121c26; border-bottom-color: #2a3a4a; }
+    body.dark-theme .app-tag-item { background: linear-gradient(135deg, #1a2a1a, #2a4a2a); border-color: #4a7a4a; color: #c8e6c9; }
+    body.dark-theme .app-tag-item:hover { background: linear-gradient(135deg, #4a7a4a, #5a9a4a); color: #0a1a0a; }
+    body.dark-theme .app-card { background: #1a2632; border-color: #2a3a4a; box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
+    body.dark-theme .app-card:hover { border-color: #ffcf8a; }
+    body.dark-theme .app-card .card-stats { background: #0f1a24; }
+    body.dark-theme .app-card .card-info-row { background: #0f1a24; border-color: #2a4a3a; }
+    body.dark-theme .app-card .card-benefits { background: #0f1a24; color: #b0d0b0; }
+    body.dark-theme .app-card .card-app-name { background: linear-gradient(125deg, #8bc34a, #4caf50); background-clip: text; -webkit-background-clip: text; color: transparent; }
+    body.dark-theme .app-card .card-spin-desc { color: #c0d0c0; }
+    body.dark-theme .app-card .download-btn { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 20px rgba(34,197,94,0.3); }
+    body.dark-theme .app-card .download-btn:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
+    body.dark-theme .warning-led-toggle { background: linear-gradient(135deg, #1a3a2a, #0a2a1a); border-color: #4a8a4a; }
+    body.dark-theme .warning-led-toggle .led-text { color: #c8e6c9; }
+    body.dark-theme .warning-content { background: #1a1a2a; border-color: #8a4a4a; color: #d0c0c0; }
+    body.dark-theme .download-page { background: #1a2632; border-color: #4a5a3a; }
+    body.dark-theme .download-header { border-bottom-color: #4a5a3a; }
+    body.dark-theme .app-highlight { background: #0f1a24; }
+    body.dark-theme .stats-row { background: #0f1a24; }
+    body.dark-theme .app-description { background: #0f1a24; color: #c0d0c0; }
+    body.dark-theme .tag-box { background: #0f1a24; border-color: #2a3a4a; }
+    body.dark-theme .tag-box .tag-content { color: #b0c0d0; }
+    body.dark-theme .other-apps-grid { background: #0f1a24; }
+    body.dark-theme .other-card { background: #1a2632; border-color: #2a4a3a; }
+    body.dark-theme .footer-note { background: #0f1a24; }
+    body.dark-theme .premium-toggle-about, body.dark-theme .premium-toggle-contact, body.dark-theme .premium-toggle-disclaimer, body.dark-theme .premium-toggle-tags { background: #0f1a24; border-color: #4a5a6a; }
+    body.dark-theme .info-modal-content { background: #1a2632; color: #d0d9e8; }
+    body.dark-theme .modal-close-btn { background: #2a3a4a; color: #e8edf2; }
+    body.dark-theme .contact-table td { background: #1a2632; color: #d0d9e8; border-bottom-color: #2a3a4a; }
+    body.dark-theme .contact-table th { background: #0a1a2a; color: #e8edf2; }
+    body.dark-theme .disclaimer-section { background: #0f1a24; border-left-color: #8a6a3a; }
+    body.dark-theme .disclaimer-box { background: #0f1a24; border-color: #4a5a3a; }
+    body.dark-theme .detail-warning-led { background: linear-gradient(135deg, #1a3a2a, #0a2a1a); border-color: #4a8a4a; }
+    body.dark-theme .detail-warning-led .led-text { color: #c8e6c9; }
+    body.dark-theme .detail-warning-content { background: #1a1a2a; border-color: #8a4a4a; color: #d0c0c0; }
+    body.dark-theme footer { background: #0a1a1a; border-top-color: #4a5a3a; }
+    body.dark-theme footer .marquee-bg { background: #0a0a0a; border-color: #4a5a3a; }
+    body.dark-theme .nav-logo .site-title { color: #8bc34a; }
+    body.dark-theme .app-card .card-stat-value.rating-green { color: #22c55e; text-shadow: 0 0 12px #22c55e; }
+    body.dark-theme .app-card .card-stat-value.size-cyan { color: #06b6d4; text-shadow: 0 0 12px #06b6d4; }
+    body.dark-theme .app-card .card-stat-value.votes-dark { color: #ec4899; text-shadow: 0 0 12px #ec4899; }
+    body.dark-theme .app-card .card-stat-value.bonus-green { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
+    body.dark-theme .app-card .card-stat-value.bonus-red { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
+    body.dark-theme .app-card .card-stat-value.votes-black { color: #ec4899; text-shadow: 0 0 12px #ec4899; }
+    body.dark-theme .final-download-btn { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 20px rgba(34,197,94,0.3); }
+    body.dark-theme .final-download-btn:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
+    body.dark-theme .small-download { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
+    body.dark-theme .small-download:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); }
+    
+    .top-nav { 
+      background: #ffffff; 
+      padding: 6px 10px; 
+      display: flex; 
+      justify-content: flex-start; 
+      align-items: center; 
+      flex-wrap: wrap; 
+      gap: 4px 8px;
+      border-bottom: 2px solid #e2e8f0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100; 
+    }
+    .nav-logo { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; object-fit: cover; border: 2px solid #22c55e; }
+    .nav-logo .site-title { font-weight: 800; font-size: 0.7rem; color: #22c55e; letter-spacing: 0.3px; white-space: nowrap; }
+    
+    .nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: 2px 6px; }
+    .top-nav a { 
+      color: #0a0a0a; 
+      text-decoration: none; 
+      font-weight: 700; 
+      font-size: 0.55rem; 
+      padding: 3px 8px; 
+      border-radius: 40px; 
+      cursor: pointer; 
+      background: transparent; 
+      white-space: nowrap; 
+      transition: 0.2s; 
+      letter-spacing: 0.2px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .top-nav a:hover { background: #f1f5f9; border-color: #d0d9e8; }
+    .top-nav a.active { background: #eef2ff; color: #1e293b; border-color: #b3c8e6; }
+    
+    .icon-about, .icon-contact, .icon-disclaimer {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: 0.2s;
+    }
+    .icon-about { background: #8b5cf6; box-shadow: 0 0 6px rgba(139,92,246,0.5); }
+    .icon-contact { background: #3b82f6; box-shadow: 0 0 6px rgba(59,130,246,0.5); }
+    .icon-disclaimer { background: #ef4444; box-shadow: 0 0 6px rgba(239,68,68,0.5); }
+    .top-nav a:hover .icon-about { box-shadow: 0 0 12px rgba(139,92,246,0.8); }
+    .top-nav a:hover .icon-contact { box-shadow: 0 0 12px rgba(59,130,246,0.8); }
+    .top-nav a:hover .icon-disclaimer { box-shadow: 0 0 12px rgba(239,68,68,0.8); }
+    
+    .telegram-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: linear-gradient(135deg, #0088cc, #00acee);
+      border: none;
+      padding: 2px 10px 2px 8px;
+      border-radius: 40px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.5rem;
+      text-decoration: none;
+      transition: 0.3s;
+      cursor: pointer;
+      white-space: nowrap;
+      margin-left: auto;
+      box-shadow: 0 2px 10px rgba(0,136,204,0.3);
+      letter-spacing: 0.3px;
+    }
+    .telegram-nav-btn:hover {
+      background: linear-gradient(135deg, #006699, #0099cc);
+      box-shadow: 0 4px 16px rgba(0,136,204,0.4);
+      transform: scale(1.03);
+    }
+    .telegram-nav-btn img {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      animation: telegramPulse 2.5s ease-in-out infinite;
+    }
+    .telegram-nav-btn img:hover {
+      animation-play-state: paused;
+      transform: scale(1.1);
+    }
+    @keyframes telegramPulse {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.06) rotate(-2deg); }
+      50% { transform: scale(1.1) rotate(0deg); }
+      75% { transform: scale(1.06) rotate(2deg); }
+    }
+    
+    .dark-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: #1a1a2e;
+      border: 1px solid #4a4a6a;
+      padding: 2px 10px 2px 8px;
+      border-radius: 40px;
+      color: #d0d0e0;
+      font-weight: 700;
+      font-size: 0.5rem;
+      text-decoration: none;
+      transition: 0.3s;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      letter-spacing: 0.3px;
+      margin-left: 6px;
+    }
+    .dark-toggle-btn:hover {
+      background: #2a2a4e;
+      border-color: #8a8aca;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      transform: scale(1.02);
+    }
+    .dark-toggle-btn .moon-icon { font-size: 0.7rem; }
+    body.dark-theme .dark-toggle-btn {
+      background: #d0d0e8;
+      border-color: #8a8aca;
+      color: #1a1a2e;
+    }
+    body.dark-theme .dark-toggle-btn:hover {
+      background: #e8e8ff;
+      border-color: #aaaadd;
+    }
+    
+    .app-tags-wrapper {
+      padding: 8px 12px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .app-tags-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px 0 8px 0;
+      scrollbar-width: thin;
+      scrollbar-color: #22c55e transparent;
+      -webkit-overflow-scrolling: touch;
+      flex-wrap: nowrap;
+      scroll-behavior: smooth;
+      animation: scrollTags 30s linear infinite;
+    }
+    .app-tags-scroll:hover {
+      animation-play-state: paused;
+    }
+    @keyframes scrollTags {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .app-tags-scroll::-webkit-scrollbar { height: 3px; }
+    .app-tags-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 4px; }
+    .app-tags-scroll::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 4px; }
+    .app-tag-item {
+      flex: 0 0 auto;
+      background: linear-gradient(135deg, #0a2e1d, #1a6e3a);
+      border: 1px solid #ffcf8a;
+      color: #e8f5e9;
+      padding: 4px 16px;
+      border-radius: 40px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      white-space: nowrap;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-radius: 40px;
+    }
+    .app-tag-item:hover {
+      background: linear-gradient(135deg, #ffcf8a, #f5a623);
+      color: #0a2e1d;
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(255,207,138,0.3);
+    }
+    
+    .container { max-width: 100%; margin: 12px auto; padding: 0 8px; }
+    .cards-grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; padding: 8px 0 16px; }
+    
+    .app-card {
+      background: white;
+      border-radius: 24px;
+      padding: 18px 14px 20px;
+      width: 100%;
+      max-width: 340px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      border: 1px solid #eef2f8;
+      text-align: center;
+      position: relative;
+    }
+    .app-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.10); border-color: #ffcf8a; }
+    
+    .app-card .card-img { width: 64px; height: 64px; margin: 0 auto 10px; background: linear-gradient(145deg, #fff5e6, #ffe6cc); border-radius: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.04); }
+    .app-card .card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .app-card .card-app-name { font-size: 1.1rem; font-weight: 800; background: linear-gradient(125deg, #1e562a, #2c4c3b); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 8px; }
+    
+    .app-card .card-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; background: #fef4e6; padding: 8px 10px; border-radius: 40px; margin: 6px 0 10px; }
+    .app-card .card-stat { text-align: center; min-width: 48px; }
+    .app-card .card-stat-value { font-size: 0.85rem; font-weight: 800; }
+    .app-card .card-stat-label { font-size: 0.4rem; font-weight: 700; color: #6c7a5a; letter-spacing: 0.2px; text-transform: uppercase; }
+    
+    .app-card .card-info-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; background: #f0f9f0; padding: 6px 10px; border-radius: 40px; border: 1px solid #d4e6d4; margin: 6px 0 10px; }
+    .app-card .ci-item { text-align: center; }
+    .app-card .ci-label { font-size: 0.4rem; font-weight: 700; color: #6c7a5a; text-transform: uppercase; letter-spacing: 0.2px; }
+    .app-card .ci-value { font-size: 0.75rem; font-weight: 800; }
+    .app-card .ci-value.bonus-c { color: #dc2626; }
+    .app-card .ci-value.withdraw-c { color: #06b6d4; }
+    
+    .app-card .download-btn { display: block; width: 100%; text-align: center; margin-top: 10px; padding: 10px 0; background: #0a0a0a; color: white; border: none; border-radius: 60px; font-weight: 800; font-size: 0.75rem; transition: 0.25s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; letter-spacing: 0.3px; }
+    .app-card .download-btn:hover { background: #1a1a1a; transform: scale(0.97); }
+    
+    .app-card .card-spin-desc { font-size: 0.7rem; color: #2d3e2b; line-height: 1.5; margin: 6px 0 4px; text-align: left; padding: 0 2px; }
+    .app-card .card-spin-desc strong { color: #1e562a; }
+    .app-card .card-benefits { font-size: 0.65rem; color: #1e562a; line-height: 1.5; margin: 4px 0 6px; text-align: left; padding: 6px 10px; background: #f0f9f0; border-radius: 12px; border-left: 3px solid #22c55e; }
+    .app-card .card-benefits strong { color: #0a2e1d; }
+    
+    .app-number {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: #000;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.65rem;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #ffcf8a;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+    body.dark-theme .app-number {
+      background: #22c55e;
+      color: #0a1a0a;
+      border-color: #22c55e;
+      box-shadow: 0 0 20px rgba(34,197,94,0.4);
+    }
+    
+    .warning-led-toggle {
+      margin-top: 12px;
+      padding: 6px 12px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #0a2e1d, #0d5c2e);
+      border: 2px solid #22c55e;
+      box-shadow: 0 0 15px rgba(34,197,94,0.3), inset 0 0 15px rgba(34,197,94,0.05);
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      user-select: none;
+    }
+    .warning-led-toggle:hover {
+      box-shadow: 0 0 25px rgba(34,197,94,0.5), 0 0 50px rgba(6,182,212,0.2);
+      transform: scale(1.02);
+      border-color: #06b6d4;
+    }
+    .warning-led-toggle .led-icon {
+      font-size: 1rem;
+      display: inline-block;
+      animation: ledPulse 1.8s ease-in-out infinite;
+    }
+    .warning-led-toggle .led-text {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #e8f5e9;
+      letter-spacing: 0.3px;
+      text-shadow: 0 0 8px rgba(34,197,94,0.3);
+    }
+    .warning-led-toggle .led-arrow {
+      font-size: 0.6rem;
+      color: #86efac;
+      transition: transform 0.3s ease;
+    }
+    .warning-led-toggle.open .led-arrow {
+      transform: rotate(180deg);
+    }
+    
+    @keyframes ledPulse {
+      0%, 100% { text-shadow: 0 0 5px #22c55e, 0 0 10px #22c55e; }
+      50% { text-shadow: 0 0 15px #06b6d4, 0 0 30px #06b6d4, 0 0 45px #22c55e; }
+    }
+    
+    .warning-content {
+      display: none;
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #fef2f2, #fff5f5);
+      border: 2px solid #dc2626;
+      border-left: 6px solid #dc2626;
+      box-shadow: 0 2px 8px rgba(220,38,38,0.08);
+      text-align: left;
+      font-size: 0.6rem;
+      color: #333;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+    .warning-content.open {
+      display: block;
+      animation: fadeSlideDown 0.3s ease;
+    }
+    .warning-content strong { color: #dc2626; font-weight: 700; }
+    .warning-content .warning-icon { color: #dc2626; margin-right: 4px; }
+    
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .rating-green { color: #22c55e; }
+    .rating-pink { color: #ec4899; }
+    .size-cyan { color: #06b6d4; }
+    .size-yellow { color: #eab308; }
+    .votes-dark { color: #1e293b; }
+    .votes-black { color: #000000; }
+    .bonus-green { color: #22c55e; }
+    .bonus-red { color: #dc2626; }
+    
+    .hidden { display: none !important; }
+    .download-page {
+      background: white;
+      border-radius: 28px;
+      padding: 18px 14px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      margin-bottom: 20px;
+      border: 1px solid #ffe1b3;
+      animation: fadeSlideUp 0.4s ease;
+    }
+    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .download-header { text-align: center; border-bottom: 2px dashed #ffcf8a; padding-bottom: 14px; margin-bottom: 18px; }
+    .download-header .tag-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 10px; margin-top: 4px; }
+    .download-header .app-name-tag { font-weight: 800; font-size: 0.85rem; color: #22c55e; display: inline-block; background: #ecfdf5; padding: 3px 14px; border-radius: 40px; border: 1px solid #86efac; }
+    .download-header .bonus-tag { font-weight: 700; font-size: 0.7rem; color: #dc2626; display: inline-block; background: #fee2e2; padding: 3px 12px; border-radius: 40px; border: 1px solid #fca5a5; }
+    .download-header .withdraw-tag { font-weight: 700; font-size: 0.7rem; color: #2563eb; display: inline-block; background: #dbeafe; padding: 3px 12px; border-radius: 40px; border: 1px solid #93c5fd; }
+    
+    .app-highlight { background: #fff7e8; padding: 18px 14px; border-radius: 28px; margin: 12px 0; text-align: center; }
+    .stats-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; background: #fef4e6; padding: 10px 12px; border-radius: 40px; margin: 14px auto; max-width: 100%; }
+    .stat-item { text-align: center; min-width: 54px; }
+    .stat-value { font-size: 1rem; font-weight: 800; color: #1e562a; }
+    .stat-label { font-size: 0.55rem; font-weight: 600; color: #6c7a5a; letter-spacing: 0.3px; }
+    .final-download-btn { background: #0a0a0a; padding: 12px 16px; font-size: 0.85rem; font-weight: 800; border-radius: 60px; display: block; width: 100%; margin: 14px 0 12px 0; box-shadow: 0 6px 18px rgba(0,0,0,0.25); text-decoration: none; color: white; transition: 0.25s ease; letter-spacing: 0.4px; cursor: pointer; text-align: center; border: none; }
+    .final-download-btn:hover { transform: scale(0.97); background: #1a1a1a; }
+    .app-description { background: white; padding: 14px 16px; border-radius: 24px; text-align: left; margin: 14px 0; font-size: 0.8rem; line-height: 1.5; color: #2d3e2b; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+    
+    .tag-section { margin: 14px 0; }
+    .tag-grid { display: flex; flex-direction: column; gap: 12px; }
+    .tag-box { background: #f8fafc; border-radius: 16px; padding: 14px 16px; border-left: 4px solid #22c55e; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border-top: 1px solid #e9edf4; border-right: 1px solid #e9edf4; border-bottom: 1px solid #e9edf4; }
+    .tag-box .tag-title { font-weight: 700; font-size: 0.9rem; color: #0b1e33; margin-bottom: 4px; }
+    .tag-box .tag-content { font-size: 0.75rem; color: #334155; line-height: 1.6; }
+    .tag-box .tag-bonus { color: #dc2626; font-weight: 700; font-size: 0.85rem; }
+    .tag-divider { height: 1px; background: linear-gradient(to right, transparent, #d0d9e8, transparent); margin: 0 10px; }
+    
+    .tag-title-premium { color: #f59e0b; }
+    .tag-title-bonus { color: #dc2626; }
+    .tag-title-games { color: #2563eb; }
+    .tag-title-cash { color: #16a34a; }
+    .tag-title-vip { color: #8b5cf6; }
+    .tag-title-download { color: #06b6d4; }
+    
+    .five-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 10px 0 6px;
+    }
+    .five-options .opt-item {
+      background: #f1f5f9;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: #0b1e33;
+      border: 1px solid #d0d9e8;
+      cursor: pointer;
+      transition: 0.2s;
+      white-space: nowrap;
+    }
+    .five-options .opt-item:hover {
+      background: #0a2e1d;
+      color: white;
+      border-color: #0a2e1d;
+      transform: scale(1.05);
+    }
+    .five-options .opt-item .opt-bonus { color: #dc2626; font-weight: 700; }
+    .five-options .opt-item .opt-app { font-weight: 700; color: #1e562a; }
+    
+    .faq-item { margin-bottom: 12px; }
+    .faq-item .faq-q { font-weight: 700; color: #b45900; font-size: 0.8rem; margin-bottom: 2px; }
+    .faq-item .faq-a { font-size: 0.75rem; color: #334155; padding-left: 10px; }
+    
+    .other-apps-title { font-size: 1.1rem; font-weight: 800; margin: 24px 0 12px; color: #1e293b; border-left: 4px solid #2ecc71; padding-left: 12px; }
+    .other-apps-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 10px; background: #ecf9f0; padding: 12px 10px; border-radius: 28px; }
+    .other-card { background: #fefcf5; border-radius: 24px; padding: 12px 10px; width: 160px; transition: 0.2s; border: 1px solid #a8d5ba; text-align: center; }
+    .other-card .app-name { font-size: 0.8rem; margin: 6px 0 4px; font-weight: 800; color: #1e562a; }
+    .other-card .withdraw-green { font-size: 0.55rem; font-weight: 700; color: #16a34a; display: block; margin-top: 2px; }
+    .other-card .signup-bonus-small { font-size: 0.55rem; font-weight: 700; color: #dc2626; display: block; margin-top: 1px; }
+    .small-download { background: #0a0a0a; font-size: 0.65rem; padding: 6px 0; margin-top: 8px; text-decoration: none; color: white; display: block; width: 100%; text-align: center; border-radius: 60px; font-weight: 700; cursor: pointer; border: none; transition: 0.25s ease; box-shadow: 0 3px 10px rgba(0,0,0,0.20); }
+    .small-download:hover { background: #1a1a1a; transform: scale(0.97); }
+    .footer-note { text-align: center; background: #ecf9f0; border-radius: 40px; padding: 10px; font-weight: 500; font-size: 0.6rem; margin-top: 14px; }
+    
+    .detail-warning-led {
+      margin-top: 14px;
+      padding: 8px 14px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #0a2e1d, #0d5c2e);
+      border: 2px solid #22c55e;
+      box-shadow: 0 0 20px rgba(34,197,94,0.25), inset 0 0 20px rgba(34,197,94,0.03);
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      user-select: none;
+    }
+    .detail-warning-led:hover {
+      box-shadow: 0 0 30px rgba(34,197,94,0.4), 0 0 60px rgba(6,182,212,0.15);
+      transform: scale(1.01);
+      border-color: #06b6d4;
+    }
+    .detail-warning-led .led-icon { font-size: 1.2rem; animation: ledPulse 1.8s ease-in-out infinite; }
+    .detail-warning-led .led-text { font-size: 0.75rem; font-weight: 700; color: #e8f5e9; letter-spacing: 0.3px; text-shadow: 0 0 8px rgba(34,197,94,0.3); }
+    .detail-warning-led .led-arrow { font-size: 0.7rem; color: #86efac; transition: transform 0.3s ease; }
+    .detail-warning-led.open .led-arrow { transform: rotate(180deg); }
+    
+    .detail-warning-content {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #fef2f2, #fff5f5);
+      border: 2px solid #dc2626;
+      border-left: 6px solid #dc2626;
+      box-shadow: 0 2px 10px rgba(220,38,38,0.08);
+      text-align: left;
+      font-size: 0.7rem;
+      color: #333;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .detail-warning-content.open { display: block; animation: fadeSlideDown 0.3s ease; }
+    .detail-warning-content strong { color: #dc2626; font-weight: 700; }
+    
+    .info-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 300; justify-content: center; align-items: center; }
+    .info-modal-content { 
+      background: white; 
+      max-width: 400px; 
+      width: 92%; 
+      border-radius: 28px; 
+      padding: 20px 16px; 
+      text-align: left; 
+      animation: fadeInUp 0.3s ease; 
+      box-shadow: 0 30px 40px rgba(0,0,0,0.3); 
+      border: 1px solid #ffcf8a; 
+      max-height: 80vh; 
+      overflow-y: auto; 
+      position: relative;
+    }
+    .info-modal-content h4 { 
+      font-size: 1.2rem; 
+      margin-bottom: 12px; 
+      color: #1e562a; 
+      border-left: 4px solid #ff8c00; 
+      padding-left: 12px; 
+      padding-right: 30px;
+    }
+    .info-modal-content p { font-size: 0.8rem; line-height: 1.5; margin: 10px 0; color: #2d3e2b; }
+    .info-modal-content ul { margin-left: 16px; margin-top: 6px; }
+    .info-modal-content li { margin: 4px 0; font-size: 0.75rem; }
+    
+    .modal-close-btn {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      background: #000000;
+      color: white;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .modal-close-btn:hover { transform: scale(1.1); background: #1a1a1a; }
+    .modal-close-btn:active { transform: scale(0.92); }
+    
+    .premium-toggle-about, .premium-toggle-contact, .premium-toggle-disclaimer {
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin: 16px 0 12px 0;
+      transition: 0.3s;
+    }
+    .premium-toggle-about { border: 2px solid #8b5cf6; background: #f5f0ff; box-shadow: 0 2px 8px rgba(139,92,246,0.12); }
+    .premium-toggle-about:hover { box-shadow: 0 4px 16px rgba(139,92,246,0.20); }
+    .premium-toggle-contact { border: 2px solid #3b82f6; background: #f0f5ff; box-shadow: 0 2px 8px rgba(59,130,246,0.12); }
+    .premium-toggle-contact:hover { box-shadow: 0 4px 16px rgba(59,130,246,0.20); }
+    .premium-toggle-disclaimer { border: 2px solid #ef4444; background: #fff5f5; box-shadow: 0 2px 8px rgba(239,68,68,0.12); }
+    .premium-toggle-disclaimer:hover { box-shadow: 0 4px 16px rgba(239,68,68,0.20); }
+    
+    .premium-toggle-about summary, .premium-toggle-contact summary, .premium-toggle-disclaimer summary {
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      padding: 4px 0;
+    }
+    .premium-toggle-about summary::-webkit-details-marker,
+    .premium-toggle-contact summary::-webkit-details-marker,
+    .premium-toggle-disclaimer summary::-webkit-details-marker { display: none; }
+    
+    .premium-toggle-about summary .toggle-icon,
+    .premium-toggle-contact summary .toggle-icon,
+    .premium-toggle-disclaimer summary .toggle-icon {
+      display: inline-block;
+      transition: transform 0.25s ease;
+      font-size: 0.8rem;
+    }
+    .premium-toggle-about[open] summary .toggle-icon { transform: rotate(90deg); color: #8b5cf6; }
+    .premium-toggle-contact[open] summary .toggle-icon { transform: rotate(90deg); color: #3b82f6; }
+    .premium-toggle-disclaimer[open] summary .toggle-icon { transform: rotate(90deg); color: #ef4444; }
+    
+    .premium-toggle-about .details-content,
+    .premium-toggle-contact .details-content,
+    .premium-toggle-disclaimer .details-content {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 2px dashed;
+    }
+    .premium-toggle-about .details-content { border-color: #8b5cf6; }
+    .premium-toggle-contact .details-content { border-color: #3b82f6; }
+    .premium-toggle-disclaimer .details-content { border-color: #ef4444; }
+    
+    .contact-table { width: 100%; border-collapse: collapse; margin: 12px 0; background: linear-gradient(145deg, #fff9f0, #ffe6cc); border-radius: 12px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
+    .contact-table th, .contact-table td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #ffcf8a; font-size: 0.8rem; }
+    .contact-table th { background: #0a2e1d; color: white; font-weight: 700; letter-spacing: 0.3px; }
+    .contact-table td { background: white; }
+    .contact-table tr:last-child td { border-bottom: none; }
+    .contact-email { color: #d50000; font-weight: 700; text-decoration: none; }
+    .contact-email:hover { text-decoration: underline; }
+    .contact-telegram { color: #0088cc; font-weight: 700; text-decoration: none; }
+    .contact-telegram:hover { text-decoration: underline; }
+    
+    .disclaimer-section { margin: 12px 0; padding: 10px 12px; border-radius: 12px; background: #f8f9fa; border-left: 4px solid #ff8c00; }
+    .disclaimer-section h4 { color: #b45900; font-size: 0.95rem; margin-bottom: 4px; }
+    .disclaimer-box { background: #fff7e8; padding: 8px 12px; border-radius: 10px; margin: 8px 0; border: 1px solid #ffcf8a; }
+    
+    .tag-template { display: none; }
+    
+    .premium-toggle-tags {
+      border: 2px solid #8b5cf6;
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin: 12px 0 8px 0;
+      background: #f5f0ff;
+      box-shadow: 0 2px 8px rgba(139,92,246,0.12);
+      transition: 0.3s;
+    }
+    .premium-toggle-tags:hover {
+      box-shadow: 0 4px 16px rgba(139,92,246,0.20);
+    }
+    .premium-toggle-tags summary {
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      padding: 4px 0;
+    }
+    .premium-toggle-tags summary::-webkit-details-marker {
+      display: none;
+    }
+    .premium-toggle-tags summary .toggle-icon {
+      display: inline-block;
+      transition: transform 0.25s ease;
+      font-size: 0.8rem;
+      color: #8b5cf6;
+    }
+    .premium-toggle-tags[open] summary .toggle-icon {
+      transform: rotate(90deg);
+    }
+    .premium-toggle-tags .details-content {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 2px dashed #8b5cf6;
+    }
+    
+    @media (min-width: 480px) {
+      .app-card { max-width: 320px; }
+      .nav-logo .site-title { font-size: 0.85rem; }
+      .top-nav a { font-size: 0.65rem; padding: 4px 12px; }
+      .telegram-nav-btn { font-size: 0.6rem; padding: 3px 12px 3px 10px; }
+      .telegram-nav-btn img { width: 20px; height: 20px; }
+      .dark-toggle-btn { font-size: 0.6rem; padding: 3px 12px 3px 10px; }
+    }
+    @media (min-width: 768px) {
+      .app-card { max-width: 280px; }
+    }
   </style>
 </head>
 <body>
 
 <nav class="top-nav">
   <div class="nav-logo">
-    <img src="https://i.ibb.co/1Y43Cq5N/logo-icon.jpg" alt="logo" loading="eager">
-    <span class="site-title">YONO GAMES</span>
+    <img src="https://i.ibb.co/1Y43Cq5N/logo-icon.jpg" alt="Yono Games Site Logo" loading="eager" fetchpriority="high">
+    <span class="site-title">YONO GAMES SITE</span>
   </div>
   <div class="nav-links">
     <a href="#" class="active" id="homeNavLink">HOME</a>
-    <a href="#" id="navAbout">About</a>
-    <a href="#" id="navContact">Contact</a>
-    <a href="#" id="navDisclaimer">Disclaimer</a>
+    <a href="#" id="navAbout"><span class="icon-about"></span> About</a>
+    <a href="#" id="navContact"><span class="icon-contact"></span> Contact</a>
+    <a href="#" id="navDisclaimer"><span class="icon-disclaimer"></span> Disclaimer</a>
   </div>
-  <a href="https://t.me/yonogamestite" target="_blank" class="telegram-nav-btn"><img src="https://i.ibb.co/S7P1xcCq/telegram-icon.jpg" alt="tg">Telegram</a>
-  <div class="dark-toggle-btn" id="darkThemeToggle"><span class="moon-icon">🌙</span> Dark</div>
+  <a href="https://t.me/yonogamestite" target="_blank" rel="noopener noreferrer" class="telegram-nav-btn" id="telegramNavBtn">
+    <img src="https://i.ibb.co/S7P1xcCq/telegram-icon.jpg" alt="Telegram" loading="eager">
+    Telegram
+  </a>
+  <div class="dark-toggle-btn" id="darkThemeToggle">
+    <span class="moon-icon">🌙</span> Dark
+  </div>
 </nav>
 
-<div class="app-tags-wrapper"><div class="app-tags-scroll" id="appTagsScroll"></div></div>
+<div class="app-tags-wrapper">
+  <div class="app-tags-scroll" id="appTagsScroll"></div>
+</div>
 
-<div id="customInfoModal" class="info-modal"><div class="info-modal-content"><button class="modal-close-btn" id="modalCloseBtn">✕</button><h4 id="modalTitle">Info</h4><div id="modalBody"></div></div></div>
+<div id="customInfoModal" class="info-modal">
+  <div class="info-modal-content">
+    <button class="modal-close-btn" id="modalCloseBtn">✕</button>
+    <h4 id="modalTitle">Information</h4>
+    <div id="modalBody"></div>
+  </div>
+</div>
 
 <div class="container" id="mainContainer">
   <div id="allAppsGrid" class="cards-grid"></div>
   <div id="downloadPageContainer" class="hidden"></div>
 </div>
 
-<footer>
-  <div class="marquee-bg"><marquee behavior="scroll" direction="left" scrollamount="4">567 Slots ✦ Jaiho 91 ✦ Rummy Ludo ✦ ABC Rummy ✦ Rummy 91 ✦ Love Rummy ✦ Bingo 101 ✦ Yono 777 ✦ Saga Slots ✦ Spin Crush ✦ Top Rummy ✦ Hello Rummy ✦ All Yono Games ✦ Rummy 365 ✦ Teen Patti Gold ✦ Teen Patti Master ✦ Yono Rummy ✦ Slots Winner ✦ Good Slots ✦ Diwa Slot ✦ GoGo Rummy ✦ Joy Rummy ✦ Spin Gold ✦ Yes Spin ✦ Yono Arcade ✦ SVIP 777 ✦ OK Rummy ✦ Hind 777 ✦ Bet 213 ✦ Boss Rummy ✦ Diwa VIP ✦ Diwa 777</marquee></div>
-  <div><a href="#" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">About</a> | <a href="#" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">Contact</a> | <a href="#" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">Disclaimer</a></div>
-  <div style="font-size:0.6rem;margin-top:8px;">© 2026/2030 <strong style="color:#ffcf8a;">yono games site.com</strong> — Play responsibly. 18+ only.</div>
-</footer>
-
 <script>
   (function() {
-    // 34 apps data
+    // ===== 34 APPS DATA =====
     const appsData = [
       { name: "Yono Games", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://yonogamesm.com/?code=LHS49AEHVMR&t=1784314209", img: "https://i.ibb.co/LXqV77rd/yono-games.jpg", category: "Slots" },
       { name: "INR Rummy", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://inrrummy.club/?code=JMQBV8TAPD7&t=1784298106", img: "https://i.ibb.co/Y7ZRkLFp/inr-rummy.jpg", category: "Rummy" },
@@ -173,51 +771,38 @@
       { name: "Diwa 777", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://sharediwa7771.top?pid=287747863&channel=2010001&t=pdd2&pkg=com.diwa777.app", img: "https://i.ibb.co/Kx2RKNvN/1000022725.jpg", category: "Slots" }
     ];
 
-    // generate unique styles per index
-    const colorSchemes = [
-      { border: '#22c55e', bg: '#1a2a1a', glow: '#22c55e', nameGrad: 'linear-gradient(135deg,#8bc34a,#4caf50)', bonusColor: '#dc2626' },
-      { border: '#06b6d4', bg: '#0a1a2a', glow: '#06b6d4', nameGrad: 'linear-gradient(135deg,#06b6d4,#22d3ee)', bonusColor: '#f59e0b' },
-      { border: '#eab308', bg: '#1a1a0a', glow: '#eab308', nameGrad: 'linear-gradient(135deg,#fbbf24,#f59e0b)', bonusColor: '#ec4899' },
-      { border: '#ec4899', bg: '#1a0a1a', glow: '#ec4899', nameGrad: 'linear-gradient(135deg,#f472b6,#ec4899)', bonusColor: '#22c55e' },
-      { border: '#8b5cf6', bg: '#0f0a1a', glow: '#8b5cf6', nameGrad: 'linear-gradient(135deg,#a78bfa,#8b5cf6)', bonusColor: '#06b6d4' },
-      { border: '#f97316', bg: '#1a0f0a', glow: '#f97316', nameGrad: 'linear-gradient(135deg,#fb923c,#f97316)', bonusColor: '#8b5cf6' },
-    ];
-
-    function getStyle(idx) {
-      return colorSchemes[idx % colorSchemes.length];
-    }
-
-    // generate info mix (Hindi + English) per app
-    function getInfoMix(appName, bonusNum, category) {
-      const catMap = { 'Slots':'स्लॉट मशीनें','Rummy':'रम्मी टेबल','Casino':'कैसीनो गेम','Spin':'स्पिन व्हील','Card':'कार्ड गेम','Bingo':'बिंगो हॉल','Arcade':'आर्केड गेम','Betting':'बेटिंग टेबल','VIP':'VIP रूम' };
-      const game = catMap[category] || 'गेम';
-      const lines = [
-        `${appName} – ₹${bonusNum} बोनस के साथ शानदार ${game} का आनंद लें। Play exciting ${category} games and win real cash.`,
-        `${appName} आपको देता है ₹${bonusNum} फ्री कैश! Experience premium ${game} and fast UPI withdrawals.`,
-        `${appName} में ₹${bonusNum} जॉइनिंग बोनस मिलता है। Spin, play & win with top ${game}. 24/7 support available.`,
-        `${appName} – ₹${bonusNum} वेलकम बोनस! Enjoy daily rewards, jackpots, and instant payouts.`,
-        `${appName} के साथ ₹${bonusNum} बोनस पाएं और ${game} में मास्टर बनें। Download now and start winning!`
+    // ===== UNIQUE SPIN & WIN DESCRIPTION PER APP =====
+    function getSpinWinDescription(appName, bonusNum, category) {
+      const catMap = { 'Slots':'slot machines','Rummy':'rummy tables','Casino':'casino games','Spin':'spin wheels','Card':'card games','Bingo':'bingo halls','Arcade':'arcade games','Betting':'betting tables','VIP':'VIP rooms' };
+      const gameType = catMap[category] || 'games';
+      const descs = [
+        `Spin & win with ${appName}! Huge jackpots, free spins, and ₹${bonusNum} joining bonus. Play premium ${gameType} and withdraw your winnings instantly.`,
+        `Play ${appName} and grab ₹${bonusNum} welcome bonus! Enjoy thrilling ${gameType}, daily rewards, and fast UPI withdrawals.`,
+        `${appName} gives you ₹${bonusNum} free cash on signup! Experience the best ${gameType}, win real money, and withdraw instantly.`,
+        `${appName} – ₹${bonusNum} joining bonus! Spin, play & win with premium ${gameType}. Fast payouts and 24/7 support.`,
+        `Download new update version ${appName} and grab ₹${bonusNum} welcome bonus! Enjoy thrilling ${gameType}, daily rewards, and fast withdrawals.`
       ];
-      return lines[Math.abs(bonusNum) % lines.length];
+      return descs[Math.abs(bonusNum) % descs.length];
     }
 
-    function getSafetyText(appName) {
-      return `Safety & Security: ${appName} uses standard encryption and secure payment systems. All transactions are protected. Play responsibly.`;
+    // ===== UNIQUE EXTRA BENEFITS PER APP (200-300 range, no referral) =====
+    function getExtraBenefits(appName, bonusNum, category) {
+      const benefits = [
+        `🎯 Daily login rewards • Cashback offers • Fast UPI withdrawals • 24/7 customer support • Exclusive ${appName} tournaments • Weekly bonus up to ₹${200 + (bonusNum % 50)}`,
+        `🎯 Welcome bonus • Daily free spins • Instant UPI payouts • VIP support • Weekly cashback offers • Monthly loyalty reward ₹${210 + (bonusNum % 60)}`,
+        `🎯 Daily rewards • Fast withdrawals • Priority support • Festival bonus offers • Weekly cashback • ₹${220 + (bonusNum % 40)} welcome bonus`,
+        `🎯 Login bonuses • Instant bank transfers • 24/7 help • Loyalty rewards • Daily spin bonuses • ₹${230 + (bonusNum % 70)} extra cash`,
+        `🎯 Free daily spins • Quick UPI withdrawals • Round-the-clock support • Exclusive events • Cashback up to ₹${240 + (bonusNum % 50)} • Daily jackpot`
+      ];
+      return benefits[Math.abs(bonusNum * 3) % benefits.length];
     }
 
-    // 4 premium tags (with glow classes)
-    function getTags(idx, stats) {
-      const tagClasses = ['glow-green', 'glow-cyan', 'glow-yellow', 'glow-pink'];
-      const labels = ['Rating', 'Size', 'Votes', 'Bonus'];
-      const values = [stats.rating, stats.size, stats.votes, stats.bonus];
-      let html = '';
-      for (let i=0; i<4; i++) {
-        html += `<span class="tag-premium ${tagClasses[i % tagClasses.length]}">${labels[i]}: ${values[i]}</span>`;
-      }
-      return html;
+    function getWarningValue(appName) {
+      let h = 0;
+      for (let i = 0; i < appName.length; i++) { h = ((h << 5) - h) + appName.charCodeAt(i); h |= 0; }
+      return 100 + (Math.abs(h) % 51);
     }
 
-    // populate scrolling tags
     function populateAppTags() {
       const container = document.getElementById('appTagsScroll');
       if (!container) return;
@@ -234,7 +819,6 @@
       });
     }
 
-    // card stats generation
     function getCardStats(appName) {
       let hash = 0;
       for (let i = 0; i < appName.length; i++) { hash = ((hash << 5) - hash) + appName.charCodeAt(i); hash |= 0; }
@@ -254,6 +838,133 @@
       const votes = ["122K","89K","222K","95K","310K","178K","150K","89K"];
       const idx = Math.abs(hash) % ratings.length;
       return { rating: ratings[idx], size: sizes[idx], votes: votes[idx] };
+    }
+
+    function getColorClasses(idx) {
+      const ratingClass = (idx % 2 === 0) ? 'rating-green' : 'rating-pink';
+      const sizeClass = (idx % 2 === 0) ? 'size-cyan' : 'size-yellow';
+      const votesClass = (idx % 2 === 0) ? 'votes-dark' : 'votes-black';
+      const bonusClass = (idx % 2 === 0) ? 'bonus-green' : 'bonus-red';
+      return { ratingClass, sizeClass, votesClass, bonusClass };
+    }
+
+    // ===== 34 UNIQUE TAG MODELS (Hindi + English mix, each unique) =====
+    const tagModelList = [
+      // Model 1: Yono Games
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">🎯 ${n} – ₹${b} तुरंत बोनस पाएं!</div><div class="tag-content">Play skill-based Rummy, Teen Patti & slots. सुरक्षित निकासी ₹100 से। Start earning real cash in minutes – डाउनलोड करें और अपना बोनस पाएं!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">💰 ${n} में ₹${b} बोनस अनलॉक करें!</div><div class="tag-content">Aviator, Rummy & more जैसे रोमांचक गेम खेलें। Fast, secure withdrawals via bank/UPI. लाखों लोगों ने भरोसा किया – अभी खेलना शुरू करें!</div></div>`,
+      // Model 2: INR Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🎰 ${n} खेलें और ₹${b} स्वागत बोनस पाएं!</div><div class="tag-content">रोमांचक रम्मी टेबल, दैनिक पुरस्कार और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💸 ${n} – ₹${b} वेलकम बोनस</div><div class="tag-content">सीक्वेंस बनाएं, कैश टूर्नामेंट में शामिल हों और दैनिक रहस्य पुरस्कार प्राप्त करें। सुरक्षित, मजेदार और भरोसेमंद गेमिंग – आज ही रियल कैश जीतना शुरू करें!</div></div>`,
+      // Model 3: MBM BET
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🏆 ${n} और ₹${b} वेलकम बोनस पाएं!</div><div class="tag-content">रोमांचक कैसीनो गेम, दैनिक पुरस्कार अपडेट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📲 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक लॉगिन बोनस, दैनिक कमाई, इंस्टेंट बैंक ट्रांसफर, ${n} लॉयल्टी रिवॉर्ड प्राप्त करें। अभी खेलें!</div></div>`,
+      // Model 4: 567 Slots
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">🆕 नया अपडेट ${n} डाउनलोड करें और ₹${b} वेलकम बोनस पाएं!</div><div class="tag-content">रोमांचक स्लॉट मशीन, दैनिक पुरस्कार और तेज़ निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎁 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक लॉगिन बोनस, कैशबैक कमाई, इंस्टेंट विदड्रॉल और ${n} लॉयल्टी रिवॉर्ड प्राप्त करें। नया अपडेट उपलब्ध है!</div></div>`,
+      // Model 5: Saga Slots
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🌟 ${n} वर्शन – ₹${b} जॉइनिंग बोनस!</div><div class="tag-content">प्रीमियम स्लॉट मशीनों के साथ स्पिन करें, खेलें और जीतें। तेज़ भुगतान और 24/7 सहायता उपलब्ध है। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💎 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक मुफ्त स्पिन, कैश, त्वरित UPI निकासी, चौबीसों घंटे सहायता और ${n} विशेष इवेंट का आनंद लें।</div></div>`,
+      // Model 6: Jaiho 91
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🎉 ${n} – ₹${b} वेलकम ऑफर</div><div class="tag-content">कैसीनो गेम, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">🎊 ${n} बोनस</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी, और VIP रिवॉर्ड अनलॉक करें। आज ही जुड़ें और कमाई शुरू करें!</div></div>`,
+      // Model 7: Rummy Ludo
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">🎲 ${n} – ₹${b} साइनअप बोनस</div><div class="tag-content">रम्मी, लूडो और बहुत कुछ खेलें। सुरक्षित लेनदेन, त्वरित निकासी और 24/7 सहायता। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🏅 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
+      // Model 8: ABC Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">♠️ ${n} – ₹${b} वेलकम बोनस</div><div class="tag-content">रम्मी टेबल, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💰 ${n} – ₹${b} बोनस</div><div class="tag-content">सीक्वेंस बनाएं, कैश टूर्नामेंट में शामिल हों और दैनिक रहस्य पुरस्कार प्राप्त करें। सुरक्षित, मजेदार और भरोसेमंद गेमिंग!</div></div>`,
+      // Model 9: Rummy 91
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🔥 ${n} – ₹${b} जॉइनिंग बोनस</div><div class="tag-content">रम्मी, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📱 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें और कमाई शुरू करें!</div></div>`,
+      // Model 10: Love Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">❤️ ${n} – ₹${b} लव बोनस</div><div class="tag-content">रम्मी को प्यार से खेलें, दैनिक टूर्नामेंट और तेज़ UPI निकासी। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎯 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
+      // Model 11: Spin Crush
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🌀 ${n} – ₹${b} स्पिन बोनस</div><div class="tag-content">प्रीमियम गेम्स के साथ स्पिन, खेलें और जीतें। तेज़ भुगतान और 24/7 सहायता उपलब्ध है। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💲 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक मुफ्त स्पिन, कैश, त्वरित UPI निकासी और ${n} विशेष इवेंट का आनंद लें।</div></div>`,
+      // Model 12: Top Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">👑 ${n} – ₹${b} टॉप बोनस</div><div class="tag-content">रम्मी, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">⭐ ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
+      // Model 13: Hello Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">👋 ${n} – ₹${b} हेलो बोनस</div><div class="tag-content">रम्मी, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎁 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
+      // Model 14: Rummy 365
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">📅 ${n} – ₹${b} 365 बोनस</div><div class="tag-content">365 दिन रम्मी खेलें, दैनिक टूर्नामेंट और तेज़ UPI निकासी। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💵 ${n} – ₹${b} बोनस</div><div class="tag-content">सीक्वेंस बनाएं, कैश टूर्नामेंट में शामिल हों और दैनिक रहस्य पुरस्कार प्राप्त करें। सुरक्षित, मजेदार और भरोसेमंद गेमिंग!</div></div>`,
+      // Model 15: Teen Patti Gold
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🥇 ${n} – ₹${b} गोल्ड बोनस</div><div class="tag-content">टीन पत्ती, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📲 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
+      // Model 16: Teen Patti Master
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">🎩 ${n} – ₹${b} मास्टर बोनस</div><div class="tag-content">टीन पत्ती, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🏆 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
+      // Model 17: Yono Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🟢 ${n} – ₹${b} योनो बोनस</div><div class="tag-content">रम्मी, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💸 ${n} – ₹${b} बोनस</div><div class="tag-content">सीक्वेंस बनाएं, कैश टूर्नामेंट में शामिल हों और दैनिक रहस्य पुरस्कार प्राप्त करें। सुरक्षित, मजेदार और भरोसेमंद गेमिंग!</div></div>`,
+      // Model 18: Slots Winner
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🏅 ${n} – ₹${b} विनर बोनस</div><div class="tag-content">स्लॉट खेलें, रियल मनी जीतें और तुरंत निकासी करें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">🎰 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
+      // Model 19: Good Slots
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">👍 ${n} – ₹${b} गुड बोनस</div><div class="tag-content">स्लॉट, दैनिक पुरस्कार और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎁 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
+      // Model 20: Diwa Slot
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🪔 ${n} – ₹${b} दीवा बोनस</div><div class="tag-content">स्लॉट खेलें, स्पिन करें और जीतें, तेज़ UPI निकासी। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💵 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक मुफ्त स्पिन, कैश, त्वरित UPI निकासी और ${n} विशेष इवेंट का आनंद लें।</div></div>`,
+      // Model 21: GoGo Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🚀 ${n} – ₹${b} गो-गो बोनस</div><div class="tag-content">रम्मी, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📱 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
+      // Model 22: Joy Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">😊 ${n} – ₹${b} जॉय बोनस</div><div class="tag-content">रम्मी, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎉 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
+      // Model 23: Spin Gold
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🌟 ${n} – ₹${b} स्पिन गोल्ड बोनस</div><div class="tag-content">प्रीमियम गेम्स के साथ स्पिन, खेलें और जीतें। तेज़ भुगतान और 24/7 सहायता। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💰 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक मुफ्त स्पिन, कैश, त्वरित UPI निकासी और ${n} विशेष इवेंट का आनंद लें।</div></div>`,
+      // Model 24: Bingo 101
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🎱 ${n} – ₹${b} बिंगो बोनस</div><div class="tag-content">बिंगो, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📲 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
+      // Model 25: Yes Spin
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">✅ ${n} – ₹${b} यस बोनस</div><div class="tag-content">प्रीमियम गेम्स के साथ स्पिन, खेलें और जीतें। तेज़ भुगतान और 24/7 सहायता। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎯 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
+      // Model 26: Yono Arcade
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🎮 ${n} – ₹${b} आर्केड बोनस</div><div class="tag-content">आर्केड गेम, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💲 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
+      // Model 27: SVIP 777
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">👑 ${n} – ₹${b} SVIP बोनस</div><div class="tag-content">कैसीनो गेम, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📱 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
+      // Model 28: OK Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">👍 ${n} – ₹${b} ओके बोनस</div><div class="tag-content">रम्मी, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎁 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
+      // Model 29: Hind 777
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🇮🇳 ${n} – ₹${b} हिंद बोनस</div><div class="tag-content">स्लॉट, स्पिन और जीतें, तेज़ UPI निकासी। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">💵 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक मुफ्त स्पिन, कैश, त्वरित UPI निकासी और ${n} विशेष इवेंट का आनंद लें।</div></div>`,
+      // Model 30: Bet 213
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">🎲 ${n} – ₹${b} बेट बोनस</div><div class="tag-content">बेटिंग गेम, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📲 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
+      // Model 31: Boss Rummy
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">👔 ${n} – ₹${b} बॉस बोनस</div><div class="tag-content">रम्मी, दैनिक टूर्नामेंट और तेज़ UPI निकासी का आनंद लें। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🏆 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`,
+      // Model 32: Yono 777
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-games">🟢 ${n} – ₹${b} योनो 777 बोनस</div><div class="tag-content">स्लॉट, स्पिन और जीतें, तेज़ UPI निकासी। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">🎰 ${n} – ₹${b} बोनस</div><div class="tag-content">दैनिक मुफ्त स्पिन, कैश, त्वरित UPI निकासी और ${n} विशेष इवेंट का आनंद लें।</div></div>`,
+      // Model 33: Diwa VIP
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-vip">💎 ${n} – ₹${b} VIP बोनस</div><div class="tag-content">VIP गेम, स्लॉट और बहुत कुछ खेलें। तेज़ निकासी, सुरक्षित प्लेटफॉर्म और दैनिक पुरस्कार। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">📱 ${n} फीचर्स</div><div class="tag-content">दैनिक बोनस, इंस्टेंट UPI निकासी और लॉयल्टी रिवॉर्ड अनलॉक करें। आज ही जुड़ें!</div></div>`,
+      // Model 34: Diwa 777
+      (n,b) => `<div class="tag-box"><div class="tag-title tag-title-premium">🪔 ${n} – ₹${b} दीवा 777 बोनस</div><div class="tag-content">स्लॉट, स्पिन और जीतें, तेज़ UPI निकासी। ${n} आपको साइनअप पर मुफ्त कैश देता है!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">🎁 ${n} रिवॉर्ड</div><div class="tag-content">कैशबैक, दैनिक लॉगिन बोनस और लॉयल्टी रिवॉर्ड प्राप्त करें। आज ही रियल मनी जीतना शुरू करें!</div></div>`
+    ];
+
+    // ===== GENERATE FULL TAGS HTML WITH FAQ AND OVERVIEW (visible by default) =====
+    function createTagsHTML(appName, bonusNum, appIndex) {
+      const modelFn = tagModelList[appIndex % tagModelList.length];
+      const mainTags = modelFn(appName, bonusNum);
+      const bonusArr = [];
+      for (let i = 1; i <= 17; i++) bonusArr.push(200 + (Math.abs((bonusNum + i) * i) % 101));
+      
+      return `
+        ${mainTags}
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">❓ Frequently Asked Questions</div>
+          <div class="tag-content">
+            <div class="faq-item"><div class="faq-q">1. ${appName} एपीके क्या है?</div><div class="faq-a">${appName} APP APK एक बेहतरीन एप्लिकेशन है जो उपयोगकर्ताओं को ₹${bonusArr[0]} का साइन-अप बोनस प्रदान करता है। इस गेम में शानदार बोनस प्रोग्राम है, और आप पूरी पोस्ट पढ़कर अधिक जान सकते हैं। इसके अलावा, ${appName} APK एक लोकप्रिय स्लॉट गेम है जिसमें न्यूनतम निकासी ₹100 है।</div></div>
+            <div class="faq-item"><div class="faq-q">2. ${appName} APK के लिए साइन अप कैसे करें?</div><div class="faq-a">${appName} APK के लिए साइन अप करने के लिए, इन चरणों का पालन करें:<br>• ${appName} APK के लिए डाउनलोड बटन पर क्लिक करें।<br>• डाउनलोड शुरू करने के लिए OK चुनें।<br>• अपने स्मार्टफोन पर ऐप इंस्टॉल करें।<br>• नया ऐप खोलें और Play as Guest पर क्लिक करें।<br>• प्रोफाइल बटन पर क्लिक करें और अपना मोबाइल नंबर बाँधें।<br>इन चरणों को पूरा करने के बाद, आपको ₹${bonusArr[1]} का साइन-अप बोनस मिलेगा।</div></div>
+            <div class="faq-item"><div class="faq-q">3. ${appName} ऐप में कितने गेम उपलब्ध हैं?</div><div class="faq-a">${appName} ऐप 75+ विभिन्न प्रकार के गेम का समर्थन करता है। आप Rummy, Teen Patti, 7 Up Down, Dragon vs Tiger और बहुत कुछ जैसे विभिन्न गेम का आनंद ले सकते हैं।</div></div>
+            <div class="faq-item"><div class="faq-q">4. ${appName} ऐप APK की कुछ बेहतरीन विशेषताएं क्या हैं?</div><div class="faq-a">• APK में ₹${bonusArr[2]} का मुफ्त बोनस प्राप्त करें।<br>• 20 गेमिंग विकल्पों तक पहुंच।<br>• दोस्तों को आमंत्रित करने पर ₹${bonusArr[3]} तक कमाएं।<br>• न्यूनतम ₹${bonusArr[4]} से निकासी शुरू करें।<br>• प्रोफाइल बटन पर क्लिक करें और अपना मोबाइल नंबर बाँधें।<br>• न्यूनतम जमा राशि ₹${bonusArr[5]} है।</div></div>
+          </div>
+        </div>
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">📖 Overview – ${appName}</div>
+          <div class="tag-content">${appName} भारत में एक लोकप्रिय रियल कैश कमाने वाला ऐप है जहाँ उपयोगकर्ता रियल मनी जीतने के लिए रम्मी, स्लॉट, बिंगो और स्पिन गेम जैसे गेम खेल सकते हैं। नए उपयोगकर्ता ₹${bonusArr[6]} तक के साइनअप बोनस का दावा कर सकते हैं, जिससे प्लेटफॉर्म पर शुरू करना और एक्सप्लोर करना आसान हो जाता है। ऐप तेज़ UPI जमा और निकासी के साथ एक सहज और सुरक्षित अनुभव प्रदान करता है।<br><br>${appName} का इंटरफ़ेस सरल और उपयोगकर्ता के अनुकूल है, जो इसे शुरुआती और अनुभवी खिलाड़ियों दोनों के लिए उपयुक्त बनाता है। आप अपनी कमाई बढ़ाने के लिए दैनिक पुरस्कार, बोनस ऑफर और विशेष इवेंट का आनंद ले सकते हैं। न्यूनतम निकासी ₹${bonusArr[7]} से शुरू होती है, और अधिकांश लेनदेन बिना देरी के जल्दी से संसाधित होते हैं।<br><br>यदि आप एक भरोसेमंद गेमिंग ऐप की तलाश में हैं जो मनोरंजन को वास्तविक कमाई के अवसरों के साथ जोड़ता है, तो ${appName} एक बढ़िया विकल्प है। आज ही नवीनतम APK संस्करण डाउनलोड करें और अपने मोबाइल से रियल कैश रिवॉर्ड कमाने के लिए खेलना शुरू करें।</div>
+        </div>
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">✨ ${appName} App Features & Benefits</div>
+          <div class="tag-content"><ul><li><strong>वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[8]} तक का साइनअप बोनस प्राप्त करें</li><li><strong>तेज़ UPI निकासी:</strong> अपने बैंक खाते में सीधे ₹${bonusArr[9]} से निकासी शुरू करें</li><li><strong>लोकप्रिय गेम:</strong> रम्मी, स्लॉट, बिंगो, स्पिन गेम और अधिक रियल कैश कमाने के विकल्प खेलें</li><li><strong>सुरक्षित प्लेटफॉर्म:</strong> सुरक्षित लेनदेन के साथ सहज गेमप्ले अनुभव</li><li><strong>दैनिक पुरस्कार और ऑफर:</strong> नियमित रूप से अतिरिक्त बोनस, कैशबैक और पुरस्कार प्राप्त करें</li><li><strong>उपयोगकर्ता के अनुकूल इंटरफ़ेस:</strong> शुरुआती और अनुभवी खिलाड़ियों के लिए उपयोग में आसान ऐप</li></ul></div>
+        </div>
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">📥 How to Download & Install ${appName}</div>
+          <div class="tag-content"><ul><li><strong>1.</strong> ऊपर दिए गए बड़े डाउनलोड बटन पर टैप करें</li><li><strong>2.</strong> अज्ञात स्रोतों से इंस्टॉलेशन की अनुमति दें</li><li><strong>3.</strong> डाउनलोड की गई APK खोलें और Install पर टैप करें</li><li><strong>4.</strong> अपने मोबाइल नंबर से पंजीकरण करें</li><li><strong>5.</strong> अपना साइनअप बोनस तुरंत प्राप्त करें – ₹${bonusArr[10]} तक!</li></ul></div>
+        </div>
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">🔒 ${appName} Safety & Security</div>
+          <div class="tag-content">${appName} एक सुरक्षित और विश्वसनीय गेमिंग अनुभव प्रदान करने के लिए डिज़ाइन किया गया है। ऐप उपयोगकर्ता डेटा और लेनदेन को सुरक्षित रखने में मदद करने के लिए मानक एन्क्रिप्शन और सुरक्षित भुगतान प्रणाली का उपयोग करता है।<br><br>जमा और निकासी आमतौर पर UPI और बैंक ट्रांसफर जैसी विधियों के माध्यम से संसाधित की जाती है, जो भारत में उपयोगकर्ताओं के लिए एक सुविधाजनक अनुभव प्रदान करती है। हालाँकि, उपयोगकर्ताओं को सलाह दी जाती है कि वे जिम्मेदारी से खेलें और ऐप का उपयोग करने से पहले इसकी शर्तों और नीतियों की समीक्षा करें।</div>
+        </div>
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">✅ Why Choose ${appName} App?</div>
+          <div class="tag-content"><ul><li><strong>आकर्षक वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[11]} तक</li><li><strong>तेज़ UPI निकासी</strong> प्रणाली त्वरित प्रसंस्करण समय के साथ</li><li><strong>गेम की विस्तृत श्रृंखला</strong> जिसमें रम्मी, स्लॉट, बिंगो और स्पिन गेम शामिल हैं</li><li><strong>स्मूथ और ऑप्टिमाइज़्ड</strong> प्रदर्शन अधिकांश Android डिवाइस पर</li><li><strong>नियमित अपडेट</strong> नई सुविधाओं, ऑफ़र और सुधारों के साथ</li><li><strong>सरल और उपयोगकर्ता के अनुकूल</strong> इंटरफ़ेस शुरुआती और नियमित खिलाड़ियों के लिए</li></ul></div>
+        </div>
+      `;
     }
 
     let currentSelectedIndex = null;
@@ -280,34 +991,56 @@
     window.addEventListener('click', (e) => { if (e.target === customModal) closeModalAndResetHistory(); });
 
     function renderMainGrid() {
-      const grid = document.getElementById('allAppsGrid');
-      if (!grid) return;
+      const gridContainer = document.getElementById('allAppsGrid');
+      if (!gridContainer) return;
       let html = '';
       appsData.forEach((app, idx) => {
         const stats = getCardStats(app.name);
-        const bonusNum = stats.bonus;
-        const style = getStyle(idx);
-        const infoMix = getInfoMix(app.name, bonusNum, app.category);
-        const safety = getSafetyText(app.name);
-        const tagsHtml = getTags(idx, stats);
+        const displayBonus = stats.bonus;
+        const colors = getColorClasses(idx);
+        const spinDesc = getSpinWinDescription(app.name, displayBonus, app.category);
+        const extraBenefits = getExtraBenefits(app.name, displayBonus, app.category);
+        const warningVal = getWarningValue(app.name);
         const number = idx + 1;
-        // random border radius variation
-        const borderRadius = 16 + (idx % 8);
-        const padding = 14 + (idx % 6);
         html += `
-          <div class="app-card" style="border-color:${style.border}; background:${style.bg}; border-radius:${borderRadius}px; padding:${padding}px 12px 14px; box-shadow:0 0 20px rgba(0,0,0,0.5), inset 0 0 30px rgba(0,0,0,0.2);" data-app-index="${idx}">
+          <div class="app-card" data-app-index="${idx}">
             <div class="app-number">${number}</div>
-            <div class="bonus-top" style="color:${style.bonusColor}; text-shadow:0 0 15px ${style.bonusColor};">₹${bonusNum}</div>
-            <div class="app-name" style="background:${style.nameGrad}; -webkit-background-clip:text; -webkit-text-fill-color:transparent;">${app.name}</div>
-            <div class="info-mix">${infoMix}</div>
-            <div class="tags-premium">${tagsHtml}</div>
-            <button class="download-btn" data-download-index="${idx}" style="background:linear-gradient(135deg,${style.border},${style.glow}); box-shadow:0 0 25px ${style.glow};">DOWNLOAD APK</button>
-            <div class="safety">${safety}</div>
+            <div class="card-img"><img src="${app.img}" alt="${app.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=App'"></div>
+            <div class="card-app-name">${app.name}</div>
+            <div class="card-stats">
+              <div class="card-stat"><div class="card-stat-value ${colors.ratingClass}">${stats.rating}</div><div class="card-stat-label">Rating</div></div>
+              <div class="card-stat"><div class="card-stat-value ${colors.sizeClass}">${stats.size}</div><div class="card-stat-label">Size</div></div>
+              <div class="card-stat"><div class="card-stat-value ${colors.votesClass}">${stats.votes}</div><div class="card-stat-label">Votes</div></div>
+              <div class="card-stat"><div class="card-stat-value ${colors.bonusClass}">${displayBonus}</div><div class="card-stat-label">Bonus</div></div>
+            </div>
+            <div class="card-info-row">
+              <div class="ci-item"><div class="ci-label">Sign Up Bonus</div><div class="ci-value bonus-c">₹${displayBonus}</div></div>
+              <div class="ci-item"><div class="ci-label">Min Withdrawal</div><div class="ci-value withdraw-c">₹${app.withdrawal}</div></div>
+            </div>
+            <button class="download-btn" data-download-index="${idx}">DOWNLOAD ${app.name}</button>
+            <div class="card-spin-desc">${spinDesc}</div>
+            <div class="card-benefits"><strong>Extra Benefits:</strong> ${extraBenefits}</div>
+            <div class="warning-led-toggle" data-toggle-idx="${idx}">
+              <span class="led-icon">⚠️</span>
+              <span class="led-text">Play responsibly. This website is for users 18+ only.</span>
+              <span class="led-arrow">▼</span>
+            </div>
+            <div class="warning-content" id="warning-content-${idx}">
+              <span class="warning-icon">⚠️</span>
+              <strong>Play responsibly.</strong> This website is intended strictly for users who are <strong>18 years of age or older</strong>. Value: <strong>₹${warningVal}</strong>
+            </div>
           </div>
         `;
       });
-      grid.innerHTML = html;
-      // attach events
+      gridContainer.innerHTML = html;
+      document.querySelectorAll('.warning-led-toggle').forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const idx = this.getAttribute('data-toggle-idx');
+          const content = document.getElementById(`warning-content-${idx}`);
+          if (content) { content.classList.toggle('open'); this.classList.toggle('open'); }
+        });
+      });
       document.querySelectorAll('#allAppsGrid .download-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
           const idx = parseInt(this.getAttribute('data-download-index'));
@@ -317,7 +1050,6 @@
       });
     }
 
-    // navigation
     function navigateToDownloadPage(selectedIndex) {
       currentSelectedIndex = selectedIndex;
       history.pushState({ page: 'download', index: selectedIndex }, '', '#download');
@@ -325,94 +1057,124 @@
     }
 
     function showDownloadPage(selectedIndex) {
-      const app = appsData[selectedIndex];
-      if (!app) return;
-      const stats = getAppStats(app.name);
+      const selectedApp = appsData[selectedIndex];
+      if (!selectedApp) return;
+      const stats = getAppStats(selectedApp.name);
       let hash = 0;
-      for (let i = 0; i < app.name.length; i++) { hash = ((hash << 5) - hash) + app.name.charCodeAt(i); hash |= 0; }
+      for (let i = 0; i < selectedApp.name.length; i++) { hash = ((hash << 5) - hash) + selectedApp.name.charCodeAt(i); hash |= 0; }
       const bonusNum = 200 + (Math.abs(hash) % 101);
-      const infoMix = getInfoMix(app.name, bonusNum, app.category);
-      const safety = getSafetyText(app.name);
-      const grid = document.getElementById('allAppsGrid');
+      const description = getSpinWinDescription(selectedApp.name, bonusNum, selectedApp.category);
+      const extraBenefits = getExtraBenefits(selectedApp.name, bonusNum, selectedApp.category);
+      const warningVal = getWarningValue(selectedApp.name);
+      const gridDiv = document.getElementById('allAppsGrid');
       const downloadContainer = document.getElementById('downloadPageContainer');
-      grid.classList.add('hidden');
+      gridDiv.classList.add('hidden');
       downloadContainer.classList.remove('hidden');
-
+      const tagsHTML = createTagsHTML(selectedApp.name, bonusNum, selectedIndex);
       const fiveApps = appsData.filter((_, idx) => idx !== selectedIndex).slice(0, 5);
       let fiveOptionsHtml = '';
-      fiveApps.forEach((a) => {
+      fiveApps.forEach((app) => {
         let h = 0;
-        for (let i=0; i<a.name.length; i++) { h = ((h << 5) - h) + a.name.charCodeAt(i); h |= 0; }
+        for (let i = 0; i < app.name.length; i++) { h = ((h << 5) - h) + app.name.charCodeAt(i); h |= 0; }
         const relBonus = 200 + (Math.abs(h) % 101);
-        const origIdx = appsData.findIndex(x => x.name === a.name);
-        fiveOptionsHtml += `<span class="opt-item" data-opt-index="${origIdx}" style="background:#1a2632; padding:4px 12px; border-radius:40px; font-size:0.6rem; font-weight:600; color:#b0c0d0; border:1px solid #4a6a8a; cursor:pointer; transition:0.2s; display:inline-block; margin:2px;">${a.name} <span style="color:#dc2626;">₹${relBonus}</span></span>`;
+        const origIdx = appsData.findIndex(a => a.name === app.name);
+        fiveOptionsHtml += `<span class="opt-item" data-opt-index="${origIdx}"><span class="opt-app">${app.name}</span> <span class="opt-bonus">₹${relBonus}</span></span>`;
       });
       const otherApps = appsData.filter((_, idx) => idx !== selectedIndex);
       let otherAppsHtml = '';
-      otherApps.forEach((a) => {
-        const origIdx = appsData.findIndex(x => x.name === a.name);
+      otherApps.forEach((app) => {
+        const originalIndex = appsData.findIndex(a => a.name === app.name);
         let h = 0;
-        for (let i=0; i<a.name.length; i++) { h = ((h << 5) - h) + a.name.charCodeAt(i); h |= 0; }
+        for (let i = 0; i < app.name.length; i++) { h = ((h << 5) - h) + app.name.charCodeAt(i); h |= 0; }
         const relBonus = 200 + (Math.abs(h) % 101);
         otherAppsHtml += `
-          <div class="other-card"><div style="width:48px;height:48px;margin:0 auto 4px;border-radius:14px;overflow:hidden;border:1px solid #2a4a3a;display:flex;align-items:center;justify-content:center;background:#0f1a24;"><img src="${a.img}" alt="${a.name}" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/48?text=App'"></div>
-          <div class="app-name">${a.name}</div>
-          <div class="withdraw-green">Min Withdrawal: ${a.withdrawal}</div>
-          <div class="signup-bonus-small">Sign Up Bonus: ₹${relBonus}</div>
-          <button class="small-download" data-other-index="${origIdx}">DOWNLOAD</button></div>`;
+          <div class="other-card">
+            <div style="width:48px;height:48px;margin:0 auto 4px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;background:#fff5e6;">
+              <img src="${app.img}" alt="${app.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/48?text=App'">
+            </div>
+            <div class="app-name">${app.name}</div>
+            <div class="withdraw-green">Min Withdrawal: ${app.withdrawal}</div>
+            <div class="signup-bonus-small">Sign Up Bonus: ₹${relBonus}</div>
+            <button class="small-download" data-other-index="${originalIndex}">DOWNLOAD</button>
+          </div>
+        `;
       });
-
       const downloadPageHtml = `
-        <div class="download-page">
-          <div class="download-header"><div class="tag-row"><span class="app-name-tag">${app.name} APK</span><span class="bonus-tag">Bonus: ₹${bonusNum}</span><span class="withdraw-tag">Withdrawal: ${app.withdrawal}</span></div></div>
-          <div class="app-highlight">
-            <div style="font-size:1.4rem;font-weight:800;color:#22c55e;">${app.name}</div>
-            <div style="width:72px;height:72px;margin:0 auto 10px;border-radius:18px;overflow:hidden;border:1px solid #2a4a3a;display:flex;align-items:center;justify-content:center;background:#0f1a24;"><img src="${app.img}" alt="${app.name}" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/72?text=App'"></div>
+        <div class="download-page" id="activeDownloadPage">
+          <div class="download-header">
+            <div class="tag-row">
+              <span class="app-name-tag">${selectedApp.name} APK Download</span>
+              <span class="bonus-tag">Signup Bonus: ₹${bonusNum}</span>
+              <span class="withdraw-tag">Min Withdrawal: ${selectedApp.withdrawal}</span>
+            </div>
+          </div>
+          <div class="app-highlight" id="topDownloadSection">
+            <div style="font-size:1.4rem;font-weight:800;margin-bottom:8px;">${selectedApp.name}</div>
+            <div style="width:72px;height:72px;margin:0 auto 10px;border-radius:18px;overflow:hidden;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;background:#fff5e6;">
+              <img src="${selectedApp.img}" alt="${selectedApp.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/72?text=App'">
+            </div>
             <div class="stats-row">
               <div class="stat-item"><div class="stat-value" style="color:#22c55e;">${stats.rating}</div><div class="stat-label">Rating</div></div>
               <div class="stat-item"><div class="stat-value" style="color:#06b6d4;">${stats.size}</div><div class="stat-label">Size</div></div>
-              <div class="stat-item"><div class="stat-value" style="color:#eab308;">${stats.votes}</div><div class="stat-label">Votes</div></div>
+              <div class="stat-item"><div class="stat-value" style="color:#1e293b;">${stats.votes}</div><div class="stat-label">Votes</div></div>
               <div class="stat-item"><div class="stat-value" style="color:#dc2626;">${bonusNum}</div><div class="stat-label">Bonus</div></div>
             </div>
-            <a href="${app.downloadUrl}" target="_blank" class="final-download-btn">DOWNLOAD ${app.name}</a>
-            <div class="app-description">${infoMix}<br><br><strong>Safety & Security:</strong> ${safety}</div>
-            <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;">${fiveOptionsHtml}</div>
-            <div style="margin-top:16px;"><div class="tag-grid" style="display:flex;flex-direction:column;gap:12px;">
-              <!-- 4 premium tags as boxes -->
-              <div style="background:#0f1a24;border-left:4px solid #22c55e;padding:12px;border-radius:12px;"><div style="font-weight:700;color:#f59e0b;">Rating: ${stats.rating}</div><div style="font-size:0.7rem;color:#b0c0d0;">High user satisfaction</div></div>
-              <div style="background:#0f1a24;border-left:4px solid #06b6d4;padding:12px;border-radius:12px;"><div style="font-weight:700;color:#06b6d4;">Size: ${stats.size}</div><div style="font-size:0.7rem;color:#b0c0d0;">Optimized for performance</div></div>
-              <div style="background:#0f1a24;border-left:4px solid #eab308;padding:12px;border-radius:12px;"><div style="font-weight:700;color:#eab308;">Votes: ${stats.votes}</div><div style="font-size:0.7rem;color:#b0c0d0;">Trusted by many</div></div>
-              <div style="background:#0f1a24;border-left:4px solid #ec4899;padding:12px;border-radius:12px;"><div style="font-weight:700;color:#ec4899;">Bonus: ₹${bonusNum}</div><div style="font-size:0.7rem;color:#b0c0d0;">Welcome offer</div></div>
-            </div></div>
+            <a href="${selectedApp.downloadUrl}" target="_blank" class="final-download-btn">DOWNLOAD ${selectedApp.name}</a>
+            <div class="app-description">${description}<br><br><strong>Extra Benefits:</strong> ${extraBenefits}</div>
+            <div class="tag-section">
+              <div class="tag-title" style="font-weight:700; font-size:0.95rem; margin-bottom:8px; color:#0b1e33;">${selectedApp.name} – Top Offers</div>
+              <div class="five-options" id="fiveOptions">${fiveOptionsHtml}<span class="opt-item" style="background:#22c55e;color:white;border-color:#22c55e;font-weight:700;">+ 5 More</span></div>
+              <!-- All tags visible directly -->
+              <div class="tag-grid" id="tagGridContainer">${tagsHTML}</div>
+            </div>
+            <div class="detail-warning-led" id="detailWarningToggle">
+              <span class="led-icon">⚠️</span>
+              <span class="led-text">Play responsibly. This website is for users 18+ only.</span>
+              <span class="led-arrow">▼</span>
+            </div>
+            <div class="detail-warning-content" id="detailWarningContent">
+              <span class="warning-icon">⚠️</span>
+              <strong>Play responsibly.</strong> This website is intended strictly for users who are <strong>18 years of age or older</strong>. Value: <strong>₹${warningVal}</strong>
+            </div>
           </div>
           <div class="other-apps-title">Other Yono Apps</div>
-          <div class="other-apps-grid">${otherAppsHtml}</div>
-          <div class="footer-note">All apps: ₹100 min withdrawal | Trusted platform | 18+</div>
+          <div class="other-apps-grid" id="otherAppsGrid">${otherAppsHtml}</div>
+          <div class="footer-note" style="margin-top:20px;">All apps: ₹100 min withdrawal | Trusted platform | 18+</div>
         </div>
       `;
       downloadContainer.innerHTML = downloadPageHtml;
-
-      // attach events
-      document.querySelectorAll('#downloadPageContainer .opt-item').forEach(el => {
+      const detailToggle = document.getElementById('detailWarningToggle');
+      const detailContent = document.getElementById('detailWarningContent');
+      if (detailToggle && detailContent) {
+        detailToggle.addEventListener('click', function() { detailContent.classList.toggle('open'); this.classList.toggle('open'); });
+      }
+      document.querySelectorAll('#fiveOptions .opt-item').forEach(el => {
         el.addEventListener('click', function() {
           const idx = this.getAttribute('data-opt-index');
           if (idx !== null) navigateToDownloadPage(parseInt(idx));
         });
       });
-      document.querySelectorAll('#downloadPageContainer .small-download').forEach(btn => {
+      document.querySelectorAll('#otherAppsGrid .small-download').forEach(btn => {
         btn.addEventListener('click', (e) => {
-          const idx = btn.getAttribute('data-other-index');
-          if (idx !== null) navigateToDownloadPage(parseInt(idx));
+          const otherIdx = btn.getAttribute('data-other-index');
+          if (otherIdx !== null) navigateToDownloadPage(parseInt(otherIdx));
           e.stopPropagation();
         });
       });
-      setTimeout(() => { document.getElementById('topDownloadSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+      setTimeout(() => {
+        const topSection = document.getElementById('topDownloadSection');
+        if (topSection) topSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     }
 
     function goToMainGrid() {
-      const grid = document.getElementById('allAppsGrid');
+      const gridDiv = document.getElementById('allAppsGrid');
       const downloadContainer = document.getElementById('downloadPageContainer');
-      if (grid && downloadContainer) { grid.classList.remove('hidden'); downloadContainer.classList.add('hidden'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      if (gridDiv && downloadContainer) {
+        gridDiv.classList.remove('hidden');
+        downloadContainer.classList.add('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
       currentSelectedIndex = null;
     }
 
@@ -429,23 +1191,67 @@
       goToMainGrid();
     }
 
-    // nav links
-    document.getElementById('homeNavLink').addEventListener('click', (e) => { e.preventDefault(); resetToMainGrid(); document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active')); document.getElementById('homeNavLink').classList.add('active'); });
-    document.getElementById('navAbout').addEventListener('click', (e) => {
-      e.preventDefault(); document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active')); document.getElementById('navAbout').classList.add('active');
-      showInfoModal('About', `<p><strong>Yono Games Site</strong> is a trusted platform to discover genuine Yono Games apps. We provide verified download links and detailed information. Our mission is to help users find authentic gaming apps safely.</p><p>All apps are listed for informational purposes. We do not host any APK files.</p>`);
-    });
-    document.getElementById('navContact').addEventListener('click', (e) => {
-      e.preventDefault(); document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active')); document.getElementById('navContact').classList.add('active');
-      showInfoModal('Contact', `<p><strong>Email:</strong> yonogamesite@gmail.com</p><p><strong>Telegram:</strong> @yonogamestite</p><p>For business queries, reach out via email.</p>`);
-    });
-    document.getElementById('navDisclaimer').addEventListener('click', (e) => {
-      e.preventDefault(); document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active')); document.getElementById('navDisclaimer').classList.add('active');
-      showInfoModal('Disclaimer', `<p>We are not owners or developers of Yono Games. All links are from official sources. Play responsibly. 18+ only. No liability for financial losses.</p>`);
+    const homeNavLink = document.getElementById('homeNavLink');
+    const navAbout = document.getElementById('navAbout');
+    const navContact = document.getElementById('navContact');
+    const navDisclaimer = document.getElementById('navDisclaimer');
+
+    homeNavLink.addEventListener('click', (e) => { e.preventDefault(); resetToMainGrid(); document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active')); homeNavLink.classList.add('active'); });
+
+    navAbout.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active'));
+      navAbout.classList.add('active');
+      showInfoModal('About - Yono Games Site', `
+        <p><strong>Welcome to Yono Games Site</strong>, a trusted platform created to help users discover <strong>genuine Yono Games apps</strong> safely and confidently. Our website was built with one clear purpose—to eliminate confusion, fake apps, and misleading downloads that users often face while searching for Yono Games online.</p>
+        <p>Over time, we noticed a growing problem. Many users searching for Yono Games were landing on spam websites, unofficial APKs, and misleading links that either didn’t work or put their devices and data at risk. Finding authentic Yono Games apps with secure download links was not easy, especially for new users. That’s where <strong>we stepped in</strong>.</p>
+        <p><strong>Our Mission</strong><br>Our mission is simple: to provide only verified, genuine, and officially released Yono Games apps in one place.</p>
+        <p>We carefully list Yono Games apps that are publicly announced and actively available, ensuring users get access to the right versions without confusion. Every app page is created with clarity, transparency, and user trust in mind.</p>
+        <p><strong>What Makes Us Different</strong><br>✅ <strong>Genuine Yono Games Apps Only</strong> – We focus on authenticity. Our platform highlights real Yono Games releases and avoids misleading or fake listings.<br>✅ <strong>Secure & Safe Download Links</strong> – We ensure users are redirected to safe sources so they can download Yono Games apps with confidence.<br>✅ <strong>Regular Updates</strong> – Yono Games frequently releases new apps and updates. We keep our listings fresh so users don’t miss the latest launches.<br>✅ <strong>User-First Approach</strong> – Our content is written in simple language, making it easy for both new and experienced users to understand app details, features, and updates.</p>
+        <p><strong>Built for the Yono Games Community</strong><br>This platform is more than just a listing website. It’s a growing resource for users who want reliable information about Yono Games, new app launches, and popular variants—all in one place. We aim to save users time, reduce risk, and improve their overall experience.</p>
+        <p><strong>Our Commitment</strong><br>We are committed to transparency, accuracy, and continuous improvement. As Yono Games evolves, so do we. Our goal is to remain a dependable destination for users who want to explore Yono Games without worrying about spam, fake apps, or unreliable sources.</p>
+        <p><strong>Explore confidently. Download safely. Stay updated with Yono Games.</strong></p>
+        <p style="margin-top:12px;">Welcome to <strong>Yono All Games</strong>, your ultimate one-stop solution for a fun and diverse gaming experience. Whether you are a strategy enthusiast, skill-based card game lover, or a casual gamer, our website has something for everyone. Download Yono All Games APK with a few taps and have access to top-rated gaming apps for unlimited fun. Our app offers a hassle-free and secure experience, with all your favorite online games in one place. Enjoy new releases, special features, and secure downloads at your fingertips. Join <strong>Yono All Games</strong> and explore a gaming universe at your fingertips!</p>
+        <div class="premium-toggle-about"><details><summary><span class="toggle-icon">▶</span><span style="font-weight:800; color:#8b5cf6; font-size:0.95rem;">📌 About - Yono Games Store</span><span style="font-size:0.65rem; color:#6b7280; margin-left:auto;">(Click to expand)</span></summary><div class="details-content"><p><strong>Welcome to our platform, Yono Games Site</strong> – a comprehensive hub created to enhance digital experiences for everyone. At the heart of our mission lies the commitment to empower users with access to a wide range of applications, mirroring the global accessibility of platforms like the renowned app marketplaces, but with a unique focus on Indian users.</p><p>Our journey began with a simple yet powerful vision: to revolutionize the way people discover and download apps. We recognize the evolving needs of the digital age and strive to meet them by offering an extensive selection of applications. From utility and productivity apps to entertainment and lifestyle options, our platform is a one-stop destination for all your app needs.</p><p>We are not just about providing access to apps; we are about fostering a community where knowledge about the latest digital tools is shared and celebrated. Our platform is designed to be user-friendly, ensuring a seamless experience for everyone, from tech-savvy individuals to those just starting their digital journey.</p><p>Our focus on Indian applications sets us apart, reflecting our dedication to cater to the unique needs and preferences of our audience. We believe in the power of local solutions for local challenges, and our platform is a testament to this belief.</p><p><strong>Update Version:</strong> We continuously update our platform to bring you the latest and most reliable Yono Games app information.</p><p>Join us in our endeavor to bring the best of digital innovations to your fingertips. Explore, download, and stay ahead in the ever-evolving world of apps with us <strong>Yono Games Site</strong>.</p><div style="margin-top:12px;background:#f5f0ff;padding:10px;border-radius:12px;border-left:4px solid #8b5cf6;"><p style="font-size:0.7rem;color:#333;line-height:1.5;">⚠️ <strong style="color:#8b5cf6;">Disclaimer:</strong> Playing Yono Games may lead to addictive behavior. Please play responsibly and use your discretion. This website is intended strictly for users who are <strong>18 years of age or older</strong>.</p></div></div></details></div>
+        <div style="margin-top:12px;background:#e8f5e9;padding:8px 12px;border-radius:10px;text-align:center;border:1px solid #a5d6a7;"><p style="font-size:0.7rem;color:#1e562a;">✅ All apps are verified and safe only.</p></div>
+      `);
     });
 
-    // dark toggle
-    document.getElementById('darkThemeToggle').addEventListener('click', function() {
+    navContact.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active'));
+      navContact.classList.add('active');
+      showInfoModal('Contact Us - Yono Games Site', `
+        <p><strong>Yono Games Site</strong> does not provide Customer Support for Listed Apps/Games. If you encounter any problems, please contact the support option within those games. Because the Listed Games/Apps are not ours. We do not own those games.</p>
+        <p style="margin-top:14px;"><strong style="color:#d50000;">📢 Advertisement/Business Queries</strong><br>If you are a game maker company, operator, or administrator, and you want to promote your application through our website, you can contact us through the contact details given below and discuss promotion and cooperation.</p>
+        <table class="contact-table"><tr><th>Title</th><th>Link</th></tr><tr><td><strong>Email</strong></td><td><a href="mailto:yonogamesite@gmail.com" class="contact-email" style="color:#d50000;font-weight:700;text-decoration:none;">yonogamesite@gmail.com</a></td></tr><tr><td><strong>Telegram</strong></td><td><a href="https://t.me/yonogamestite" target="_blank" class="contact-telegram" style="color:#0088cc;font-weight:700;text-decoration:none;">@yonogamestite</a></td></tr></table>
+        <div class="premium-toggle-contact"><details><summary><span class="toggle-icon">▶</span><span style="font-weight:800; color:#3b82f6; font-size:0.95rem;">📌 About Tags Model - Disclaimer</span><span style="font-size:0.65rem; color:#6b7280; margin-left:auto;">(Click to expand)</span></summary><div class="details-content"><p><strong>Yono Games Site</strong> – Your Trusted Source for Yono Games Information.</p><p>We are an independent platform dedicated to providing accurate and up-to-date information about Yono Games apps, their features, bonuses, and download links. Our goal is to help users discover genuine Yono Games apps without confusion or risk.</p><p><strong>About This Platform</strong><br>• <strong>Purpose:</strong> To simplify the discovery of authentic Yono Games apps<br>• <strong>Focus:</strong> Indian users seeking reliable gaming app information<br>• <strong>Commitment:</strong> Transparency, accuracy, and user safety</p><p><strong>Our Promise</strong><br>We do not host or distribute any APK files directly. All download links redirect to official or verified sources. We do not collect any user data. Your privacy and safety are our priority.</p><div style="margin-top:12px;background:#f0f5ff;padding:10px;border-radius:12px;border-left:4px solid #3b82f6;"><p style="font-size:0.7rem;color:#1e3a5f;font-weight:600;">✅ Verified & Trusted Platform</p><p style="font-size:0.7rem;color:#333;line-height:1.5;">We are committed to providing only verified and genuine Yono Games app information.</p></div></div></details></div>
+        <div style="margin-top:12px;background:#e8f5e9;padding:8px 12px;border-radius:10px;text-align:center;border:1px solid #a5d6a7;"><p style="font-size:0.7rem;color:#1e562a;">⚡ We respond within 24 hours</p></div>
+      `);
+    });
+
+    navDisclaimer.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active'));
+      navDisclaimer.classList.add('active');
+      showInfoModal('Disclaimer - Yono Games Site', `
+        <div style="background:linear-gradient(135deg,#fff5e6,#ffe6cc);padding:10px;border-radius:14px;margin-bottom:12px;text-align:center;"><h3 style="color:#b45900;font-weight:800;font-size:1.1rem;">Yono Games Site - Disclaimer</h3><p style="font-size:0.7rem;color:#555;">By using our website, you confirm that you have read and agreed to this disclaimer. If you do not agree, please discontinue use of our website.</p></div>
+        <div class="premium-toggle-disclaimer"><details><summary><span class="toggle-icon">▶</span><span style="font-weight:800; color:#ef4444; font-size:0.95rem;">📌 All Disclaimer Points</span><span style="font-size:0.65rem; color:#6b7280; margin-left:auto;">(Click to expand)</span></summary><div class="details-content"><div style="display:flex; flex-direction:column; gap:4px; font-size:0.75rem; color:#333;"><p><strong style="color:#ef4444;">1. No Ownership:</strong> We are not developers/owners of Yono Games.</p><p><strong style="color:#ef4444;">2. Play Responsibly:</strong> Gaming can be addictive. Play with control.</p><p><strong style="color:#ef4444;">3. Financial Risk:</strong> Financial transactions may lead to monetary loss.</p><p><strong style="color:#ef4444;">4. 18+ Age Restriction:</strong> Strictly for users 18 years and above.</p><p><strong style="color:#ef4444;">5. No Liability:</strong> We are not liable for any losses or damages.</p><p><strong style="color:#ef4444;">6. Third-Party Links:</strong> External links are not under our control.</p><p><strong style="color:#ef4444;">7. Changes:</strong> Disclaimer may be updated anytime.</p><p><strong style="color:#ef4444;">8. Contact Us:</strong> Reach us via Telegram or Email.</p></div><div style="margin-top:10px;background:#fff5f5;padding:8px 12px;border-radius:10px;border-left:4px solid #ef4444;"><p style="font-size:0.7rem;color:#333;">🔞 <strong style="color:#ef4444;">Strictly for users aged 18+</strong></p></div></div></details></div>
+        <div class="disclaimer-section" style="border-left-color:#8b5cf6;"><h4>1. No Ownership or Association with Yono Games</h4><p>We are not the developers, owners, or operators of Yono Games. Our website serves as a promoter/affiliate, providing information about Yono Games. We have no control over the game, its developers, or any related policies. All trademarks, copyrights, and intellectual property related to Yono Games belong to their respective owners.</p></div>
+        <div class="disclaimer-section" style="border-left-color:#22c55e;"><h4>2. Play Responsibly</h4><p>Gaming can be addictive. Users are advised to play responsibly and maintain control over their gaming activities. We encourage users to take breaks and avoid excessive gameplay that may negatively impact their well-being.</p></div>
+        <div class="disclaimer-section" style="border-left-color:#ef4444;"><h4>3. Financial Risk Warning</h4><p>Playing games may involve financial transactions that can lead to monetary loss. We are not responsible for any financial decisions made by users while playing Yono Games. Users acknowledge that they play at their own risk and should exercise caution when making in-game purchases or engaging in any financial transactions related to the game.</p></div>
+        <div class="disclaimer-section" style="border-left-color:#f59e0b;"><h4>4. 18+ Age Restriction</h4><p>Our website and the games we promote are strictly intended for users aged 18 and above. If you are under 18, please refrain from using our website and playing the games we feature.</p></div>
+        <div class="disclaimer-section" style="border-left-color:#3b82f6;"><h4>5. No Liability</h4><p>We do not accept liability for any losses, damages, or consequences resulting from playing Yono Games. Since we do not own, operate, or control these games, users may not hold us liable for any financial losses, technical issues, or other risks associated with gameplay.</p></div>
+        <div class="disclaimer-section" style="border-left-color:#06b6d4;"><h4>6. Third-Party Links & External Content</h4><p>Our website may contain links to third-party websites, including the official Yono Games platform. We do not control these external websites and are not responsible for their content, policies, or security practices. Users should review third-party terms and conditions before engaging with them.</p></div>
+        <div class="disclaimer-section" style="border-left-color:#8b5cf6;"><h4>7. Changes to This Disclaimer</h4><p>We reserve the right to update or modify this disclaimer at any time. Any changes will be posted on this page with an updated date. Continued use of our website implies acceptance of any revisions.</p></div>
+        <div class="disclaimer-section" style="border-left-color:#22c55e;"><h4>8. Contact Us</h4><p>If you have any questions regarding this disclaimer, please contact us at:</p><p><strong>Yono Top Games</strong><br><strong>Telegram:</strong> <a href="https://t.me/yonogamestite" target="_blank" style="color:#0088cc;font-weight:700;text-decoration:none;">@yonogamestite</a><br><strong>Gmail:</strong> <a href="mailto:yonogamesite@gmail.com" style="color:#d50000;font-weight:700;text-decoration:none;">yonogamesite@gmail.com</a></p></div>
+        <div style="margin-top:14px;background:#fff3e0;padding:10px 12px;border-radius:12px;border:2px solid #ff8c00;"><p style="font-size:0.75rem;color:#d32f2f;font-weight:600;">⚠️ Disclaimer:</p><p style="font-size:0.7rem;color:#333;line-height:1.5;">yono games site may lead to addictive behavior. Please play responsibly and use your discretion. This website is intended strictly for users who are <strong>18 years of age or older</strong>.</p></div>
+      `);
+    });
+
+    // DARK THEME TOGGLE
+    const darkToggle = document.getElementById('darkThemeToggle');
+    darkToggle.addEventListener('click', function(e) {
       document.body.classList.toggle('dark-theme');
       const isDark = document.body.classList.contains('dark-theme');
       this.innerHTML = isDark ? '<span class="moon-icon">☀️</span> Light' : '<span class="moon-icon">🌙</span> Dark';
@@ -455,5 +1261,24 @@
     renderMainGrid();
   })();
 </script>
+
+<footer style="background:#0a2e1d;color:#b9ddcb;text-align:center;padding:20px;margin-top:30px;font-size:0.7rem;border-top:2px solid #ffcf8a;">
+  <div style="background:#000000;border-radius:60px;padding:12px 16px;margin-bottom:16px;overflow:hidden;border:2px solid #ffcf8a;box-shadow:0 0 30px rgba(255,207,138,0.05);">
+    <marquee behavior="scroll" direction="left" scrollamount="4" style="color:#ffffff;font-weight:700;font-size:0.75rem;letter-spacing:0.5px;">
+      567 Slots &nbsp;✦&nbsp; Jaiho 91 &nbsp;✦&nbsp; Rummy Ludo &nbsp;✦&nbsp; ABC Rummy &nbsp;✦&nbsp; Rummy 91 &nbsp;✦&nbsp; Love Rummy &nbsp;✦&nbsp; Bingo 101 &nbsp;✦&nbsp; Yono 777 &nbsp;✦&nbsp; Saga Slots &nbsp;✦&nbsp; Spin Crush &nbsp;✦&nbsp; Top Rummy &nbsp;✦&nbsp; New Yono Games &nbsp;✦&nbsp; Hello Rummy &nbsp;✦&nbsp; All Yono Games &nbsp;✦&nbsp; Rummy 365 &nbsp;✦&nbsp; Taurus App &nbsp;✦&nbsp; Teen Patti Gold &nbsp;✦&nbsp; Teen Patti Master &nbsp;✦&nbsp; Yono Rummy &nbsp;✦&nbsp; Slots Winner &nbsp;✦&nbsp; Good Slots &nbsp;✦&nbsp; Diwa Slot &nbsp;✦&nbsp; GoGo Rummy &nbsp;✦&nbsp; Joy Rummy &nbsp;✦&nbsp; Spin Gold &nbsp;✦&nbsp; Yes Spin &nbsp;✦&nbsp; Yono Arcade &nbsp;✦&nbsp; SVIP 777 &nbsp;✦&nbsp; OK Rummy &nbsp;✦&nbsp; Hind 777 &nbsp;✦&nbsp; Rummy Most &nbsp;✦&nbsp; Bet 213 &nbsp;✦&nbsp; Teen Patti &nbsp;✦&nbsp; Boss Rummy &nbsp;✦&nbsp; Diwa VIP &nbsp;✦&nbsp; Diwa 777
+    </marquee>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 12px;margin-bottom:8px;">
+    <a href="#" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">About</a>
+    <span style="color:#6c7a5a;">|</span>
+    <a href="#" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">Contact</a>
+    <span style="color:#6c7a5a;">|</span>
+    <a href="#" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">Disclaimer</a>
+  </div>
+  <div style="font-size:0.6rem;color:#b9ddcb;">
+    © 2026/2030 <strong style="color:#ffcf8a;">yono games site.com</strong> — Play responsibly. 18+ only. | Official APK Downloads
+  </div>
+</footer>
+
 </body>
 </html>
