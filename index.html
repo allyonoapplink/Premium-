@@ -65,7 +65,7 @@
     body.dark-theme .small-download { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
     body.dark-theme .small-download:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); }
     
-    /* ===== PREMIUM LED NAV ICONS (unique designs) ===== */
+    /* ===== PREMIUM LED NAV ICONS ===== */
     .nav-icon {
       display: inline-flex;
       align-items: center;
@@ -79,16 +79,12 @@
       position: relative;
       background: transparent;
     }
-    /* Home icon - house with glow */
     .nav-icon-home svg { width: 18px; height: 18px; fill: none; stroke: #3b82f6; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px #3b82f6); }
     .nav-icon-home:hover svg { filter: drop-shadow(0 0 12px #3b82f6); stroke: #60a5fa; }
-    /* About icon - info circle with pulse */
     .nav-icon-about svg { width: 18px; height: 18px; fill: none; stroke: #8b5cf6; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px #8b5cf6); }
     .nav-icon-about:hover svg { filter: drop-shadow(0 0 12px #8b5cf6); stroke: #a78bfa; }
-    /* Contact icon - message bubble */
     .nav-icon-contact svg { width: 18px; height: 18px; fill: none; stroke: #06b6d4; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px #06b6d4); }
     .nav-icon-contact:hover svg { filter: drop-shadow(0 0 12px #06b6d4); stroke: #22d3ee; }
-    /* Disclaimer icon - shield */
     .nav-icon-disclaimer svg { width: 18px; height: 18px; fill: none; stroke: #ef4444; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px #ef4444); }
     .nav-icon-disclaimer:hover svg { filter: drop-shadow(0 0 12px #ef4444); stroke: #f87171; }
     
@@ -283,7 +279,7 @@
     .app-card .card-img img { width: 100%; height: 100%; object-fit: cover; }
     .app-card .card-app-name { font-size: 1.1rem; font-weight: 800; background: linear-gradient(125deg, #1e562a, #2c4c3b); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 8px; }
     
-    /* Premium number badge on image */
+    /* Premium number badge on image - full view 1-34 */
     .img-number {
       position: absolute;
       top: -6px;
@@ -708,27 +704,19 @@
   </div>
   <div class="nav-links">
     <a href="#" class="active" id="homeNavLink">
-      <span class="nav-icon nav-icon-home">
-        <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10"/></svg>
-      </span>
+      <span class="nav-icon nav-icon-home"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10"/></svg></span>
       <span class="nav-label">HOME</span>
     </a>
     <a href="#" id="navAbout">
-      <span class="nav-icon nav-icon-about">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-      </span>
+      <span class="nav-icon nav-icon-about"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
       <span class="nav-label">About</span>
     </a>
     <a href="#" id="navContact">
-      <span class="nav-icon nav-icon-contact">
-        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-      </span>
+      <span class="nav-icon nav-icon-contact"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
       <span class="nav-label">Contact</span>
     </a>
     <a href="#" id="navDisclaimer">
-      <span class="nav-icon nav-icon-disclaimer">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      </span>
+      <span class="nav-icon nav-icon-disclaimer"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
       <span class="nav-label">Disclaimer</span>
     </a>
   </div>
@@ -873,7 +861,7 @@
       return { ratingClass, sizeClass, votesClass, bonusClass };
     }
 
-    // ===== 34 UNIQUE TAG MODELS (using LED icons) =====
+    // ===== 34 UNIQUE TAG MODELS (using LED icons, no emoji) =====
     const tagModelList = [
       (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} इंस्टेंट बोनस पाएं!<br>Play Rummy, Teen Patti & slots. सुरक्षित निकासी ₹100 से। Start earning real cash – डाउनलोड करें! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस अनलॉक करें!<br>रोमांचक गेम खेलें। Fast withdrawals via UPI. Trusted by millions – अभी खेलना शुरू करें! ₹${bArr[2]} welcome.</div></div>`,
       (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – Get ₹${b} Welcome Bonus!<br>रोमांचक रम्मी टेबल, daily rewards, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} वेलकम बोनस<br>Build sequences, join cash tournaments & daily mystery rewards. सुरक्षित गेमिंग – आज ही जीतना शुरू करें! ₹${bArr[2]} daily. ₹${bArr[3]} loyalty.</div></div>`,
@@ -911,7 +899,6 @@
       (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} Diwa 777 Bonus<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} cashback.</div></div>`
     ];
 
-    // ===== GENERATE FULL TAGS HTML =====
     function createTagsHTML(appName, bonusNum, appIndex) {
       const modelFn = tagModelList[appIndex % tagModelList.length];
       const bonusArr = [];
