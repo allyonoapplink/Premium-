@@ -1,4 +1,3 @@
-00
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -727,8 +726,6 @@
   </div>
 </div>
 
-<!-- tag template removed - all tags will be generated per app dynamically -->
-
 <div class="container" id="mainContainer">
   <div id="allAppsGrid" class="cards-grid"></div>
   <div id="downloadPageContainer" class="hidden"></div>
@@ -788,14 +785,14 @@
       return descs[Math.abs(bonusNum) % descs.length];
     }
 
-    // ===== UNIQUE EXTRA BENEFITS PER APP =====
+    // ===== UNIQUE EXTRA BENEFITS PER APP (200-300 range, no referral) =====
     function getExtraBenefits(appName, bonusNum, category) {
       const benefits = [
-        `Daily login rewards, referral cashback, fast UPI withdrawals, 24/7 customer support, and exclusive ${appName} tournaments.`,
-        `Earn referral bonuses, daily free spins, instant UPI payouts, VIP support, and weekly ${appName} cashback offers.`,
-        `Get daily rewards, friend referral bonuses, fast withdrawals, priority support, and special ${appName} festival offers.`,
-        `Unlock daily login bonuses, referral earnings, instant bank transfers, 24/7 help, and ${appName} loyalty rewards.`,
-        `Enjoy free daily spins, referral cash, quick UPI withdrawals, round-the-clock support, and ${appName} exclusive events.`
+        `🎯 Daily login rewards • Cashback offers • Fast UPI withdrawals • 24/7 customer support • Exclusive ${appName} tournaments • Weekly bonus up to ₹${200 + (bonusNum % 50)}`,
+        `🎯 Welcome bonus • Daily free spins • Instant UPI payouts • VIP support • Weekly cashback offers • Monthly loyalty reward ₹${210 + (bonusNum % 60)}`,
+        `🎯 Daily rewards • Fast withdrawals • Priority support • Festival bonus offers • Weekly cashback • ₹${220 + (bonusNum % 40)} welcome bonus`,
+        `🎯 Login bonuses • Instant bank transfers • 24/7 help • Loyalty rewards • Daily spin bonuses • ₹${230 + (bonusNum % 70)} extra cash`,
+        `🎯 Free daily spins • Quick UPI withdrawals • Round-the-clock support • Exclusive events • Cashback up to ₹${240 + (bonusNum % 50)} • Daily jackpot`
       ];
       return benefits[Math.abs(bonusNum * 3) % benefits.length];
     }
@@ -855,7 +852,7 @@
     function generateAppTags(appName, bonusNum) {
       const tagModels = [
         // Model 1: Yono Games style
-        `<div class="tag-box"><div class="tag-title tag-title-premium">${appName} – Get ₹${bonusNum} Instant Bonus!</div><div class="tag-content">Play skill-based Rummy, Teen Patti & slots. Safe withdrawals from ₹100. Start earning real cash in minutes – download APK & claim your bonus today!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">Unlock ₹${bonusNum} Bonus in ${appName} App!</div><div class="tag-content">Enjoy thrilling games like Aviator, Rummy & more. Refer friends for extra cash. Fast, secure withdrawals via bank/UPI. Trusted by millions – start playing now!</div></div>`,
+        `<div class="tag-box"><div class="tag-title tag-title-premium">${appName} – Get ₹${bonusNum} Instant Bonus!</div><div class="tag-content">Play skill-based Rummy, Teen Patti & slots. Safe withdrawals from ₹100. Start earning real cash in minutes – download APK & claim your bonus today!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">Unlock ₹${bonusNum} Bonus in ${appName} App!</div><div class="tag-content">Enjoy thrilling games like Aviator, Rummy & more. Fast, secure withdrawals via bank/UPI. Trusted by millions – start playing now!</div></div>`,
         
         // Model 2: INR Rummy style
         `<div class="tag-box"><div class="tag-title tag-title-games">Play ${appName} and grab ₹${bonusNum} welcome bonus!</div><div class="tag-content">Enjoy thrilling rummy tables, daily rewards, and fast UPI withdrawals. ${appName} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${appName} – ₹${bonusNum} Welcome Bonus</div><div class="tag-content">Build sequences, join cash tournaments & daily mystery rewards. Safe, fun, and secure gaming – start winning real cash today!</div></div>`,
@@ -870,16 +867,15 @@
         `<div class="tag-box"><div class="tag-title tag-title-games">${appName} version – ₹${bonusNum} joining bonus!</div><div class="tag-content">Spin, play & win with premium slot machines. Fast payouts and 24/7 support available. ${appName} gives you free cash on signup!</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${appName} – ₹${bonusNum} Bonus</div><div class="tag-content">Enjoy free daily spins, cash, quick UPI instant withdrawals, round-the-clock support, and ${appName} exclusive events.</div></div>`,
         
         // Model 6: Generic premium
-        `<div class="tag-box"><div class="tag-title tag-title-vip">${appName} – Join & Get ₹${bonusNum} Free</div><div class="tag-content">Play exciting games, win real money, withdraw instantly. ${appName} is India's trusted gaming platform.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${appName} Features</div><div class="tag-content">Daily bonuses, referral rewards, fast UPI payouts, and exclusive VIP tournaments. Download now!</div></div>`,
+        `<div class="tag-box"><div class="tag-title tag-title-vip">${appName} – Join & Get ₹${bonusNum} Free</div><div class="tag-content">Play exciting games, win real money, withdraw instantly. ${appName} is India's trusted gaming platform.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-download">${appName} Features</div><div class="tag-content">Daily bonuses, fast UPI payouts, and exclusive VIP tournaments. Download now!</div></div>`,
         
         // Model 7: Card games style
-        `<div class="tag-box"><div class="tag-title tag-title-premium">${appName} – ₹${bonusNum} Signup Bonus</div><div class="tag-content">Play Teen Patti, Rummy & more. Secure transactions, instant withdrawals, and 24/7 support.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${appName} Rewards</div><div class="tag-content">Earn cashback, referral income, and daily login bonuses. Start winning real money today!</div></div>`,
+        `<div class="tag-box"><div class="tag-title tag-title-premium">${appName} – ₹${bonusNum} Signup Bonus</div><div class="tag-content">Play Teen Patti, Rummy & more. Secure transactions, instant withdrawals, and 24/7 support.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-bonus">${appName} Rewards</div><div class="tag-content">Earn cashback, and daily login bonuses. Start winning real money today!</div></div>`,
         
         // Model 8: Arcade style
-        `<div class="tag-box"><div class="tag-title tag-title-games">${appName} – ₹${bonusNum} Welcome Offer</div><div class="tag-content">Play arcade games, slots, and more. Fast withdrawals, secure platform, and daily rewards.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${appName} Bonus</div><div class="tag-content">Unlock daily bonuses, referral cash, and instant UPI withdrawals. Join now and start earning!</div></div>`
+        `<div class="tag-box"><div class="tag-title tag-title-games">${appName} – ₹${bonusNum} Welcome Offer</div><div class="tag-content">Play arcade games, slots, and more. Fast withdrawals, secure platform, and daily rewards.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-title tag-title-cash">${appName} Bonus</div><div class="tag-content">Unlock daily bonuses, and instant UPI withdrawals. Join now and start earning!</div></div>`
       ];
       
-      // Select model based on app name hash
       let hash = 0;
       for (let i = 0; i < appName.length; i++) { hash = ((hash << 5) - hash) + appName.charCodeAt(i); hash |= 0; }
       const modelIdx = Math.abs(hash) % tagModels.length;
@@ -907,12 +903,12 @@
         <div class="tag-divider"></div>
         <div class="tag-box">
           <div class="tag-title">Overview – ${appName}</div>
-          <div class="tag-content">${appName} is a popular real cash earning app in India where users can play games like rummy, slots, bingo, and spin games to win real money. New users can claim a signup bonus of up to ₹${bonusArr[6]}, making it easy to get started and explore the platform. The app offers a smooth and secure experience with fast UPI deposits and withdrawals.<br><br>The interface of ${appName} is simple and user-friendly, making it suitable for both beginners and experienced players. You can enjoy daily rewards, referral bonuses, and special events to increase your earnings. The minimum withdrawal starts from ₹${bonusArr[7]}, and most transactions are processed quickly without delays.<br><br>If you are looking for a trusted gaming app that combines entertainment with real earning opportunities, ${appName} is a great choice. Download the latest APK version today and start playing to earn real cash rewards from your mobile.</div>
+          <div class="tag-content">${appName} is a popular real cash earning app in India where users can play games like rummy, slots, bingo, and spin games to win real money. New users can claim a signup bonus of up to ₹${bonusArr[6]}, making it easy to get started and explore the platform. The app offers a smooth and secure experience with fast UPI deposits and withdrawals.<br><br>The interface of ${appName} is simple and user-friendly, making it suitable for both beginners and experienced players. You can enjoy daily rewards, bonus offers, and special events to increase your earnings. The minimum withdrawal starts from ₹${bonusArr[7]}, and most transactions are processed quickly without delays.<br><br>If you are looking for a trusted gaming app that combines entertainment with real earning opportunities, ${appName} is a great choice. Download the latest APK version today and start playing to earn real cash rewards from your mobile.</div>
         </div>
         <div class="tag-divider"></div>
         <div class="tag-box">
           <div class="tag-title">${appName} App Features & Benefits</div>
-          <div class="tag-content"><ul><li><strong>Welcome Bonus:</strong> Get up to ₹${bonusArr[8]} signup bonus for new users</li><li><strong>Fast UPI Withdrawal:</strong> Withdraw starting from ₹${bonusArr[9]} directly to your bank account</li><li><strong>Popular Games:</strong> Play rummy, slots, bingo, spin games and more real cash earning options</li><li><strong>Safe & Secure Platform:</strong> Smooth gameplay experience with secure transactions</li><li><strong>Daily Rewards & Offers:</strong> Earn extra bonuses, cashback and referral rewards regularly</li><li><strong>User-Friendly Interface:</strong> Easy to use app suitable for beginners and experienced players</li></ul></div>
+          <div class="tag-content"><ul><li><strong>Welcome Bonus:</strong> Get up to ₹${bonusArr[8]} signup bonus for new users</li><li><strong>Fast UPI Withdrawal:</strong> Withdraw starting from ₹${bonusArr[9]} directly to your bank account</li><li><strong>Popular Games:</strong> Play rummy, slots, bingo, spin games and more real cash earning options</li><li><strong>Safe & Secure Platform:</strong> Smooth gameplay experience with secure transactions</li><li><strong>Daily Rewards & Offers:</strong> Earn extra bonuses, cashback and rewards regularly</li><li><strong>User-Friendly Interface:</strong> Easy to use app suitable for beginners and experienced players</li></ul></div>
         </div>
         <div class="tag-divider"></div>
         <div class="tag-box">
