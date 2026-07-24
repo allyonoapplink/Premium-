@@ -1528,7 +1528,6 @@
         max-width: 280px;
       }
     }
-    /* mobile first photo adjustment */
     @media (max-width: 480px) {
       .banner-full {
         max-height: 180px;
@@ -1542,6 +1541,68 @@
       .game-name-big {
         font-size: 1.3rem;
         margin: 2px 0 0 0;
+      }
+    }
+    /* small round icons on next page - same as home */
+    .other-card .app-icon-round {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #22c55e;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin: 0 auto 4px;
+      flex-shrink: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .other-card .app-icon-round img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .other-card .app-name {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #1e562a;
+      line-height: 1.2;
+      margin: 2px 0;
+    }
+    .other-card .withdraw-green {
+      font-size: 0.5rem;
+      font-weight: 600;
+      color: #06b6d4;
+      text-shadow: 0 0 6px #06b6d4;
+    }
+    .other-card .signup-bonus-small {
+      font-size: 0.5rem;
+      font-weight: 700;
+      color: #dc2626;
+      text-shadow: 0 0 6px #dc2626;
+    }
+    .other-card .small-download {
+      font-size: 0.55rem;
+      padding: 4px 0;
+      margin-top: 4px;
+    }
+    @media (max-width: 480px) {
+      .other-card .app-icon-round {
+        width: 44px;
+        height: 44px;
+      }
+      .other-card .app-name {
+        font-size: 0.5rem;
+      }
+      .other-card .withdraw-green,
+      .other-card .signup-bonus-small {
+        font-size: 0.4rem;
+      }
+      .other-card .small-download {
+        font-size: 0.45rem;
+        padding: 3px 0;
       }
     }
   </style>
@@ -2001,12 +2062,12 @@
           const relBonus = 200 + (Math.abs(h) % 101);
           otherAppsHtml += `
             <div class="other-card">
-              <div style="width:48px;height:48px;margin:0 auto 4px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;background:#fff5e6;">
-                <img src="${app.img}" alt="${app.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/48?text=App'">
+              <div class="app-icon-round">
+                <img src="${app.img}" alt="${app.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/56?text=App'">
               </div>
               <div class="app-name">${app.name}</div>
-              <div class="withdraw-green">Min Withdrawal: ${app.withdrawal}</div>
-              <div class="signup-bonus-small">Sign Up Bonus: ₹${relBonus}</div>
+              <span class="withdraw-green">Min: ${app.withdrawal}</span>
+              <span class="signup-bonus-small">₹${relBonus}</span>
               <button class="small-download" data-other-index="${originalIndex}">DOWNLOAD</button>
             </div>
           `;
@@ -2014,7 +2075,6 @@
 
         const downloadPageHtml = `
           <div class="download-page" id="activeDownloadPage">
-            <!-- FULL WIDTH BANNER - positioned lower with rounded corners -->
             <div style="padding: 0 12px;">
               <div class="banner-full">
                 <img src="${selectedApp.img}" alt="${selectedApp.name} Banner" loading="eager">
