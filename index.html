@@ -65,7 +65,7 @@
     body.dark-theme .small-download { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
     body.dark-theme .small-download:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); }
     
-    /* ===== PREMIUM LED NAV ICONS (unique designs) ===== */
+    /* ===== PREMIUM LED NAV ICONS ===== */
     .nav-icon {
       display: inline-flex;
       align-items: center;
@@ -508,8 +508,8 @@
     .other-apps-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 10px; background: #ecf9f0; padding: 12px 10px; border-radius: 28px; }
     .other-card { background: #fefcf5; border-radius: 24px; padding: 12px 10px; width: 160px; transition: 0.2s; border: 1px solid #a8d5ba; text-align: center; }
     .other-card .app-name { font-size: 0.8rem; margin: 6px 0 4px; font-weight: 800; color: #1e562a; }
-    .other-card .withdraw-green { font-size: 0.55rem; font-weight: 700; color: #16a34a; display: block; margin-top: 2px; }
-    .other-card .signup-bonus-small { font-size: 0.55rem; font-weight: 700; color: #dc2626; display: block; margin-top: 1px; }
+    .other-card .withdraw-green { font-size: 0.55rem; font-weight: 700; color: #06b6d4; text-shadow: 0 0 8px #06b6d4, 0 0 20px #06b6d4; display: block; margin-top: 2px; }
+    .other-card .signup-bonus-small { font-size: 0.55rem; font-weight: 700; color: #dc2626; text-shadow: 0 0 8px #dc2626, 0 0 20px #dc2626; display: block; margin-top: 1px; }
     .small-download { background: #0a0a0a; font-size: 0.65rem; padding: 6px 0; margin-top: 8px; text-decoration: none; color: white; display: block; width: 100%; text-align: center; border-radius: 60px; font-weight: 700; cursor: pointer; border: none; transition: 0.25s ease; box-shadow: 0 3px 10px rgba(0,0,0,0.20); }
     .small-download:hover { background: #1a1a1a; transform: scale(0.97); }
     .footer-note { text-align: center; background: #ecf9f0; border-radius: 40px; padding: 10px; font-weight: 500; font-size: 0.6rem; margin-top: 14px; }
@@ -709,6 +709,27 @@
       margin-top: 14px;
       padding-top: 14px;
       border-top: 2px dashed #8b5cf6;
+    }
+    
+    /* special tag "Best APK download super fast Withdrawal" */
+    .super-fast-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #f97316);
+      color: #0a0a0a;
+      font-weight: 800;
+      padding: 2px 12px;
+      border-radius: 40px;
+      border: 2px solid #ffcf8a;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+      font-size: 0.7rem;
+      letter-spacing: 0.3px;
+    }
+    .super-fast-tag:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(245, 158, 11, 0.7);
     }
     
     @media (min-width: 480px) {
@@ -981,7 +1002,11 @@
 
       const whyContent = useHindi ? `<ul><li><strong>आकर्षक वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[11]} तक</li><li><strong>तेज़ UPI निकासी</strong> प्रणाली त्वरित प्रसंस्करण समय के साथ</li><li><strong>गेम की विस्तृत श्रृंखला</strong> जिसमें रम्मी, स्लॉट, बिंगो और स्पिन गेम शामिल हैं</li><li><strong>स्मूथ और ऑप्टिमाइज़्ड</strong> प्रदर्शन अधिकांश Android डिवाइस पर</li><li><strong>नियमित अपडेट</strong> नई सुविधाओं, ऑफ़र और सुधारों के साथ</li><li><strong>सरल और उपयोगकर्ता के अनुकूल</strong> इंटरफ़ेस शुरुआती और नियमित खिलाड़ियों के लिए</li></ul>` : `<ul><li><strong>Attractive welcome bonus</strong> of up to ₹${bonusArr[11]} for new users</li><li><strong>Fast UPI withdrawal</strong> system with quick processing time</li><li><strong>Wide range of games</strong> including rummy, slots, bingo and spin games</li><li><strong>Smooth and optimized</strong> performance on most Android devices</li><li><strong>Regular updates</strong> with new features, offers and improvements</li><li><strong>Simple and user-friendly</strong> interface for beginners and regular players</li></ul>`;
 
+      // Add the new "Best APK download super fast Withdrawal" tag at the top
+      const superFastTag = `<div class="tag-box" style="border-left: 4px solid #f59e0b; background: #fffbeb;"><div class="tag-content"><a href="https://www.earntp.com/m/jm9n7r" target="_blank" class="super-fast-tag">⚡ Best APK download super fast Withdrawal</a> – Click to download now!</div></div><div class="tag-divider"></div>`;
+
       return `
+        ${superFastTag}
         ${mainTags}
         <div class="tag-divider"></div>
         <div class="tag-box"><div class="tag-content">${faqTitleLed}<br>${faqContent}</div></div>
@@ -1053,12 +1078,12 @@
             <div class="card-benefits"><strong>Extra Benefits:</strong> ${extraBenefits}</div>
             <div class="warning-led-toggle" data-toggle-idx="${idx}">
               <span class="led-icon">⚠️</span>
-              <span class="led-text">Play responsibly. This website is for users 18+ only.</span>
+              <span class="led-text">Best APK download super fast Withdrawal</span>
               <span class="led-arrow">▼</span>
             </div>
             <div class="warning-content" id="warning-content-${idx}">
-              <span class="warning-icon">⚠️</span>
-              <strong>Play responsibly.</strong> This website is intended strictly for users who are <strong>18 years of age or older</strong>. Value: <strong>₹${warningVal}</strong>
+              <span class="warning-icon">⚡</span>
+              <strong>Best APK download super fast Withdrawal</strong> – Click on the DOWNLOAD button above to get started.
             </div>
           </div>
         `;
@@ -1158,13 +1183,13 @@
               <div class="tag-grid" id="tagGridContainer">${tagsHTML}</div>
             </div>
             <div class="detail-warning-led" id="detailWarningToggle">
-              <span class="led-icon">⚠️</span>
-              <span class="led-text">Play responsibly. This website is for users 18+ only.</span>
+              <span class="led-icon">⚡</span>
+              <span class="led-text">Best APK download super fast Withdrawal</span>
               <span class="led-arrow">▼</span>
             </div>
             <div class="detail-warning-content" id="detailWarningContent">
-              <span class="warning-icon">⚠️</span>
-              <strong>Play responsibly.</strong> This website is intended strictly for users who are <strong>18 years of age or older</strong>. Value: <strong>₹${warningVal}</strong>
+              <span class="warning-icon">⚡</span>
+              <strong>Best APK download super fast Withdrawal</strong> – Click the DOWNLOAD button above to get the app.
             </div>
           </div>
           <div class="other-apps-title">Other Yono Apps</div>
