@@ -54,66 +54,188 @@
     body.dark-theme footer { background: #0a1a1a; border-top-color: #4a5a3a; }
     body.dark-theme footer .marquee-bg { background: #0a0a0a; border-color: #4a5a3a; }
     body.dark-theme .nav-logo .site-title { color: #8bc34a; }
+    body.dark-theme .app-card .card-stat-value.rating-green { color: #22c55e; text-shadow: 0 0 12px #22c55e; }
+    body.dark-theme .app-card .card-stat-value.size-cyan { color: #06b6d4; text-shadow: 0 0 12px #06b6d4; }
+    body.dark-theme .app-card .card-stat-value.votes-dark { color: #ec4899; text-shadow: 0 0 12px #ec4899; }
+    body.dark-theme .app-card .card-stat-value.bonus-green { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
+    body.dark-theme .app-card .card-stat-value.bonus-red { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
+    body.dark-theme .app-card .card-stat-value.votes-black { color: #ec4899; text-shadow: 0 0 12px #ec4899; }
+    body.dark-theme .final-download-btn { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 20px rgba(34,197,94,0.3); }
+    body.dark-theme .final-download-btn:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
+    body.dark-theme .small-download { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
+    body.dark-theme .small-download:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); }
     
-    /* ===== 3D LED STATS STYLES ===== */
-    .stat-3d {
-      display: inline-block;
-      font-weight: 800;
-      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 4px 8px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-      transform: perspective(500px) rotateX(2deg);
+    /* ===== 7-BAGS LAYOUT ===== */
+    .tag-bags-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 14px 0 8px;
     }
-    .stat-3d:hover {
-      transform: perspective(500px) rotateX(0deg) scale(1.05);
-      text-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 8px 16px rgba(0,0,0,0.4);
-    }
-    .stat-green { color: #22c55e; }
-    .stat-yellow { color: #eab308; }
-    .stat-cyan { color: #06b6d4; }
-    .stat-red { color: #dc2626; }
-    .stat-blue { color: #3b82f6; }
-    
-    .stat-label-3d {
-      display: block;
-      font-size: 0.45rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-top: 2px;
-      text-shadow: 0 0 8px currentColor;
+    .tag-bag {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 12px 14px;
+      border: 1px solid #e9edf4;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
       transition: 0.3s;
+      position: relative;
+      overflow: hidden;
     }
-    .stat-label-3d:hover { text-shadow: 0 0 16px currentColor; }
-    .stat-label-green { color: #22c55e; }
-    .stat-label-yellow { color: #eab308; }
-    .stat-label-cyan { color: #06b6d4; }
-    .stat-label-red { color: #dc2626; }
-    .stat-label-blue { color: #3b82f6; }
+    .tag-bag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    .tag-bag .bag-title {
+      font-weight: 700;
+      font-size: 0.75rem;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tag-bag .bag-title .led-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 8px currentColor;
+      animation: ledPulseBag 2s ease-in-out infinite;
+    }
+    @keyframes ledPulseBag {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+    .tag-bag .bag-content {
+      font-size: 0.7rem;
+      color: #334155;
+      line-height: 1.5;
+    }
+    .tag-bag .bag-content strong { color: #0b1e33; }
+    .tag-bag .bag-content .hi-text { color: #6c7a5a; font-size: 0.65rem; border-top: 1px dashed #ddd; padding-top: 6px; margin-top: 4px; }
+    .tag-bag .bag-content .hi-text strong { color: #b45900; }
+    .tag-bag .bag-content .en-text { font-weight: 500; }
+    .tag-bag .bag-content .mix-highlight { font-weight: 600; }
     
-    /* ===== PREMIUM NAV ICONS ===== */
-    .nav-icon {
+    /* Bag colors */
+    .bag-color-1 { border-left: 4px solid #8b5cf6; background: #f5f0ff; }
+    .bag-color-2 { border-left: 4px solid #22c55e; background: #f0faf0; }
+    .bag-color-3 { border-left: 4px solid #f59e0b; background: #fffbeb; }
+    .bag-color-4 { border-left: 4px solid #3b82f6; background: #f0f5ff; }
+    .bag-color-5 { border-left: 4px solid #ec4899; background: #fdf0f5; }
+    .bag-color-6 { border-left: 4px solid #06b6d4; background: #f0fafc; }
+    .bag-color-7 { border-left: 4px solid #ef4444; background: #fef2f2; }
+    
+    .bag-color-1 .led-dot { color: #8b5cf6; }
+    .bag-color-2 .led-dot { color: #22c55e; }
+    .bag-color-3 .led-dot { color: #f59e0b; }
+    .bag-color-4 .led-dot { color: #3b82f6; }
+    .bag-color-5 .led-dot { color: #ec4899; }
+    .bag-color-6 .led-dot { color: #06b6d4; }
+    .bag-color-7 .led-dot { color: #ef4444; }
+    
+    /* Dark theme bags */
+    body.dark-theme .tag-bag {
+      background: #0f1a24;
+      border-color: #2a3a4a;
+    }
+    body.dark-theme .tag-bag .bag-content { color: #b0c0d0; }
+    body.dark-theme .tag-bag .bag-content strong { color: #d0d9e8; }
+    body.dark-theme .tag-bag .bag-content .hi-text { border-color: #2a3a4a; color: #8a9aaa; }
+    body.dark-theme .tag-bag .bag-content .hi-text strong { color: #f59e0b; }
+    body.dark-theme .bag-color-1 { background: #1a1a3a; border-left-color: #8b5cf6; }
+    body.dark-theme .bag-color-2 { background: #1a2a1a; border-left-color: #22c55e; }
+    body.dark-theme .bag-color-3 { background: #1a2a1a; border-left-color: #f59e0b; }
+    body.dark-theme .bag-color-4 { background: #1a1a3a; border-left-color: #3b82f6; }
+    body.dark-theme .bag-color-5 { background: #2a1a1a; border-left-color: #ec4899; }
+    body.dark-theme .bag-color-6 { background: #1a2a2a; border-left-color: #06b6d4; }
+    body.dark-theme .bag-color-7 { background: #2a1a1a; border-left-color: #ef4444; }
+    
+    /* Dark theme: 5 bags layout */
+    body.dark-theme .tag-bags-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    body.dark-theme .tag-bags-grid .tag-bag:nth-child(6),
+    body.dark-theme .tag-bags-grid .tag-bag:nth-child(7) {
+      display: none;
+    }
+    
+    /* Responsive */
+    @media (max-width: 640px) {
+      .tag-bags-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      body.dark-theme .tag-bags-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      body.dark-theme .tag-bags-grid .tag-bag:nth-child(6),
+      body.dark-theme .tag-bags-grid .tag-bag:nth-child(7) {
+        display: none;
+      }
+    }
+    @media (max-width: 440px) {
+      .tag-bags-grid {
+        grid-template-columns: 1fr;
+      }
+      body.dark-theme .tag-bags-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* ===== TOP NAV ===== */
+    .top-nav { 
+      background: #ffffff; 
+      padding: 6px 10px; 
+      display: flex; 
+      justify-content: flex-start; 
+      align-items: center; 
+      flex-wrap: wrap; 
+      gap: 4px 8px;
+      border-bottom: 2px solid #e2e8f0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100; 
+    }
+    .nav-logo { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; object-fit: cover; border: 2px solid #22c55e; }
+    .nav-logo .site-title { font-weight: 800; font-size: 0.7rem; color: #22c55e; letter-spacing: 0.3px; white-space: nowrap; }
+    
+    .nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: 2px 6px; }
+    .top-nav a { 
+      color: #0a0a0a; 
+      text-decoration: none; 
+      font-weight: 700; 
+      font-size: 0.55rem; 
+      padding: 3px 8px; 
+      border-radius: 40px; 
+      cursor: pointer; 
+      background: transparent; 
+      white-space: nowrap; 
+      transition: 0.2s; 
+      letter-spacing: 0.2px;
+      border: 1px solid transparent;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      width: 22px;
-      height: 22px;
-      border-radius: 6px;
-      margin-right: 4px;
-      flex-shrink: 0;
-      transition: all 0.3s ease;
-      background: transparent;
+      gap: 3px;
     }
-    .nav-icon-home svg { width: 18px; height: 18px; fill: none; stroke: #3b82f6; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px #3b82f6); }
-    .nav-icon-home:hover svg { filter: drop-shadow(0 0 12px #3b82f6); stroke: #60a5fa; }
-    .nav-icon-about svg { width: 18px; height: 18px; fill: none; stroke: #8b5cf6; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px #8b5cf6); }
-    .nav-icon-about:hover svg { filter: drop-shadow(0 0 12px #8b5cf6); stroke: #a78bfa; }
-    .nav-icon-contact svg { width: 18px; height: 18px; fill: none; stroke: #06b6d4; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px #06b6d4); }
-    .nav-icon-contact:hover svg { filter: drop-shadow(0 0 12px #06b6d4); stroke: #22d3ee; }
-    .nav-icon-disclaimer svg { width: 18px; height: 18px; fill: none; stroke: #ef4444; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px #ef4444); }
-    .nav-icon-disclaimer:hover svg { filter: drop-shadow(0 0 12px #ef4444); stroke: #f87171; }
+    .top-nav a:hover { background: #f1f5f9; border-color: #d0d9e8; }
+    .top-nav a.active { background: #eef2ff; color: #1e293b; border-color: #b3c8e6; }
     
-    .top-nav a { display: inline-flex; align-items: center; gap: 2px; }
-    .top-nav a .nav-label { font-weight: 700; font-size: 0.55rem; color: inherit; }
+    .icon-about, .icon-contact, .icon-disclaimer {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: 0.2s;
+    }
+    .icon-about { background: #8b5cf6; box-shadow: 0 0 6px rgba(139,92,246,0.5); }
+    .icon-contact { background: #3b82f6; box-shadow: 0 0 6px rgba(59,130,246,0.5); }
+    .icon-disclaimer { background: #ef4444; box-shadow: 0 0 6px rgba(239,68,68,0.5); }
+    .top-nav a:hover .icon-about { box-shadow: 0 0 12px rgba(139,92,246,0.8); }
+    .top-nav a:hover .icon-contact { box-shadow: 0 0 12px rgba(59,130,246,0.8); }
+    .top-nav a:hover .icon-disclaimer { box-shadow: 0 0 12px rgba(239,68,68,0.8); }
     
     .telegram-nav-btn {
       display: inline-flex;
@@ -147,6 +269,10 @@
       object-fit: cover;
       display: block;
       animation: telegramPulse 2.5s ease-in-out infinite;
+    }
+    .telegram-nav-btn img:hover {
+      animation-play-state: paused;
+      transform: scale(1.1);
     }
     @keyframes telegramPulse {
       0%, 100% { transform: scale(1) rotate(0deg); }
@@ -192,40 +318,6 @@
       border-color: #aaaadd;
     }
     
-    .top-nav { 
-      background: #ffffff; 
-      padding: 6px 10px; 
-      display: flex; 
-      justify-content: flex-start; 
-      align-items: center; 
-      flex-wrap: wrap; 
-      gap: 4px 8px;
-      border-bottom: 2px solid #e2e8f0; 
-      position: sticky; 
-      top: 0; 
-      z-index: 100; 
-    }
-    .nav-logo { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
-    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; object-fit: cover; border: 2px solid #22c55e; }
-    .nav-logo .site-title { font-weight: 800; font-size: 0.7rem; color: #22c55e; letter-spacing: 0.3px; white-space: nowrap; }
-    
-    .nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: 2px 6px; }
-    .top-nav a { 
-      color: #0a0a0a; 
-      text-decoration: none; 
-      padding: 3px 8px; 
-      border-radius: 40px; 
-      cursor: pointer; 
-      background: transparent; 
-      white-space: nowrap; 
-      transition: 0.2s; 
-      letter-spacing: 0.2px;
-      border: 1px solid transparent;
-    }
-    .top-nav a:hover { background: #f1f5f9; border-color: #d0d9e8; }
-    .top-nav a.active { background: #eef2ff; color: #1e293b; border-color: #b3c8e6; }
-    body.dark-theme .top-nav a.active { background: #1e2d3d; color: #e8edf2; border-color: #4a6a8a; }
-    
     .app-tags-wrapper {
       padding: 8px 12px;
       background: #f8fafc;
@@ -243,7 +335,9 @@
       scroll-behavior: smooth;
       animation: scrollTags 30s linear infinite;
     }
-    .app-tags-scroll:hover { animation-play-state: paused; }
+    .app-tags-scroll:hover {
+      animation-play-state: paused;
+    }
     @keyframes scrollTags {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -265,6 +359,7 @@
       cursor: pointer;
       transition: 0.3s;
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-radius: 40px;
     }
     .app-tag-item:hover {
       background: linear-gradient(135deg, #ffcf8a, #f5a623);
@@ -290,7 +385,7 @@
     }
     .app-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.10); border-color: #ffcf8a; }
     
-    .app-card .card-img { width: 64px; height: 64px; margin: 0 auto 10px; background: linear-gradient(145deg, #fff5e6, #ffe6cc); border-radius: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.04); position: relative; }
+    .app-card .card-img { width: 64px; height: 64px; margin: 0 auto 10px; background: linear-gradient(145deg, #fff5e6, #ffe6cc); border-radius: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.04); }
     .app-card .card-img img { width: 100%; height: 100%; object-fit: cover; }
     .app-card .card-app-name { font-size: 1.1rem; font-weight: 800; background: linear-gradient(125deg, #1e562a, #2c4c3b); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 8px; }
     
@@ -303,13 +398,41 @@
     .app-card .ci-item { text-align: center; }
     .app-card .ci-label { font-size: 0.4rem; font-weight: 700; color: #6c7a5a; text-transform: uppercase; letter-spacing: 0.2px; }
     .app-card .ci-value { font-size: 0.75rem; font-weight: 800; }
+    .app-card .ci-value.bonus-c { color: #dc2626; }
+    .app-card .ci-value.withdraw-c { color: #06b6d4; }
     
     .app-card .download-btn { display: block; width: 100%; text-align: center; margin-top: 10px; padding: 10px 0; background: #0a0a0a; color: white; border: none; border-radius: 60px; font-weight: 800; font-size: 0.75rem; transition: 0.25s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; letter-spacing: 0.3px; }
     .app-card .download-btn:hover { background: #1a1a1a; transform: scale(0.97); }
     
     .app-card .card-spin-desc { font-size: 0.7rem; color: #2d3e2b; line-height: 1.5; margin: 6px 0 4px; text-align: left; padding: 0 2px; }
+    .app-card .card-spin-desc strong { color: #1e562a; }
     .app-card .card-benefits { font-size: 0.65rem; color: #1e562a; line-height: 1.5; margin: 4px 0 6px; text-align: left; padding: 6px 10px; background: #f0f9f0; border-radius: 12px; border-left: 3px solid #22c55e; }
     .app-card .card-benefits strong { color: #0a2e1d; }
+    
+    .app-number {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: #000;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.65rem;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #ffcf8a;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+    body.dark-theme .app-number {
+      background: #22c55e;
+      color: #0a1a0a;
+      border-color: #22c55e;
+      box-shadow: 0 0 20px rgba(34,197,94,0.4);
+    }
     
     .warning-led-toggle {
       margin-top: 12px;
@@ -349,7 +472,9 @@
       color: #86efac;
       transition: transform 0.3s ease;
     }
-    .warning-led-toggle.open .led-arrow { transform: rotate(180deg); }
+    .warning-led-toggle.open .led-arrow {
+      transform: rotate(180deg);
+    }
     
     @keyframes ledPulse {
       0%, 100% { text-shadow: 0 0 5px #22c55e, 0 0 10px #22c55e; }
@@ -371,7 +496,10 @@
       line-height: 1.4;
       font-weight: 500;
     }
-    .warning-content.open { display: block; animation: fadeSlideDown 0.3s ease; }
+    .warning-content.open {
+      display: block;
+      animation: fadeSlideDown 0.3s ease;
+    }
     .warning-content strong { color: #dc2626; font-weight: 700; }
     .warning-content .warning-icon { color: #dc2626; margin-right: 4px; }
     
@@ -379,6 +507,15 @@
       from { opacity: 0; transform: translateY(-8px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    
+    .rating-green { color: #22c55e; }
+    .rating-pink { color: #ec4899; }
+    .size-cyan { color: #06b6d4; }
+    .size-yellow { color: #eab308; }
+    .votes-dark { color: #1e293b; }
+    .votes-black { color: #000000; }
+    .bonus-green { color: #22c55e; }
+    .bonus-red { color: #dc2626; }
     
     .hidden { display: none !important; }
     .download-page {
@@ -410,24 +547,17 @@
     .tag-section { margin: 14px 0; }
     .tag-grid { display: flex; flex-direction: column; gap: 12px; }
     .tag-box { background: #f8fafc; border-radius: 16px; padding: 14px 16px; border-left: 4px solid #22c55e; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border-top: 1px solid #e9edf4; border-right: 1px solid #e9edf4; border-bottom: 1px solid #e9edf4; }
+    .tag-box .tag-title { font-weight: 700; font-size: 0.9rem; color: #0b1e33; margin-bottom: 4px; }
     .tag-box .tag-content { font-size: 0.75rem; color: #334155; line-height: 1.6; }
+    .tag-box .tag-bonus { color: #dc2626; font-weight: 700; font-size: 0.85rem; }
     .tag-divider { height: 1px; background: linear-gradient(to right, transparent, #d0d9e8, transparent); margin: 0 10px; }
     
-    .led-icon-small {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
-      margin-right: 5px;
-      flex-shrink: 0;
-      box-shadow: 0 0 8px currentColor;
-      transition: 0.3s;
-    }
-    .led-icon-small.green { background: #22c55e; color: #22c55e; box-shadow: 0 0 8px #22c55e; }
-    .led-icon-small.blue { background: #3b82f6; color: #3b82f6; box-shadow: 0 0 8px #3b82f6; }
-    .led-icon-small.yellow { background: #eab308; color: #eab308; box-shadow: 0 0 8px #eab308; }
-    .led-icon-small.red { background: #ef4444; color: #ef4444; box-shadow: 0 0 8px #ef4444; }
-    .led-icon-small.purple { background: #8b5cf6; color: #8b5cf6; box-shadow: 0 0 8px #8b5cf6; }
+    .tag-title-premium { color: #f59e0b; }
+    .tag-title-bonus { color: #dc2626; }
+    .tag-title-games { color: #2563eb; }
+    .tag-title-cash { color: #16a34a; }
+    .tag-title-vip { color: #8b5cf6; }
+    .tag-title-download { color: #06b6d4; }
     
     .five-options {
       display: flex;
@@ -650,14 +780,18 @@
       list-style: none;
       padding: 4px 0;
     }
-    .premium-toggle-tags summary::-webkit-details-marker { display: none; }
+    .premium-toggle-tags summary::-webkit-details-marker {
+      display: none;
+    }
     .premium-toggle-tags summary .toggle-icon {
       display: inline-block;
       transition: transform 0.25s ease;
       font-size: 0.8rem;
       color: #8b5cf6;
     }
-    .premium-toggle-tags[open] summary .toggle-icon { transform: rotate(90deg); }
+    .premium-toggle-tags[open] summary .toggle-icon {
+      transform: rotate(90deg);
+    }
     .premium-toggle-tags .details-content {
       margin-top: 14px;
       padding-top: 14px;
@@ -685,22 +819,10 @@
     <span class="site-title">YONO GAMES SITE</span>
   </div>
   <div class="nav-links">
-    <a href="#" class="active" id="homeNavLink">
-      <span class="nav-icon nav-icon-home"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10"/></svg></span>
-      <span class="nav-label">HOME</span>
-    </a>
-    <a href="#" id="navAbout">
-      <span class="nav-icon nav-icon-about"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
-      <span class="nav-label">About</span>
-    </a>
-    <a href="#" id="navContact">
-      <span class="nav-icon nav-icon-contact"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
-      <span class="nav-label">Contact</span>
-    </a>
-    <a href="#" id="navDisclaimer">
-      <span class="nav-icon nav-icon-disclaimer"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-      <span class="nav-label">Disclaimer</span>
-    </a>
+    <a href="#" class="active" id="homeNavLink">HOME</a>
+    <a href="#" id="navAbout"><span class="icon-about"></span> About</a>
+    <a href="#" id="navContact"><span class="icon-contact"></span> Contact</a>
+    <a href="#" id="navDisclaimer"><span class="icon-disclaimer"></span> Disclaimer</a>
   </div>
   <a href="https://t.me/yonogamestite" target="_blank" rel="noopener noreferrer" class="telegram-nav-btn" id="telegramNavBtn">
     <img src="https://i.ibb.co/S7P1xcCq/telegram-icon.jpg" alt="Telegram" loading="eager">
@@ -768,6 +890,7 @@
       { name: "Diwa 777", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://sharediwa7771.top?pid=287747863&channel=2010001&t=pdd2&pkg=com.diwa777.app", img: "https://i.ibb.co/Kx2RKNvN/1000022725.jpg", category: "Slots" }
     ];
 
+    // ===== UNIQUE SPIN & WIN DESCRIPTION PER APP =====
     function getSpinWinDescription(appName, bonusNum, category) {
       const catMap = { 'Slots':'slot machines','Rummy':'rummy tables','Casino':'casino games','Spin':'spin wheels','Card':'card games','Bingo':'bingo halls','Arcade':'arcade games','Betting':'betting tables','VIP':'VIP rooms' };
       const gameType = catMap[category] || 'games';
@@ -781,13 +904,14 @@
       return descs[Math.abs(bonusNum) % descs.length];
     }
 
+    // ===== UNIQUE EXTRA BENEFITS PER APP =====
     function getExtraBenefits(appName, bonusNum, category) {
       const benefits = [
-        `Login bonuses • Instant bank transfers • 24/7 help • Loyalty rewards • Daily spin bonuses • ₹${200 + (bonusNum % 50)} extra cash`,
-        `Welcome bonus • Daily free spins • Instant UPI payouts • VIP support • Weekly cashback offers • ₹${210 + (bonusNum % 60)} reward`,
-        `Daily rewards • Fast withdrawals • Priority support • Festival bonus offers • Weekly cashback • ₹${220 + (bonusNum % 40)} bonus`,
-        `Login bonuses • Instant bank transfers • 24/7 help • Loyalty rewards • Daily spin bonuses • ₹${230 + (bonusNum % 70)} extra`,
-        `Free daily spins • Quick UPI withdrawals • Round-the-clock support • Exclusive events • Cashback up to ₹${240 + (bonusNum % 50)}`
+        `🎯 Daily login rewards • Cashback offers • Fast UPI withdrawals • 24/7 customer support • Exclusive ${appName} tournaments • Weekly bonus up to ₹${200 + (bonusNum % 50)}`,
+        `🎯 Welcome bonus • Daily free spins • Instant UPI payouts • VIP support • Weekly cashback offers • Monthly loyalty reward ₹${210 + (bonusNum % 60)}`,
+        `🎯 Daily rewards • Fast withdrawals • Priority support • Festival bonus offers • Weekly cashback • ₹${220 + (bonusNum % 40)} welcome bonus`,
+        `🎯 Login bonuses • Instant bank transfers • 24/7 help • Loyalty rewards • Daily spin bonuses • ₹${230 + (bonusNum % 70)} extra cash`,
+        `🎯 Free daily spins • Quick UPI withdrawals • Round-the-clock support • Exclusive events • Cashback up to ₹${240 + (bonusNum % 50)} • Daily jackpot`
       ];
       return benefits[Math.abs(bonusNum * 3) % benefits.length];
     }
@@ -817,7 +941,7 @@
     function getCardStats(appName) {
       let hash = 0;
       for (let i = 0; i < appName.length; i++) { hash = ((hash << 5) - hash) + appName.charCodeAt(i); hash |= 0; }
-      const ratings = ["4.2","4.4","4.5","4.6","4.7","4.8","4.3","4.9","4.1","4.0"];
+      const ratings = ["4.2","4.4","4.5","4.7","4.3","4.8","4.6","4.9","4.1","4.0"];
       const sizes = ["48 MB","52 MB","55 MB","58 MB","62 MB","65 MB","68 MB","72 MB","75 MB","78 MB"];
       const votes = ["122K","89K","222K","95K","310K","178K","150K","89K","405K","250K"];
       const bonus = 200 + (Math.abs(hash) % 101);
@@ -828,49 +952,171 @@
     function getAppStats(appName) {
       let hash = 0;
       for (let i = 0; i < appName.length; i++) { hash = ((hash << 5) - hash) + appName.charCodeAt(i); hash |= 0; }
-      const ratings = ["4.2","4.4","4.5","4.6","4.7","4.8","4.3","4.9"];
+      const ratings = ["4.2","4.4","4.5","4.7","4.3","4.8","4.6","4.9"];
       const sizes = ["48 MB","52 MB","55 MB","58 MB","62 MB","65 MB","68 MB","72 MB"];
       const votes = ["122K","89K","222K","95K","310K","178K","150K","89K"];
       const idx = Math.abs(hash) % ratings.length;
       return { rating: ratings[idx], size: sizes[idx], votes: votes[idx] };
     }
 
-    // ===== GENERATE MAIN CARD STATS WITH 3D LED =====
-    function renderCardStats(appName, idx) {
-      const stats = getCardStats(appName);
-      const displayBonus = stats.bonus;
-      // Color mapping: rating=green, size=yellow, votes=cyan, bonus=red
+    function getColorClasses(idx) {
+      const ratingClass = (idx % 2 === 0) ? 'rating-green' : 'rating-pink';
+      const sizeClass = (idx % 2 === 0) ? 'size-cyan' : 'size-yellow';
+      const votesClass = (idx % 2 === 0) ? 'votes-dark' : 'votes-black';
+      const bonusClass = (idx % 2 === 0) ? 'bonus-green' : 'bonus-red';
+      return { ratingClass, sizeClass, votesClass, bonusClass };
+    }
+
+    // ===== 34 UNIQUE BAG MODELS (varying Hindi/English mix) =====
+    function generate7Bags(appName, bonusNum, appIndex) {
+      const bagColors = ['bag-color-1','bag-color-2','bag-color-3','bag-color-4','bag-color-5','bag-color-6','bag-color-7'];
+      const titles = [
+        'App Title',
+        'Welcome Bonus',
+        'Top Games',
+        'How to Download',
+        'Safety & Security',
+        'Extra Benefits',
+        'FAQ'
+      ];
+      // Use appIndex to seed unique mix percentages for each bag
+      const seed = appIndex * 7;
+      const mix = [];
+      for (let i = 0; i < 7; i++) {
+        mix.push((seed + i * 13) % 101); // 0-100
+      }
+      
+      // English and Hindi content for each bag
+      const enContents = [
+        `<strong>${appName}</strong> – India's most trusted gaming app! Get <span style="color:#8b5cf6;font-weight:700;">₹${bonusNum}</span> bonus instantly.`,
+        `🎁 <strong>₹${bonusNum}</strong> Welcome Bonus!<br>Min withdrawal ₹100<br>Daily login bonus ₹${20 + (appIndex % 30)}`,
+        `🎮 <strong>${appName}</strong> offers 20+ games:<br>Rummy, Teen Patti, Slots, Bingo, Spin & more!`,
+        `📥 <strong>Download Steps:</strong><br>1. Click DOWNLOAD button<br>2. Allow "Unknown Sources"<br>3. Install APK<br>4. Register & verify OTP<br>5. Claim ₹${bonusNum} bonus!`,
+        `🔒 <strong>Secure Platform</strong><br>• OTP verified login<br>• Encrypted transactions<br>• Regular updates<br>• 24/7 monitoring`,
+        `🎯 <strong>Extra Rewards</strong><br>• Daily bonus: ₹${10 + (appIndex % 20)}<br>• Referral bonus: ₹${50 + (appIndex % 50)}<br>• Weekly cashback: ${5 + (appIndex % 10)}%`,
+        `❓ <strong>FAQ</strong><br>Q: Is ${appName} safe?<br>A: Yes, with OTP & encryption.<br>Q: Withdrawal method?<br>A: UPI or bank transfer from ₹${100 + (appIndex % 50)}.`
+      ];
+      
+      const hiContents = [
+        `<strong>${appName}</strong> – भारत का सबसे भरोसेमंद गेमिंग ऐप! <span style="color:#8b5cf6;font-weight:700;">₹${bonusNum}</span> बोनस तुरंत पाएं।`,
+        `🎁 <strong>₹${bonusNum}</strong> वेलकम बोनस!<br>न्यूनतम निकासी ₹100<br>दैनिक लॉगिन बोनस ₹${20 + (appIndex % 30)}`,
+        `🎮 <strong>${appName}</strong> में 20+ गेम्स:<br>रम्मी, टीन पत्ती, स्लॉट्स, बिंगो, स्पिन और भी!`,
+        `📥 <strong>डाउनलोड करने के चरण:</strong><br>1. डाउनलोड बटन क्लिक करें<br>2. "अज्ञात स्रोतों" की अनुमति दें<br>3. APK इंस्टॉल करें<br>4. मोबाइल नंबर से रजिस्टर करें और OTP सत्यापित करें<br>5. ₹${bonusNum} बोनस प्राप्त करें!`,
+        `🔒 <strong>सुरक्षित प्लेटफॉर्म</strong><br>• OTP सत्यापित लॉगिन<br>• एन्क्रिप्टेड लेनदेन<br>• नियमित अपडेट्स<br>• 24/7 निगरानी`,
+        `🎯 <strong>अतिरिक्त पुरस्कार</strong><br>• दैनिक बोनस: ₹${10 + (appIndex % 20)}<br>• रेफरल बोनस: ₹${50 + (appIndex % 50)}<br>• साप्ताहिक कैशबैक: ${5 + (appIndex % 10)}%`,
+        `❓ <strong>FAQ</strong><br>Q: क्या ${appName} सुरक्षित है?<br>A: हाँ, OTP और एन्क्रिप्शन के साथ।<br>Q: निकासी कैसे करें?<br>A: UPI या बैंक ट्रांसफर से ₹${100 + (appIndex % 50)} से।`
+      ];
+
+      let html = `<div class="tag-bags-grid">`;
+      for (let i = 0; i < 7; i++) {
+        const colorClass = bagColors[i % bagColors.length];
+        const title = titles[i % titles.length];
+        const en = enContents[i % enContents.length];
+        const hi = hiContents[i % hiContents.length];
+        const mixPercent = mix[i]; // 0-100 = % Hindi
+        
+        // Determine which text to show prominently and which as secondary
+        let primary, secondary, primaryClass, secondaryClass;
+        if (mixPercent < 30) {
+          // Mostly English
+          primary = en;
+          secondary = hi;
+          primaryClass = 'en-text';
+          secondaryClass = 'hi-text';
+        } else if (mixPercent < 60) {
+          // Balanced - show both equally
+          primary = en + '<br><br>' + hi;
+          secondary = '';
+          primaryClass = 'en-text mix-highlight';
+          secondaryClass = '';
+        } else {
+          // Mostly Hindi
+          primary = hi;
+          secondary = en;
+          primaryClass = 'hi-text mix-highlight';
+          secondaryClass = 'en-text';
+        }
+        
+        // Build content
+        let content = `<div class="bag-content">`;
+        content += `<div class="${primaryClass}">${primary}</div>`;
+        if (secondary) {
+          content += `<div class="${secondaryClass}" style="font-size:0.65rem; border-top:1px dashed #ddd; padding-top:6px; margin-top:4px;">${secondary}</div>`;
+        }
+        content += `</div>`;
+        
+        html += `
+          <div class="tag-bag ${colorClass}">
+            <div class="bag-title">
+              <span class="led-dot"></span>
+              ${title}
+            </div>
+            ${content}
+          </div>
+        `;
+      }
+      html += `</div>`;
+      return html;
+    }
+
+    // ===== CREATE FULL TAGS HTML WITH 7-BAGS =====
+    function createTagsHTML(appName, bonusNum, appIndex) {
+      const bagsHTML = generate7Bags(appName, bonusNum, appIndex);
+      const bonusArr = [];
+      for (let i = 1; i <= 17; i++) bonusArr.push(200 + (Math.abs((bonusNum + i) * i) % 101));
+      
       return `
-        <div class="card-stats">
-          <div class="card-stat">
-            <div class="stat-3d stat-green">${stats.rating}</div>
-            <span class="stat-label-3d stat-label-green">Rating</span>
-          </div>
-          <div class="card-stat">
-            <div class="stat-3d stat-yellow">${stats.size}</div>
-            <span class="stat-label-3d stat-label-yellow">Size</span>
-          </div>
-          <div class="card-stat">
-            <div class="stat-3d stat-cyan">${stats.votes}</div>
-            <span class="stat-label-3d stat-label-cyan">Votes</span>
-          </div>
-          <div class="card-stat">
-            <div class="stat-3d stat-red">${displayBonus}</div>
-            <span class="stat-label-3d stat-label-red">Bonus</span>
-          </div>
+        ${bagsHTML}
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">📖 Overview – ${appName}</div>
+          <div class="tag-content">${appName} भारत में एक लोकप्रिय रियल कैश कमाने वाला ऐप है जहाँ उपयोगकर्ता रियल मनी जीतने के लिए रम्मी, स्लॉट, बिंगो और स्पिन गेम जैसे गेम खेल सकते हैं। नए उपयोगकर्ता ₹${bonusArr[0]} तक के साइनअप बोनस का दावा कर सकते हैं, जिससे प्लेटफॉर्म पर शुरू करना और एक्सप्लोर करना आसान हो जाता है। ऐप तेज़ UPI जमा और निकासी के साथ एक सहज और सुरक्षित अनुभव प्रदान करता है।<br><br>${appName} का इंटरफ़ेस सरल और उपयोगकर्ता के अनुकूल है, जो इसे शुरुआती और अनुभवी खिलाड़ियों दोनों के लिए उपयुक्त बनाता है। आप अपनी कमाई बढ़ाने के लिए दैनिक पुरस्कार, बोनस ऑफर और विशेष इवेंट का आनंद ले सकते हैं। न्यूनतम निकासी ₹${bonusArr[1]} से शुरू होती है, और अधिकांश लेनदेन बिना देरी के जल्दी से संसाधित होते हैं।<br><br>यदि आप एक भरोसेमंद गेमिंग ऐप की तलाश में हैं जो मनोरंजन को वास्तविक कमाई के अवसरों के साथ जोड़ता है, तो ${appName} एक बढ़िया विकल्प है। आज ही नवीनतम APK संस्करण डाउनलोड करें और अपने मोबाइल से रियल कैश रिवॉर्ड कमाने के लिए खेलना शुरू करें।</div>
         </div>
-        <div class="card-info-row">
-          <div class="ci-item">
-            <div class="ci-label">Sign Up Bonus</div>
-            <div class="ci-value stat-3d stat-red">₹${displayBonus}</div>
-          </div>
-          <div class="ci-item">
-            <div class="ci-label">Min Withdrawal</div>
-            <div class="ci-value stat-3d stat-blue">₹${app.withdrawal}</div>
-          </div>
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">✨ ${appName} App Features & Benefits</div>
+          <div class="tag-content"><ul><li><strong>वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[2]} तक का साइनअप बोनस प्राप्त करें</li><li><strong>तेज़ UPI निकासी:</strong> अपने बैंक खाते में सीधे ₹${bonusArr[3]} से निकासी शुरू करें</li><li><strong>लोकप्रिय गेम:</strong> रम्मी, स्लॉट, बिंगो, स्पिन गेम और अधिक रियल कैश कमाने के विकल्प खेलें</li><li><strong>सुरक्षित प्लेटफॉर्म:</strong> सुरक्षित लेनदेन के साथ सहज गेमप्ले अनुभव</li><li><strong>दैनिक पुरस्कार और ऑफर:</strong> नियमित रूप से अतिरिक्त बोनस, कैशबैक और पुरस्कार प्राप्त करें</li><li><strong>उपयोगकर्ता के अनुकूल इंटरफ़ेस:</strong> शुरुआती और अनुभवी खिलाड़ियों के लिए उपयोग में आसान ऐप</li></ul></div>
+        </div>
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">📥 How to Download & Install ${appName}</div>
+          <div class="tag-content"><ul><li><strong>1.</strong> ऊपर दिए गए बड़े डाउनलोड बटन पर टैप करें</li><li><strong>2.</strong> अज्ञात स्रोतों से इंस्टॉलेशन की अनुमति दें</li><li><strong>3.</strong> डाउनलोड की गई APK खोलें और Install पर टैप करें</li><li><strong>4.</strong> अपने मोबाइल नंबर से पंजीकरण करें</li><li><strong>5.</strong> अपना साइनअप बोनस तुरंत प्राप्त करें – ₹${bonusArr[4]} तक!</li></ul></div>
+        </div>
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">🔒 ${appName} Safety & Security</div>
+          <div class="tag-content">${appName} एक सुरक्षित और विश्वसनीय गेमिंग अनुभव प्रदान करने के लिए डिज़ाइन किया गया है। ऐप उपयोगकर्ता डेटा और लेनदेन को सुरक्षित रखने में मदद करने के लिए मानक एन्क्रिप्शन और सुरक्षित भुगतान प्रणाली का उपयोग करता है।<br><br>जमा और निकासी आमतौर पर UPI और बैंक ट्रांसफर जैसी विधियों के माध्यम से संसाधित की जाती है, जो भारत में उपयोगकर्ताओं के लिए एक सुविधाजनक अनुभव प्रदान करती है। हालाँकि, उपयोगकर्ताओं को सलाह दी जाती है कि वे जिम्मेदारी से खेलें और ऐप का उपयोग करने से पहले इसकी शर्तों और नीतियों की समीक्षा करें।</div>
+        </div>
+        <div class="tag-divider"></div>
+        <div class="tag-box">
+          <div class="tag-title">✅ Why Choose ${appName} App?</div>
+          <div class="tag-content"><ul><li><strong>आकर्षक वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[5]} तक</li><li><strong>तेज़ UPI निकासी</strong> प्रणाली त्वरित प्रसंस्करण समय के साथ</li><li><strong>गेम की विस्तृत श्रृंखला</strong> जिसमें रम्मी, स्लॉट, बिंगो और स्पिन गेम शामिल हैं</li><li><strong>स्मूथ और ऑप्टिमाइज़्ड</strong> प्रदर्शन अधिकांश Android डिवाइस पर</li><li><strong>नियमित अपडेट</strong> नई सुविधाओं, ऑफ़र और सुधारों के साथ</li><li><strong>सरल और उपयोगकर्ता के अनुकूल</strong> इंटरफ़ेस शुरुआती और नियमित खिलाड़ियों के लिए</li></ul></div>
         </div>
       `;
     }
+
+    let currentSelectedIndex = null;
+    const customModal = document.getElementById('customInfoModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+    function showInfoModal(title, contentHtml) {
+      modalTitle.innerText = title;
+      modalBody.innerHTML = contentHtml;
+      customModal.style.display = 'flex';
+      history.pushState({ modal: true }, '');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModalAndResetHistory() {
+      customModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+      history.replaceState({ page: 'main' }, '', window.location.pathname);
+    }
+
+    modalCloseBtn.addEventListener('click', closeModalAndResetHistory);
+    window.addEventListener('click', (e) => { if (e.target === customModal) closeModalAndResetHistory(); });
 
     function renderMainGrid() {
       const gridContainer = document.getElementById('allAppsGrid');
@@ -879,17 +1125,26 @@
       appsData.forEach((app, idx) => {
         const stats = getCardStats(app.name);
         const displayBonus = stats.bonus;
+        const colors = getColorClasses(idx);
         const spinDesc = getSpinWinDescription(app.name, displayBonus, app.category);
         const extraBenefits = getExtraBenefits(app.name, displayBonus, app.category);
         const warningVal = getWarningValue(app.name);
-        const cardStatsHTML = renderCardStats(app.name, idx);
+        const number = idx + 1;
         html += `
           <div class="app-card" data-app-index="${idx}">
-            <div class="card-img">
-              <img src="${app.img}" alt="${app.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=App'">
-            </div>
+            <div class="app-number">${number}</div>
+            <div class="card-img"><img src="${app.img}" alt="${app.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=App'"></div>
             <div class="card-app-name">${app.name}</div>
-            ${cardStatsHTML}
+            <div class="card-stats">
+              <div class="card-stat"><div class="card-stat-value ${colors.ratingClass}">${stats.rating}</div><div class="card-stat-label">Rating</div></div>
+              <div class="card-stat"><div class="card-stat-value ${colors.sizeClass}">${stats.size}</div><div class="card-stat-label">Size</div></div>
+              <div class="card-stat"><div class="card-stat-value ${colors.votesClass}">${stats.votes}</div><div class="card-stat-label">Votes</div></div>
+              <div class="card-stat"><div class="card-stat-value ${colors.bonusClass}">${displayBonus}</div><div class="card-stat-label">Bonus</div></div>
+            </div>
+            <div class="card-info-row">
+              <div class="ci-item"><div class="ci-label">Sign Up Bonus</div><div class="ci-value bonus-c">₹${displayBonus}</div></div>
+              <div class="ci-item"><div class="ci-label">Min Withdrawal</div><div class="ci-value withdraw-c">₹${app.withdrawal}</div></div>
+            </div>
             <button class="download-btn" data-download-index="${idx}">DOWNLOAD ${app.name}</button>
             <div class="card-spin-desc">${spinDesc}</div>
             <div class="card-benefits"><strong>Extra Benefits:</strong> ${extraBenefits}</div>
@@ -922,133 +1177,6 @@
         });
       });
     }
-
-    // ===== TAG MODELS =====
-    const tagModelList = [
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} इंस्टेंट बोनस पाएं!<br>Play Rummy, Teen Patti & slots. सुरक्षित निकासी ₹100 से। Start earning real cash – डाउनलोड करें! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस अनलॉक करें!<br>रोमांचक गेम खेलें। Fast withdrawals via UPI. Trusted by millions – अभी खेलना शुरू करें! ₹${bArr[2]} welcome.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – Get ₹${b} Welcome Bonus!<br>रोमांचक रम्मी टेबल, daily rewards, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} वेलकम बोनस<br>Build sequences, join cash tournaments & daily mystery rewards. सुरक्षित गेमिंग – आज ही जीतना शुरू करें! ₹${bArr[2]} daily. ₹${bArr[3]} loyalty.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – Get ₹${b} Welcome Bonus!<br>Enjoy thrilling casino games, daily rewards update, and fast UPI withdrawals. ${n} gives you free cash on signup! ₹${bArr[0]} extra. ₹${bArr[1]} refer bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[2]} Bonus<br>दैनिक लॉगिन बोनस, daily earnings, instant bank transfers. ${n} loyalty rewards. ₹${bArr[3]} cashback. ₹${bArr[4]} spin.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>नया अपडेट ${n}</strong> – ₹${b} वेलकम बोनस पाएं!<br>रोमांचक स्लॉट मशीन, daily rewards, fast withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक लॉगिन बोनस, cashback earnings, instant withdrawal. New update available! ₹${bArr[2]} welcome.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${b} joining bonus!<br>Spin, play & win with premium slots. Fast payouts and 24/7 support. ₹${bArr[0]} free spins.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, quick UPI withdrawals, round-the-clock support. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} Welcome Offer<br>Play casino games, slots & more. Fast withdrawals, secure platform, daily rewards. ₹${bArr[0]} daily bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} Bonus<br>Daily bonuses, instant UPI withdrawals, VIP rewards. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${b} साइनअप बोनस<br>Play Rummy, Ludo & more. सुरक्षित लेनदेन, instant withdrawals. ₹${bArr[0]} refer bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonus, loyalty rewards. ₹${bArr[2]} cashback.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${b} Welcome Bonus<br>रम्मी टेबल, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>Build sequences, join cash tournaments & daily mystery rewards. Safe gaming! ₹${bArr[2]} daily. ₹${bArr[3]} loyalty.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} जॉइनिंग बोनस<br>रम्मी, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily reward.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals, loyalty rewards. ₹${bArr[2]} bonus. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${b} Love Bonus<br>Play rummy with love, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses, loyalty rewards. ₹${bArr[2]} cashback.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} स्पिन बोनस<br>Spin, play & win with premium games. Fast payouts and 24/7 support. ₹${bArr[0]} free spins.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, cash, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${b} Top Bonus<br>Play rummy, slots & more. Fast withdrawals, secure platform, daily rewards. ₹${bArr[0]} extra cash.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} Features<br>Daily bonuses, instant UPI withdrawals, loyalty rewards. ₹${bArr[2]} cashback. ₹${bArr[3]} spin. ₹${bArr[4]} welcome.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${b} Hello Bonus<br>Play rummy, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses, loyalty rewards. ₹${bArr[2]} cashback.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} 365 बोनस<br>365 days play rummy, daily tournaments, fast UPI withdrawals. ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>Build sequences, join cash tournaments. ₹${bArr[2]} daily reward. ₹${bArr[3]} loyalty.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${b} गोल्ड बोनस<br>Teen Patti, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily. ₹${bArr[1]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${bArr[2]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals. ₹${bArr[3]} loyalty. ₹${bArr[4]} cashback.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} मास्टर बोनस<br>Play Teen Patti, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses, loyalty rewards. ₹${bArr[2]} welcome.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${b} Yono Bonus<br>रम्मी, slots & more. Fast withdrawals, secure platform, daily rewards. ₹${bArr[0]} daily reward.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>Build sequences, join cash tournaments. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${b} Winner Bonus<br>Play slots, win real money, withdraw instantly. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[1]} Features<br>Daily bonuses, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} spin.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} गुड बोनस<br>Play slots, daily rewards, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} loyalty.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${b} Diwa Bonus<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} गो-गो बोनस<br>रम्मी, daily tournaments, fast UPI withdrawals. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${b} Joy Bonus<br>Play rummy, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} cashback.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${b} स्पिन गोल्ड बोनस<br>Spin, play & win with premium games. Fast payouts and 24/7 support. ₹${bArr[0]} free spins.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, cash, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} Bingo Bonus<br>Play Bingo, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} Features<br>Daily bonuses, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${b} Yes Bonus<br>Spin, play & win with premium games. Fast payouts and 24/7 support. ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} loyalty.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} Arcade Bonus<br>Play arcade games, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>Daily bonuses, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${b} SVIP बोनस<br>Casino games, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${b} OK Bonus<br>Play rummy, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} extra.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses, loyalty rewards. ₹${bArr[2]} welcome.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} हिंद बोनस<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${b} Bet Bonus<br>Betting games, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${bArr[1]} Features<br>Daily bonuses, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${b} बॉस बोनस<br>Play rummy, daily tournaments, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} loyalty.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${b} योनो 777 बोनस<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} bonus.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small red"></span><strong>${n}</strong> – ₹${bArr[1]} बोनस<br>दैनिक मुफ्त स्पिन, quick UPI withdrawals. ₹${bArr[2]} events. ₹${bArr[3]} loyalty.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small purple"></span><strong>${n}</strong> – ₹${b} VIP बोनस<br>VIP games, slots & more. Fast withdrawals, secure platform. ₹${bArr[0]} daily.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small green"></span><strong>${n}</strong> – ₹${bArr[1]} फीचर्स<br>दैनिक बोनस, instant UPI withdrawals. ₹${bArr[2]} loyalty. ₹${bArr[3]} cashback. ₹${bArr[4]} welcome.</div></div>`,
-      (n,b,bArr) => `<div class="tag-box"><div class="tag-content"><span class="led-icon-small blue"></span><strong>${n}</strong> – ₹${b} Diwa 777 Bonus<br>Play slots, spin & win, fast UPI withdrawals. ${n} gives free cash! ₹${bArr[0]} refer.</div></div><div class="tag-divider"></div><div class="tag-box"><div class="tag-content"><span class="led-icon-small yellow"></span><strong>${n}</strong> – ₹${bArr[1]} रिवॉर्ड<br>कैशबैक, daily login bonuses. ₹${bArr[2]} cashback.</div></div>`
-    ];
-
-    function createTagsHTML(appName, bonusNum, appIndex) {
-      const modelFn = tagModelList[appIndex % tagModelList.length];
-      const bonusArr = [];
-      for (let i = 1; i <= 17; i++) bonusArr.push(200 + (Math.abs((bonusNum + i) * i) % 101));
-      const mainTags = modelFn(appName, bonusNum, bonusArr);
-      const langMode = appIndex % 5;
-      let useHindi = false;
-      if (langMode === 0) useHindi = true;
-      else if (langMode === 1) useHindi = false;
-      else if (langMode === 2) useHindi = true;
-      else if (langMode === 3) useHindi = false;
-      else useHindi = (appIndex % 2 === 0);
-      
-      const faqTitle = useHindi ? '❓ अक्सर पूछे जाने वाले प्रश्न' : '❓ Frequently Asked Questions';
-      const overviewTitle = useHindi ? `📖 अवलोकन – ${appName}` : `📖 Overview – ${appName}`;
-      const featuresTitle = useHindi ? `✨ ${appName} ऐप की विशेषताएं और लाभ` : `✨ ${appName} App Features & Benefits`;
-      const downloadTitle = useHindi ? `📥 ${appName} कैसे डाउनलोड और इंस्टॉल करें` : `📥 How to Download & Install ${appName}`;
-      const safetyTitle = useHindi ? `🔒 ${appName} सुरक्षा और सुरक्षा` : `🔒 ${appName} Safety & Security`;
-      const whyTitle = useHindi ? `✅ ${appName} ऐप क्यों चुनें?` : `✅ Why Choose ${appName} App?`;
-      
-      const faqTitleLed = faqTitle.replace('❓', '<span class="led-icon-small purple"></span>');
-      const overviewTitleLed = overviewTitle.replace('📖', '<span class="led-icon-small blue"></span>');
-      const featuresTitleLed = featuresTitle.replace('✨', '<span class="led-icon-small green"></span>');
-      const downloadTitleLed = downloadTitle.replace('📥', '<span class="led-icon-small yellow"></span>');
-      const safetyTitleLed = safetyTitle.replace('🔒', '<span class="led-icon-small red"></span>');
-      const whyTitleLed = whyTitle.replace('✅', '<span class="led-icon-small green"></span>');
-      
-      const faqContent = useHindi ? `
-        <div class="faq-item"><div class="faq-q">1. ${appName} एपीके क्या है?</div><div class="faq-a">${appName} APP APK एक बेहतरीन एप्लिकेशन है जो उपयोगकर्ताओं को ₹${bonusArr[0]} का साइन-अप बोनस प्रदान करता है। इस गेम में शानदार बोनस प्रोग्राम है, और आप पूरी पोस्ट पढ़कर अधिक जान सकते हैं। इसके अलावा, ${appName} APK एक लोकप्रिय स्लॉट गेम है जिसमें न्यूनतम निकासी ₹100 है।</div></div>
-        <div class="faq-item"><div class="faq-q">2. ${appName} APK के लिए साइन अप कैसे करें?</div><div class="faq-a">${appName} APK के लिए साइन अप करने के लिए, इन चरणों का पालन करें:<br>• ${appName} APK के लिए डाउनलोड बटन पर क्लिक करें।<br>• डाउनलोड शुरू करने के लिए OK चुनें।<br>• अपने स्मार्टफोन पर ऐप इंस्टॉल करें।<br>• नया ऐप खोलें और Play as Guest पर क्लिक करें।<br>• प्रोफाइल बटन पर क्लिक करें और अपना मोबाइल नंबर बाँधें।<br>इन चरणों को पूरा करने के बाद, आपको ₹${bonusArr[1]} का साइन-अप बोनस मिलेगा।</div></div>
-        <div class="faq-item"><div class="faq-q">3. ${appName} ऐप में कितने गेम उपलब्ध हैं?</div><div class="faq-a">${appName} ऐप 75+ विभिन्न प्रकार के गेम का समर्थन करता है। आप Rummy, Teen Patti, 7 Up Down, Dragon vs Tiger और बहुत कुछ जैसे विभिन्न गेम का आनंद ले सकते हैं।</div></div>
-        <div class="faq-item"><div class="faq-q">4. ${appName} ऐप APK की कुछ बेहतरीन विशेषताएं क्या हैं?</div><div class="faq-a">• APK में ₹${bonusArr[2]} का मुफ्त बोनस प्राप्त करें।<br>• 20 गेमिंग विकल्पों तक पहुंच।<br>• दोस्तों को आमंत्रित करने पर ₹${bonusArr[3]} तक कमाएं।<br>• न्यूनतम ₹${bonusArr[4]} से निकासी शुरू करें।<br>• प्रोफाइल बटन पर क्लिक करें और अपना मोबाइल नंबर बाँधें।<br>• न्यूनतम जमा राशि ₹${bonusArr[5]} है।</div></div>
-      ` : `
-        <div class="faq-item"><div class="faq-q">1. What Is The ${appName} app APK?</div><div class="faq-a">The ${appName} APP APK is an excellent application that offers users a sign-up bonus of ₹${bonusArr[0]} when they join. This game includes a fantastic bonus program, and you can learn more by reading the complete post. Additionally, ${appName} APK is a popular slots game with a minimum withdrawal amount of ₹100.</div></div>
-        <div class="faq-item"><div class="faq-q">2. How to Sign Up for ${appName} APK?</div><div class="faq-a">To sign up for the ${appName} APK, follow these steps:<br>• Click on the Download Button for the ${appName} APK.<br>• Select OK to start the download.<br>• Install the App application on your smartphone.<br>• Open the new app and click on Play as Guest.<br>• Click on the Profile Button and bind your mobile number.<br>After completing these steps, you will receive a sign-up bonus of ₹${bonusArr[1]}.</div></div>
-        <div class="faq-item"><div class="faq-q">3. How Many Games Are Available In The ${appName} App?</div><div class="faq-a">The ${appName} app offers support for 75+ different types of games. You can enjoy a variety of games such as Rummy, Teen Patti, 7 Up Down, Dragon vs Tiger, and many more.</div></div>
-        <div class="faq-item"><div class="faq-q">4. What are some of the best features of the ${appName} app APK?</div><div class="faq-a">• Enjoy a bonus of ₹${bonusArr[2]} for free in the APK.<br>• Access to 20 gaming options.<br>• Earn up to ₹${bonusArr[3]} for inviting friends.<br>• Withdrawals can be made starting from a minimum of ₹${bonusArr[4]}.<br>• Click on the Profile Button and bind your mobile number.<br>• The minimum deposit required is ₹${bonusArr[5]}.</div></div>
-      `;
-      
-      const overviewContent = useHindi ? `${appName} भारत में एक लोकप्रिय रियल कैश कमाने वाला ऐप है जहाँ उपयोगकर्ता रियल मनी जीतने के लिए रम्मी, स्लॉट, बिंगो और स्पिन गेम जैसे गेम खेल सकते हैं। नए उपयोगकर्ता ₹${bonusArr[6]} तक के साइनअप बोनस का दावा कर सकते हैं, जिससे प्लेटफॉर्म पर शुरू करना और एक्सप्लोर करना आसान हो जाता है। ऐप तेज़ UPI जमा और निकासी के साथ एक सहज और सुरक्षित अनुभव प्रदान करता है।<br><br>${appName} का इंटरफ़ेस सरल और उपयोगकर्ता के अनुकूल है, जो इसे शुरुआती और अनुभवी खिलाड़ियों दोनों के लिए उपयुक्त बनाता है। आप अपनी कमाई बढ़ाने के लिए दैनिक पुरस्कार, बोनस ऑफर और विशेष इवेंट का आनंद ले सकते हैं। न्यूनतम निकासी ₹${bonusArr[7]} से शुरू होती है, और अधिकांश लेनदेन बिना देरी के जल्दी से संसाधित होते हैं।<br><br>यदि आप एक भरोसेमंद गेमिंग ऐप की तलाश में हैं जो मनोरंजन को वास्तविक कमाई के अवसरों के साथ जोड़ता है, तो ${appName} एक बढ़िया विकल्प है। आज ही नवीनतम APK संस्करण डाउनलोड करें और अपने मोबाइल से रियल कैश रिवॉर्ड कमाने के लिए खेलना शुरू करें।` : `${appName} is a popular real cash earning app in India where users can play games like rummy, slots, bingo, and spin games to win real money. New users can claim a signup bonus of up to ₹${bonusArr[6]}, making it easy to get started and explore the platform. The app offers a smooth and secure experience with fast UPI deposits and withdrawals.<br><br>The interface of ${appName} is simple and user-friendly, making it suitable for both beginners and experienced players. You can enjoy daily rewards, bonus offers, and special events to increase your earnings. The minimum withdrawal starts from ₹${bonusArr[7]}, and most transactions are processed quickly without delays.<br><br>If you are looking for a trusted gaming app that combines entertainment with real earning opportunities, ${appName} is a great choice. Download the latest APK version today and start playing to earn real cash rewards from your mobile.`;
-
-      const featuresContent = useHindi ? `<ul><li><strong>वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[8]} तक का साइनअप बोनस प्राप्त करें</li><li><strong>तेज़ UPI निकासी:</strong> अपने बैंक खाते में सीधे ₹${bonusArr[9]} से निकासी शुरू करें</li><li><strong>लोकप्रिय गेम:</strong> रम्मी, स्लॉट, बिंगो, स्पिन गेम और अधिक रियल कैश कमाने के विकल्प खेलें</li><li><strong>सुरक्षित प्लेटफॉर्म:</strong> सुरक्षित लेनदेन के साथ सहज गेमप्ले अनुभव</li><li><strong>दैनिक पुरस्कार और ऑफर:</strong> नियमित रूप से अतिरिक्त बोनस, कैशबैक और पुरस्कार प्राप्त करें</li><li><strong>उपयोगकर्ता के अनुकूल इंटरफ़ेस:</strong> शुरुआती और अनुभवी खिलाड़ियों के लिए उपयोग में आसान ऐप</li></ul>` : `<ul><li><strong>Welcome Bonus:</strong> Get up to ₹${bonusArr[8]} signup bonus for new users</li><li><strong>Fast UPI Withdrawal:</strong> Withdraw starting from ₹${bonusArr[9]} directly to your bank account</li><li><strong>Popular Games:</strong> Play rummy, slots, bingo, spin games and more real cash earning options</li><li><strong>Safe & Secure Platform:</strong> Smooth gameplay experience with secure transactions</li><li><strong>Daily Rewards & Offers:</strong> Earn extra bonuses, cashback and rewards regularly</li><li><strong>User-Friendly Interface:</strong> Easy to use app suitable for beginners and experienced players</li></ul>`;
-
-      const downloadContent = useHindi ? `<ul><li><strong>1.</strong> ऊपर दिए गए बड़े डाउनलोड बटन पर टैप करें</li><li><strong>2.</strong> अज्ञात स्रोतों से इंस्टॉलेशन की अनुमति दें</li><li><strong>3.</strong> डाउनलोड की गई APK खोलें और Install पर टैप करें</li><li><strong>4.</strong> अपने मोबाइल नंबर से पंजीकरण करें</li><li><strong>5.</strong> अपना साइनअप बोनस तुरंत प्राप्त करें – ₹${bonusArr[10]} तक!</li></ul>` : `<ul><li><strong>1.</strong> Tap the big Download button above</li><li><strong>2.</strong> Allow installation from unknown sources</li><li><strong>3.</strong> Open the downloaded APK and tap Install</li><li><strong>4.</strong> Register with your mobile number</li><li><strong>5.</strong> Claim your signup bonus instantly – up to ₹${bonusArr[10]}!</li></ul>`;
-
-      const safetyContent = useHindi ? `${appName} एक सुरक्षित और विश्वसनीय गेमिंग अनुभव प्रदान करने के लिए डिज़ाइन किया गया है। ऐप उपयोगकर्ता डेटा और लेनदेन को सुरक्षित रखने में मदद करने के लिए मानक एन्क्रिप्शन और सुरक्षित भुगतान प्रणाली का उपयोग करता है।<br><br>जमा और निकासी आमतौर पर UPI और बैंक ट्रांसफर जैसी विधियों के माध्यम से संसाधित की जाती है, जो भारत में उपयोगकर्ताओं के लिए एक सुविधाजनक अनुभव प्रदान करती है। हालाँकि, उपयोगकर्ताओं को सलाह दी जाती है कि वे जिम्मेदारी से खेलें और ऐप का उपयोग करने से पहले इसकी शर्तों और नीतियों की समीक्षा करें।` : `${appName} is designed to provide a secure and reliable gaming experience. The app uses standard encryption and protected payment systems to help keep user data and transactions safe.<br><br>Deposits and withdrawals are processed through commonly used methods such as UPI and bank transfer, offering a convenient experience for users in India. However, users are advised to play responsibly and review the app's terms and policies before using it.`;
-
-      const whyContent = useHindi ? `<ul><li><strong>आकर्षक वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[11]} तक</li><li><strong>तेज़ UPI निकासी</strong> प्रणाली त्वरित प्रसंस्करण समय के साथ</li><li><strong>गेम की विस्तृत श्रृंखला</strong> जिसमें रम्मी, स्लॉट, बिंगो और स्पिन गेम शामिल हैं</li><li><strong>स्मूथ और ऑप्टिमाइज़्ड</strong> प्रदर्शन अधिकांश Android डिवाइस पर</li><li><strong>नियमित अपडेट</strong> नई सुविधाओं, ऑफ़र और सुधारों के साथ</li><li><strong>सरल और उपयोगकर्ता के अनुकूल</strong> इंटरफ़ेस शुरुआती और नियमित खिलाड़ियों के लिए</li></ul>` : `<ul><li><strong>Attractive welcome bonus</strong> of up to ₹${bonusArr[11]} for new users</li><li><strong>Fast UPI withdrawal</strong> system with quick processing time</li><li><strong>Wide range of games</strong> including rummy, slots, bingo and spin games</li><li><strong>Smooth and optimized</strong> performance on most Android devices</li><li><strong>Regular updates</strong> with new features, offers and improvements</li><li><strong>Simple and user-friendly</strong> interface for beginners and regular players</li></ul>`;
-
-      return `
-        ${mainTags}
-        <div class="tag-divider"></div>
-        <div class="tag-box"><div class="tag-content">${faqTitleLed}<br>${faqContent}</div></div>
-        <div class="tag-divider"></div>
-        <div class="tag-box"><div class="tag-content"><strong>${overviewTitleLed}</strong><br>${overviewContent}</div></div>
-        <div class="tag-divider"></div>
-        <div class="tag-box"><div class="tag-content"><strong>${featuresTitleLed}</strong><br>${featuresContent}</div></div>
-        <div class="tag-divider"></div>
-        <div class="tag-box"><div class="tag-content"><strong>${downloadTitleLed}</strong><br>${downloadContent}</div></div>
-        <div class="tag-divider"></div>
-        <div class="tag-box"><div class="tag-content"><strong>${safetyTitleLed}</strong><br>${safetyContent}</div></div>
-        <div class="tag-divider"></div>
-        <div class="tag-box"><div class="tag-content"><strong>${whyTitleLed}</strong><br>${whyContent}</div></div>
-      `;
-    }
-
-    let currentSelectedIndex = null;
-    const customModal = document.getElementById('customInfoModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalBody = document.getElementById('modalBody');
-    const modalCloseBtn = document.getElementById('modalCloseBtn');
-
-    function showInfoModal(title, contentHtml) {
-      modalTitle.innerText = title;
-      modalBody.innerHTML = contentHtml;
-      customModal.style.display = 'flex';
-      history.pushState({ modal: true }, '');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModalAndResetHistory() {
-      customModal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-      history.replaceState({ page: 'main' }, '', window.location.pathname);
-    }
-
-    modalCloseBtn.addEventListener('click', closeModalAndResetHistory);
-    window.addEventListener('click', (e) => { if (e.target === customModal) closeModalAndResetHistory(); });
 
     function navigateToDownloadPage(selectedIndex) {
       currentSelectedIndex = selectedIndex;
@@ -1114,16 +1242,17 @@
               <img src="${selectedApp.img}" alt="${selectedApp.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/72?text=App'">
             </div>
             <div class="stats-row">
-              <div class="stat-item"><div class="stat-value stat-3d stat-green">${stats.rating}</div><div class="stat-label stat-label-green">Rating</div></div>
-              <div class="stat-item"><div class="stat-value stat-3d stat-yellow">${stats.size}</div><div class="stat-label stat-label-yellow">Size</div></div>
-              <div class="stat-item"><div class="stat-value stat-3d stat-cyan">${stats.votes}</div><div class="stat-label stat-label-cyan">Votes</div></div>
-              <div class="stat-item"><div class="stat-value stat-3d stat-red">${bonusNum}</div><div class="stat-label stat-label-red">Bonus</div></div>
+              <div class="stat-item"><div class="stat-value" style="color:#22c55e;">${stats.rating}</div><div class="stat-label">Rating</div></div>
+              <div class="stat-item"><div class="stat-value" style="color:#06b6d4;">${stats.size}</div><div class="stat-label">Size</div></div>
+              <div class="stat-item"><div class="stat-value" style="color:#1e293b;">${stats.votes}</div><div class="stat-label">Votes</div></div>
+              <div class="stat-item"><div class="stat-value" style="color:#dc2626;">${bonusNum}</div><div class="stat-label">Bonus</div></div>
             </div>
             <a href="${selectedApp.downloadUrl}" target="_blank" class="final-download-btn">DOWNLOAD ${selectedApp.name}</a>
             <div class="app-description">${description}<br><br><strong>Extra Benefits:</strong> ${extraBenefits}</div>
             <div class="tag-section">
               <div class="tag-title" style="font-weight:700; font-size:0.95rem; margin-bottom:8px; color:#0b1e33;">${selectedApp.name} – Top Offers</div>
               <div class="five-options" id="fiveOptions">${fiveOptionsHtml}<span class="opt-item" style="background:#22c55e;color:white;border-color:#22c55e;font-weight:700;">+ 5 More</span></div>
+              <!-- 7-BAGS TAGS -->
               <div class="tag-grid" id="tagGridContainer">${tagsHTML}</div>
             </div>
             <div class="detail-warning-led" id="detailWarningToggle">
@@ -1248,6 +1377,7 @@
       `);
     });
 
+    // DARK THEME TOGGLE
     const darkToggle = document.getElementById('darkThemeToggle');
     darkToggle.addEventListener('click', function(e) {
       document.body.classList.toggle('dark-theme');
