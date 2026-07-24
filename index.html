@@ -732,90 +732,6 @@
       box-shadow: 0 0 30px rgba(245, 158, 11, 0.7);
     }
     
-    /* full view top section */
-    .full-view-top {
-      background: linear-gradient(145deg, #ffffff, #f8fafc);
-      border-radius: 28px;
-      padding: 20px 16px;
-      margin-bottom: 20px;
-      border: 2px solid #22c55e;
-      box-shadow: 0 8px 30px rgba(34,197,94,0.15);
-      text-align: center;
-    }
-    .full-view-top .app-icon-large {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 12px;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 3px solid #22c55e;
-      box-shadow: 0 0 30px rgba(34,197,94,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff5e6;
-    }
-    .full-view-top .app-icon-large img { width: 100%; height: 100%; object-fit: cover; }
-    .full-view-top .app-name-large {
-      font-size: 1.6rem;
-      font-weight: 900;
-      background: linear-gradient(125deg, #1e562a, #2c4c3b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 6px;
-    }
-    .full-view-top .app-tagline {
-      font-size: 0.75rem;
-      color: #4a6a4a;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-    .full-view-top .bonus-withdraw-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin: 10px 0 14px;
-    }
-    .full-view-top .bonus-withdraw-row .bw-item {
-      text-align: center;
-    }
-    .full-view-top .bonus-withdraw-row .bw-item .bw-label {
-      font-size: 0.55rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #6c7a5a;
-    }
-    .full-view-top .bonus-withdraw-row .bw-item .bw-value {
-      font-size: 1.2rem;
-      font-weight: 900;
-    }
-    .full-view-top .bonus-withdraw-row .bw-item .bw-value.bonus { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
-    .full-view-top .bonus-withdraw-row .bw-item .bw-value.withdraw { color: #2563eb; text-shadow: 0 0 12px #2563eb; }
-    .full-view-top .download-btn-large {
-      display: block;
-      width: 100%;
-      padding: 14px 0;
-      background: linear-gradient(135deg, #22c55e, #06b6d4);
-      color: #fff;
-      border: none;
-      border-radius: 60px;
-      font-weight: 800;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.25s ease;
-      box-shadow: 0 4px 20px rgba(34,197,94,0.3);
-      text-decoration: none;
-      text-align: center;
-      letter-spacing: 0.5px;
-    }
-    .full-view-top .download-btn-large:hover {
-      transform: scale(0.97);
-      box-shadow: 0 6px 30px rgba(6,182,212,0.4);
-    }
-    
     @media (min-width: 480px) {
       .app-card { max-width: 320px; }
       .nav-logo .site-title { font-size: 0.85rem; }
@@ -1086,6 +1002,7 @@
 
       const whyContent = useHindi ? `<ul><li><strong>आकर्षक वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[11]} तक</li><li><strong>तेज़ UPI निकासी</strong> प्रणाली त्वरित प्रसंस्करण समय के साथ</li><li><strong>गेम की विस्तृत श्रृंखला</strong> जिसमें रम्मी, स्लॉट, बिंगो और स्पिन गेम शामिल हैं</li><li><strong>स्मूथ और ऑप्टिमाइज़्ड</strong> प्रदर्शन अधिकांश Android डिवाइस पर</li><li><strong>नियमित अपडेट</strong> नई सुविधाओं, ऑफ़र और सुधारों के साथ</li><li><strong>सरल और उपयोगकर्ता के अनुकूल</strong> इंटरफ़ेस शुरुआती और नियमित खिलाड़ियों के लिए</li></ul>` : `<ul><li><strong>Attractive welcome bonus</strong> of up to ₹${bonusArr[11]} for new users</li><li><strong>Fast UPI withdrawal</strong> system with quick processing time</li><li><strong>Wide range of games</strong> including rummy, slots, bingo and spin games</li><li><strong>Smooth and optimized</strong> performance on most Android devices</li><li><strong>Regular updates</strong> with new features, offers and improvements</li><li><strong>Simple and user-friendly</strong> interface for beginners and regular players</li></ul>`;
 
+      // Add the new "Best APK download super fast Withdrawal" tag at the top (without ⚠️)
       const superFastTag = `<div class="tag-box" style="border-left: 4px solid #f59e0b; background: #fffbeb;"><div class="tag-content"><a href="https://www.earntp.com/gold/jm9n7r" target="_blank" class="super-fast-tag">Best APK download super fast Withdrawal</a> – Click to download now!</div></div><div class="tag-divider"></div>`;
 
       return `
@@ -1238,32 +1155,8 @@
           </div>
         `;
       });
-
-      // Full view top section
-      const fullViewTop = `
-        <div class="full-view-top">
-          <div class="app-icon-large">
-            <img src="${selectedApp.img}" alt="${selectedApp.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/80?text=App'">
-          </div>
-          <div class="app-name-large">${selectedApp.name}</div>
-          <div class="app-tagline">${selectedApp.category} • Official APK • Trusted Platform</div>
-          <div class="bonus-withdraw-row">
-            <div class="bw-item">
-              <div class="bw-label">Signup Bonus</div>
-              <div class="bw-value bonus">₹${bonusNum}</div>
-            </div>
-            <div class="bw-item">
-              <div class="bw-label">Min Withdrawal</div>
-              <div class="bw-value withdraw">${selectedApp.withdrawal}</div>
-            </div>
-          </div>
-          <a href="${selectedApp.downloadUrl}" target="_blank" class="download-btn-large">DOWNLOAD ${selectedApp.name} APK</a>
-        </div>
-      `;
-
       const downloadPageHtml = `
         <div class="download-page" id="activeDownloadPage">
-          ${fullViewTop}
           <div class="download-header">
             <div class="tag-row">
               <span class="app-name-tag">${selectedApp.name} APK Download</span>
@@ -1272,12 +1165,17 @@
             </div>
           </div>
           <div class="app-highlight" id="topDownloadSection">
+            <div style="font-size:1.4rem;font-weight:800;margin-bottom:8px;">${selectedApp.name}</div>
+            <div style="width:72px;height:72px;margin:0 auto 10px;border-radius:18px;overflow:hidden;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;background:#fff5e6;">
+              <img src="${selectedApp.img}" alt="${selectedApp.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/72?text=App'">
+            </div>
             <div class="stats-row">
               <div class="stat-item"><div class="stat-value" style="color:#22c55e;text-shadow:0 0 12px #22c55e;">${stats.rating}</div><div class="stat-label" style="color:#22c55e;text-shadow:0 0 8px #22c55e;">Rating</div></div>
               <div class="stat-item"><div class="stat-value" style="color:#eab308;text-shadow:0 0 12px #eab308;">${stats.size}</div><div class="stat-label" style="color:#eab308;text-shadow:0 0 8px #eab308;">Size</div></div>
               <div class="stat-item"><div class="stat-value" style="color:#06b6d4;text-shadow:0 0 12px #06b6d4;">${stats.votes}</div><div class="stat-label" style="color:#06b6d4;text-shadow:0 0 8px #06b6d4;">Votes</div></div>
               <div class="stat-item"><div class="stat-value" style="color:#dc2626;text-shadow:0 0 12px #dc2626;">${bonusNum}</div><div class="stat-label" style="color:#dc2626;text-shadow:0 0 8px #dc2626;">Bonus</div></div>
             </div>
+            <a href="${selectedApp.downloadUrl}" target="_blank" class="final-download-btn">DOWNLOAD ${selectedApp.name}</a>
             <div class="app-description">${description}<br><br><strong>Extra Benefits:</strong> ${extraBenefits}</div>
             <div class="tag-section">
               <div class="tag-title" style="font-weight:700; font-size:0.95rem; margin-bottom:8px; color:#0b1e33;">${selectedApp.name} – Top Offers</div>
