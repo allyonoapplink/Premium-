@@ -1465,7 +1465,7 @@
       transform: scale(1.05);
       box-shadow: 0 0 30px rgba(245, 158, 11, 0.7);
     }
-    /* FULL WIDTH BANNER */
+    /* FULL WIDTH BANNER - adjusted position */
     .banner-full {
       width: 100%;
       max-height: 220px;
@@ -1474,22 +1474,25 @@
       align-items: center;
       justify-content: center;
       background: #0a1a0a;
-      border-radius: 0 0 20px 20px;
-      margin-bottom: 10px;
+      border-radius: 20px 20px 20px 20px;
+      margin: 12px 0 6px 0;
+      padding: 0 4px;
     }
     .banner-full img {
       width: 100%;
       height: auto;
-      max-height: 220px;
+      max-height: 200px;
       object-fit: cover;
       display: block;
-      border-radius: 0 0 20px 20px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     .game-name-big {
       font-size: 1.6rem;
       font-weight: 900;
       text-align: center;
-      margin: 10px 0 4px 0;
+      margin: 4px 0 2px 0;
       color: #1e562a;
       background: linear-gradient(145deg, #1e562a, #2c4c3b);
       background-clip: text;
@@ -1523,6 +1526,22 @@
     @media (min-width: 768px) {
       .app-card {
         max-width: 280px;
+      }
+    }
+    /* mobile first photo adjustment */
+    @media (max-width: 480px) {
+      .banner-full {
+        max-height: 180px;
+        margin: 8px 0 4px 0;
+        padding: 0 2px;
+      }
+      .banner-full img {
+        max-height: 160px;
+        border-radius: 12px;
+      }
+      .game-name-big {
+        font-size: 1.3rem;
+        margin: 2px 0 0 0;
       }
     }
   </style>
@@ -1815,7 +1834,7 @@
         `;
 
         const overviewContent = useHindi ?
-          `${appName} भारत में एक लोकप्रिय रियल कैश कमाने वाला ऐप है जहाँ उपयोगकर्ता रियल मनी जीतने के लिए रम्मी, स्लॉट, बिंगो और स्पिन गेम जैसे गेम खेल सकते हैं। नए उपयोगकर्ता ₹${bonusArr[6]} तक के साइनअप बोनस का दावा कर सकते हैं, जिससे प्लेटफॉर्म पर शुरू करना और एक्सप्लोर करना आसान हो जाता है। ऐप तेज़ UPI जमा और निकासी के साथ एक सहज और सुरक्षित अनुभव प्रदान करता है।<br><br>${appName} का इंटरफ़ेस सरल और उपयोगकर्ता के अनुकूल है, जो इसे शुरुआती और अनुभवी खिलाड़ियों दोनों के लिए उपयुक्त बनाता है। आप अपनी कमाई बढ़ाने के लिए दैनिक पुरस्कार, बोनस ऑफर और विशेष इवेंट का आनंद ले सकते हैं। न्यूनतम निकासी ₹${bonusArr[7]} से शुरू होती है, और अधिकांश लेनदेन बिना देरी के जल्दी से संसाधित होते हैं।<br><br>यदि आप एक भरोसेमंद गेमिंग ऐप की तलाश में हैं जो मनोरंजन को वास्तविक कमाई के अवसरों के साथ जोड़ता है, तो ${appName} एक बढ़िया विकल्प है। आज ही नवीनतम APK संस्करण डाउनलोड करें और अपने मोबाइल से रियल कैश रिवॉर्ड कमाने के लिए खेलना शुरू करें。` :
+          `${appName} भारत में एक लोकप्रिय रियल कैश कमाने वाला ऐप है जहाँ उपयोगकर्ता रियल मनी जीतने के लिए रम्मी, स्लॉट, बिंगो और स्पिन गेम जैसे गेम खेल सकते हैं। नए उपयोगकर्ता ₹${bonusArr[6]} तक के साइनअप बोनस का दावा कर सकते हैं, जिससे प्लेटफॉर्म पर शुरू करना और एक्सप्लोर करना आसान हो जाता है। ऐप तेज़ UPI जमा और निकासी के साथ एक सहज और सुरक्षित अनुभव प्रदान करता है।<br><br>${appName} का इंटरफ़ेस सरल और उपयोगकर्ता के अनुकूल है, जो इसे शुरुआती और अनुभवी खिलाड़ियों दोनों के लिए उपयुक्त बनाता है। आप अपनी कमाई बढ़ाने के लिए दैनिक पुरस्कार, बोनस ऑफर और विशेष इवेंट का आनंद ले सकते हैं। न्यूनतम निकासी ₹${bonusArr[7]} से शुरू होती है, और अधिकांश लेनदेन बिना देरी के जल्दी से संसाधित होते हैं।<br><br>यदि आप एक भरोसेमंद गेमिंग ऐप की तलाश में हैं जो मनोरंजन को वास्तविक कमाई के अवसरों के साथ जोड़ता है, तो ${appName} एक बढ़िया विकल्प है। आज ही नवीनतम APK संस्करण डाउनलोड करें और अपने मोबाइल से रियल कैश रिवॉर्ड कमाने के लिए खेलना शुरू करें।` :
           `${appName} is a popular real cash earning app in India where users can play games like rummy, slots, bingo, and spin games to win real money. New users can claim a signup bonus of up to ₹${bonusArr[6]}, making it easy to get started and explore the platform. The app offers a smooth and secure experience with fast UPI deposits and withdrawals.<br><br>The interface of ${appName} is simple and user-friendly, making it suitable for both beginners and experienced players. You can enjoy daily rewards, bonus offers, and special events to increase your earnings. The minimum withdrawal starts from ₹${bonusArr[7]}, and most transactions are processed quickly without delays.<br><br>If you are looking for a trusted gaming app that combines entertainment with real earning opportunities, ${appName} is a great choice. Download the latest APK version today and start playing to earn real cash rewards from your mobile.`;
 
         const featuresContent = useHindi ?
@@ -1995,9 +2014,11 @@
 
         const downloadPageHtml = `
           <div class="download-page" id="activeDownloadPage">
-            <!-- FULL WIDTH BANNER -->
-            <div class="banner-full">
-              <img src="${selectedApp.img}" alt="${selectedApp.name} Banner" loading="eager">
+            <!-- FULL WIDTH BANNER - positioned lower with rounded corners -->
+            <div style="padding: 0 12px;">
+              <div class="banner-full">
+                <img src="${selectedApp.img}" alt="${selectedApp.name} Banner" loading="eager">
+              </div>
             </div>
             <div style="padding: 0 14px;">
               <div class="game-name-big">${selectedApp.name}</div>
