@@ -270,14 +270,14 @@
       transition: all 0.3s ease;
       box-shadow: 0 4px 14px rgba(0,0,0,0.05);
       border: 1px solid #eef2f8;
-      text-align: left;
+      text-align: center;
       position: relative;
     }
     .app-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.10); border-color: #ffcf8a; }
     
     .app-card .card-img { width: 64px; height: 64px; margin: 0 auto 10px; background: linear-gradient(145deg, #fff5e6, #ffe6cc); border-radius: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.04); position: relative; }
     .app-card .card-img img { width: 100%; height: 100%; object-fit: cover; }
-    .app-card .card-app-name { font-size: 1.1rem; font-weight: 800; background: linear-gradient(125deg, #1e562a, #2c4c3b); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 8px; text-align: center; }
+    .app-card .card-app-name { font-size: 1.1rem; font-weight: 800; background: linear-gradient(125deg, #1e562a, #2c4c3b); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 8px; }
     
     /* Premium 3D LED styles */
     .card-stat-value.rating-green {
@@ -350,17 +350,16 @@
     .card-info-row .ci-label.bonus-label-c { color: #dc2626; text-shadow: 0 0 8px #dc2626; }
     .card-info-row .ci-label.withdraw-label-c { color: #2563eb; text-shadow: 0 0 8px #2563eb; }
 
-    .app-card .card-stats { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 12px 20px; background: #fef4e6; padding: 8px 12px; border-radius: 40px; margin: 6px 0 10px; }
-    .app-card .card-stat { text-align: left; min-width: 48px; }
+    .app-card .card-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; background: #fef4e6; padding: 8px 10px; border-radius: 40px; margin: 6px 0 10px; }
+    .app-card .card-stat { text-align: center; min-width: 48px; }
     
-    .app-card .card-info-row { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 6px 24px; background: #f0f9f0; padding: 6px 12px; border-radius: 40px; border: 1px solid #d4e6d4; margin: 6px 0 10px; }
-    .app-card .ci-item { text-align: left; }
+    .app-card .card-info-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; background: #f0f9f0; padding: 6px 10px; border-radius: 40px; border: 1px solid #d4e6d4; margin: 6px 0 10px; }
+    .app-card .ci-item { text-align: center; }
     
     .app-card .download-btn { display: block; width: 100%; text-align: center; margin-top: 10px; padding: 10px 0; background: #0a0a0a; color: white; border: none; border-radius: 60px; font-weight: 800; font-size: 0.75rem; transition: 0.25s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; letter-spacing: 0.3px; }
     .app-card .download-btn:hover { background: #1a1a1a; transform: scale(0.97); }
     
     .app-card .card-spin-desc { font-size: 0.7rem; color: #2d3e2b; line-height: 1.5; margin: 6px 0 4px; text-align: left; padding: 0 2px; }
-    .app-card .card-spin-desc strong { color: #1e562a; }
     .app-card .card-benefits { font-size: 0.65rem; color: #1e562a; line-height: 1.5; margin: 4px 0 6px; text-align: left; padding: 6px 10px; background: #f0f9f0; border-radius: 12px; border-left: 3px solid #22c55e; }
     .app-card .card-benefits strong { color: #0a2e1d; }
     
@@ -456,34 +455,13 @@
     .download-header .bonus-tag { font-weight: 700; font-size: 0.7rem; color: #dc2626; display: inline-block; background: #fee2e2; padding: 3px 12px; border-radius: 40px; border: 1px solid #fca5a5; }
     .download-header .withdraw-tag { font-weight: 700; font-size: 0.7rem; color: #2563eb; display: inline-block; background: #dbeafe; padding: 3px 12px; border-radius: 40px; border: 1px solid #93c5fd; }
     
-    .app-highlight { background: #fff7e8; padding: 18px 14px; border-radius: 28px; margin: 12px 0; text-align: left; }
-    .stats-row { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 12px 24px; background: #fef4e6; padding: 10px 14px; border-radius: 40px; margin: 14px auto; max-width: 100%; }
-    .stat-item { text-align: left; min-width: 54px; }
+    .app-highlight { background: #fff7e8; padding: 18px 14px; border-radius: 28px; margin: 12px 0; text-align: center; }
+    .stats-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; background: #fef4e6; padding: 10px 12px; border-radius: 40px; margin: 14px auto; max-width: 100%; }
+    .stat-item { text-align: center; min-width: 54px; }
     .stat-value { font-size: 1rem; font-weight: 800; color: #1e562a; }
     .stat-label { font-size: 0.55rem; font-weight: 600; color: #6c7a5a; letter-spacing: 0.3px; }
-    .final-download-btn { 
-      background: linear-gradient(135deg, #06b6d4, #22c55e, #2563eb); 
-      padding: 14px 20px; 
-      font-size: 0.95rem; 
-      font-weight: 800; 
-      border-radius: 60px; 
-      display: block; 
-      width: 100%; 
-      margin: 14px 0 12px 0; 
-      box-shadow: 0 0 20px rgba(6,182,212,0.4), 0 0 40px rgba(34,197,94,0.2); 
-      text-decoration: none; 
-      color: white; 
-      transition: 0.25s ease; 
-      letter-spacing: 0.4px; 
-      cursor: pointer; 
-      text-align: center; 
-      border: none; 
-      text-shadow: 0 1px 4px rgba(0,0,0,0.2);
-    }
-    .final-download-btn:hover { 
-      transform: scale(0.97); 
-      box-shadow: 0 0 30px rgba(6,182,212,0.6), 0 0 60px rgba(34,197,94,0.3); 
-    }
+    .final-download-btn { background: #0a0a0a; padding: 12px 16px; font-size: 0.85rem; font-weight: 800; border-radius: 60px; display: block; width: 100%; margin: 14px 0 12px 0; box-shadow: 0 6px 18px rgba(0,0,0,0.25); text-decoration: none; color: white; transition: 0.25s ease; letter-spacing: 0.4px; cursor: pointer; text-align: center; border: none; }
+    .final-download-btn:hover { transform: scale(0.97); background: #1a1a1a; }
     .app-description { background: white; padding: 14px 16px; border-radius: 24px; text-align: left; margin: 14px 0; font-size: 0.8rem; line-height: 1.5; color: #2d3e2b; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
     
     .tag-section { margin: 14px 0; }
@@ -527,8 +505,8 @@
     
     .other-apps-title { font-size: 1.1rem; font-weight: 800; margin: 24px 0 12px; color: #1e293b; border-left: 4px solid #2ecc71; padding-left: 12px; }
     .other-apps-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 10px; background: #ecf9f0; padding: 12px 10px; border-radius: 28px; }
-    .other-card { background: #fefcf5; border-radius: 24px; padding: 12px 10px; width: 160px; transition: 0.2s; border: 1px solid #a8d5ba; text-align: left; }
-    .other-card .app-name { font-size: 0.8rem; margin: 6px 0 4px; font-weight: 800; color: #1e562a; text-align: center; }
+    .other-card { background: #fefcf5; border-radius: 24px; padding: 12px 10px; width: 160px; transition: 0.2s; border: 1px solid #a8d5ba; text-align: center; }
+    .other-card .app-name { font-size: 0.8rem; margin: 6px 0 4px; font-weight: 800; color: #1e562a; }
     .other-card .withdraw-green { font-size: 0.55rem; font-weight: 700; color: #06b6d4; text-shadow: 0 0 8px #06b6d4, 0 0 20px #06b6d4; display: block; margin-top: 2px; }
     .other-card .signup-bonus-small { font-size: 0.55rem; font-weight: 700; color: #dc2626; text-shadow: 0 0 8px #dc2626, 0 0 20px #dc2626; display: block; margin-top: 1px; }
     .small-download { background: #0a0a0a; font-size: 0.65rem; padding: 6px 0; margin-top: 8px; text-decoration: none; color: white; display: block; width: 100%; text-align: center; border-radius: 60px; font-weight: 700; cursor: pointer; border: none; transition: 0.25s ease; box-shadow: 0 3px 10px rgba(0,0,0,0.20); }
@@ -753,7 +731,7 @@
       box-shadow: 0 0 30px rgba(245, 158, 11, 0.7);
     }
     
-    /* FULL VIEW CARD STYLES - left aligned stats */
+    /* FULL VIEW CARD STYLES */
     .full-view-card {
       background: white;
       border-radius: 28px;
@@ -762,7 +740,7 @@
       margin: 0 auto;
       box-shadow: 0 12px 40px rgba(0,0,0,0.12);
       border: 1px solid #ffe1b3;
-      text-align: left;
+      text-align: center;
     }
     body.dark-theme .full-view-card {
       background: #1a2632;
@@ -794,27 +772,25 @@
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      text-align: center;
     }
     .full-view-card .app-sub {
       font-size: 0.75rem;
       color: #6c7a5a;
       margin-bottom: 12px;
       font-weight: 600;
-      text-align: center;
     }
     .full-view-card .stats-row {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-start;
-      gap: 12px 24px;
+      justify-content: center;
+      gap: 12px 20px;
       background: #fef4e6;
       padding: 10px 14px;
       border-radius: 40px;
       margin: 12px auto;
     }
     .full-view-card .stats-row .stat-item {
-      text-align: left;
+      text-align: center;
       min-width: 50px;
     }
     .full-view-card .stats-row .stat-value {
@@ -831,8 +807,8 @@
     .full-view-card .info-badges {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-start;
-      gap: 8px 24px;
+      justify-content: center;
+      gap: 8px 16px;
       margin: 12px 0;
     }
     .full-view-card .info-badges .badge-item {
@@ -855,7 +831,7 @@
       text-shadow: 0 0 8px #2563eb;
     }
     .full-view-card .download-btn-large {
-      background: linear-gradient(135deg, #06b6d4, #22c55e, #2563eb);
+      background: #0a0a0a;
       padding: 14px 20px;
       font-size: 0.95rem;
       font-weight: 800;
@@ -863,7 +839,7 @@
       display: block;
       width: 100%;
       margin: 16px 0 12px;
-      box-shadow: 0 0 20px rgba(6,182,212,0.4), 0 0 40px rgba(34,197,94,0.2);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
       text-decoration: none;
       color: white;
       transition: 0.25s ease;
@@ -871,11 +847,18 @@
       cursor: pointer;
       text-align: center;
       border: none;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.2);
     }
     .full-view-card .download-btn-large:hover {
       transform: scale(0.97);
-      box-shadow: 0 0 30px rgba(6,182,212,0.6), 0 0 60px rgba(34,197,94,0.3);
+      background: #1a1a1a;
+    }
+    body.dark-theme .full-view-card .download-btn-large {
+      background: linear-gradient(135deg, #22c55e, #06b6d4);
+      box-shadow: 0 0 20px rgba(34,197,94,0.3);
+    }
+    body.dark-theme .full-view-card .download-btn-large:hover {
+      background: linear-gradient(135deg, #06b6d4, #22c55e);
+      box-shadow: 0 0 30px rgba(6,182,212,0.4);
     }
     .full-view-card .desc-box {
       background: #f8fafc;
@@ -1249,6 +1232,7 @@
 
       const whyContent = useHindi ? `<ul><li><strong>आकर्षक वेलकम बोनस:</strong> नए उपयोगकर्ताओं के लिए ₹${bonusArr[11]} तक</li><li><strong>तेज़ UPI निकासी</strong> प्रणाली त्वरित प्रसंस्करण समय के साथ</li><li><strong>गेम की विस्तृत श्रृंखला</strong> जिसमें रम्मी, स्लॉट, बिंगो और स्पिन गेम शामिल हैं</li><li><strong>स्मूथ और ऑप्टिमाइज़्ड</strong> प्रदर्शन अधिकांश Android डिवाइस पर</li><li><strong>नियमित अपडेट</strong> नई सुविधाओं, ऑफ़र और सुधारों के साथ</li><li><strong>सरल और उपयोगकर्ता के अनुकूल</strong> इंटरफ़ेस शुरुआती और नियमित खिलाड़ियों के लिए</li></ul>` : `<ul><li><strong>Attractive welcome bonus</strong> of up to ₹${bonusArr[11]} for new users</li><li><strong>Fast UPI withdrawal</strong> system with quick processing time</li><li><strong>Wide range of games</strong> including rummy, slots, bingo and spin games</li><li><strong>Smooth and optimized</strong> performance on most Android devices</li><li><strong>Regular updates</strong> with new features, offers and improvements</li><li><strong>Simple and user-friendly</strong> interface for beginners and regular players</li></ul>`;
 
+      // Add the new "Best APK download super fast Withdrawal" tag at the top (without ⚠️)
       const superFastTag = `<div class="tag-box" style="border-left: 4px solid #f59e0b; background: #fffbeb;"><div class="tag-content"><a href="https://www.earntp.com/gold/jm9n7r" target="_blank" class="super-fast-tag">Best APK download super fast Withdrawal</a> – Click to download now!</div></div><div class="tag-divider"></div>`;
 
       return `
@@ -1373,6 +1357,7 @@
       gridDiv.classList.add('hidden');
       downloadContainer.classList.remove('hidden');
       
+      // Build FULL VIEW CARD
       const fullViewHtml = `
         <div class="full-view-card" id="fullViewCard">
           <div class="app-icon-large">
@@ -1453,6 +1438,7 @@
       `;
       downloadContainer.innerHTML = fullViewHtml;
 
+      // Attach events for full view
       const warnToggle = document.getElementById('fullViewWarningToggle');
       const warnContent = document.getElementById('fullViewWarningContent');
       if (warnToggle && warnContent) {
